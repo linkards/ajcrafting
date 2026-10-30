@@ -59,6 +59,9 @@ button { font: inherit; }
 .nav-actions { display: flex; align-items: center; gap: 16px; z-index: 2; }
 .nav-cta { padding: 12px 18px; border: 1px solid var(--ink); font-size: 10px; border-radius: 9999px; }
 .nav-cta span, .button span { margin-left: 14px; }
+.icon { display: inline-block; width: 1em; height: 1em; vertical-align: -.12em; stroke-width: 2; }
+.step-symbol .icon, .ornament .icon { stroke-width: 1.3; }
+.ornament { min-height: 21.5px; }
 .menu-toggle { display: none; border: 0; background: transparent; font-size: 22px; }
 .hero { min-height: 670px; position: relative; display: flex; align-items: center; color: white; overflow: hidden; background: #5a5144; }
 .hero-photo, .hero-shade { position: absolute; inset: 0; }
@@ -321,6 +324,10 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
   </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19" fill="none" stroke="currentColor"/></symbol>
+</svg>
   <div class="announcement">Diseñamos el primer recuerdo de un día inolvidable</div>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="AJ Moments, inicio">
@@ -334,7 +341,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
       <a href="#planes">Paquetes</a>
     </nav>
     <div class="nav-actions">
-      <a class="nav-cta" href="#planes">Comenzar <span>↗</span></a>
+      <a class="nav-cta" href="#planes">Comenzar <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
       <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
     </div>
   </header>
@@ -348,7 +355,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
           <h1>Hay días que merecen<br><em>una invitación especial.</em></h1>
           <p class="hero-copy">Diseños digitales hechos a tu medida para anunciar ese momento que llevas tanto tiempo soñando.</p>
           <div class="hero-actions">
-            <a class="button button-light" href="#coleccion">Explorar diseños <span>↗</span></a>
+            <a class="button button-light" href="#coleccion">Explorar diseños <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
             <a class="text-link light-link" href="#experiencia">Descubre la experiencia <span>↓</span></a>
           </div>
         </div>
@@ -358,7 +365,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
         <p class="eyebrow">UN COMIENZO MEMORABLE</p>
         <h2>Tu historia. Tu estilo.<br><em>Una invitación única.</em></h2>
         <p class="intro-copy">No es solo compartir una fecha. Es despertar emoción desde el primer instante y dar a tus invitados una pequeña muestra de lo que están por vivir.</p>
-        <div class="ornament">✳ <span></span> ✳</div>
+        <div class="ornament"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> <span></span> <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div>
       </section>
 
       <div id="coleccion" style="position: relative; top: 75px; visibility: hidden; pointer-events: none;"></div>
@@ -373,7 +380,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <div class="collection-screen">
                 <img src="https://i.postimg.cc/V1vmCqrp/boda.jpg" alt="Decoración elegante para una boda" loading="lazy">
                 <div class="collection-hover-overlay">
-                  <span class="collection-hover-badge">Ver modelos <span>↗</span></span>
+                  <span class="collection-hover-badge">Ver modelos <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></span>
                 </div>
               </div>
             </div>
@@ -388,7 +395,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <div class="collection-screen">
                 <img src="https://i.postimg.cc/05tW81nc/xv.jpg" alt="Celebración especial con decoración floral" loading="lazy">
                 <div class="collection-hover-overlay">
-                  <span class="collection-hover-badge">Ver modelos <span>↗</span></span>
+                  <span class="collection-hover-badge">Ver modelos <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></span>
                 </div>
               </div>
             </div>
@@ -403,7 +410,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <div class="collection-screen">
                 <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1100&q=85" alt="Celebración de bautizo y bendición" loading="lazy">
                 <div class="collection-hover-overlay">
-                  <span class="collection-hover-badge">Ver modelos <span>↗</span></span>
+                  <span class="collection-hover-badge">Ver modelos <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></span>
                 </div>
               </div>
             </div>
@@ -418,7 +425,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <div class="collection-screen">
                 <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1100&q=85" alt="Brindis y celebración de aniversario y cumpleaños" loading="lazy">
                 <div class="collection-hover-overlay">
-                  <span class="collection-hover-badge">Ver modelos <span>↗</span></span>
+                  <span class="collection-hover-badge">Ver modelos <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></span>
                 </div>
               </div>
             </div>
@@ -433,7 +440,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <div class="collection-screen">
                 <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1100&q=85" alt="Celebración de despedida de soltera y brindis" loading="lazy">
                 <div class="collection-hover-overlay">
-                  <span class="collection-hover-badge">Ver modelos <span>↗</span></span>
+                  <span class="collection-hover-badge">Ver modelos <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></span>
                 </div>
               </div>
             </div>
@@ -448,7 +455,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <div class="collection-screen">
                 <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1100&q=85" alt="Celebración y fiesta infantil colorida" loading="lazy">
                 <div class="collection-hover-overlay">
-                  <span class="collection-hover-badge">Ver modelos <span>↗</span></span>
+                  <span class="collection-hover-badge">Ver modelos <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></span>
                 </div>
               </div>
             </div>
@@ -458,7 +465,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
             </div>
           </a>
         </div>
-        <div class="center-action"><a class="button button-dark" href="#contacto">Cuéntanos qué vas a celebrar <span>↗</span></a></div>
+        <div class="center-action"><a class="button button-dark" href="#contacto">Cuéntanos qué vas a celebrar <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a></div>
       </section>
 
       <section class="experience" id="experiencia">
@@ -484,9 +491,9 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
       <section class="process section-pad">
         <div class="process-intro"><p class="eyebrow">SENCILLO DESDE EL PRINCIPIO</p><h2>Tu invitación ideal,<br><em>en tres momentos.</em></h2><p>Te acompañamos desde la idea inicial hasta que esté lista para compartir.</p></div>
         <div class="steps">
-          <article class="step"><span class="step-no">01</span><div class="step-symbol">✳</div><h3>Cuéntanos tu idea</h3><p>Comparte el tipo de evento, tus colores favoritos y los detalles que quieres incluir.</p></article>
+          <article class="step"><span class="step-no">01</span><div class="step-symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div><h3>Cuéntanos tu idea</h3><p>Comparte el tipo de evento, tus colores favoritos y los detalles que quieres incluir.</p></article>
           <article class="step"><span class="step-no">02</span><div class="step-symbol">✎</div><h3>Diseñamos para ti</h3><p>Preparamos una invitación personalizada que reúne tu información y tu estilo.</p></article>
-          <article class="step"><span class="step-no">03</span><div class="step-symbol">↗</div><h3>Comparte y celebra</h3><p>Recibe tu enlace y envíalo a tus invitados por WhatsApp o redes sociales.</p></article>
+          <article class="step"><span class="step-no">03</span><div class="step-symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div><h3>Comparte y celebra</h3><p>Recibe tu enlace y envíalo a tus invitados por WhatsApp o redes sociales.</p></article>
         </div>
       </section>
 
@@ -510,7 +517,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <li>Galería de fotografías (hasta 4 fotos)</li>
               <li>Enlace para compartir</li>
             </ul>
-            <a class="button button-outline" href="https://wa.me/528132642699?text=Hola%2C%20me%20interesa%20adquirir%20una%20invitaci%C3%B3n%20con%20el%20paquete%20esencial." target="_blank" rel="noopener">Me interesa <span>↗</span></a>
+            <a class="button button-outline" href="https://wa.me/528132642699?text=Hola%2C%20me%20interesa%20adquirir%20una%20invitaci%C3%B3n%20con%20el%20paquete%20esencial." target="_blank" rel="noopener">Me interesa <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
           </article>
           <article class="plan-card featured">
             <div class="popular">EL FAVORITO</div>
@@ -529,7 +536,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
               <li>Cuenta regresiva</li>
               <li>Confirmación de asistencia</li>
             </ul>
-            <a class="button button-dark" href="https://wa.me/528132642699?text=Hola%2C%20me%20interesa%20adquirir%20una%20invitaci%C3%B3n%20con%20el%20paquete%20exclusivo." target="_blank" rel="noopener">Elegir este plan <span>↗</span></a>
+            <a class="button button-dark" href="https://wa.me/528132642699?text=Hola%2C%20me%20interesa%20adquirir%20una%20invitaci%C3%B3n%20con%20el%20paquete%20exclusivo." target="_blank" rel="noopener">Elegir este plan <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
           </article>
         </div>
         <p class="plans-disclaimer">* Precios expresados en pesos mexicanos (MXN).</p>
@@ -557,7 +564,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
           <p class="eyebrow light">EL PRIMER DETALLE DE UN GRAN DÍA</p>
           <h2>Hagamos algo<br><em>inolvidable.</em></h2>
           <p>Cuéntanos qué vas a celebrar. Nosotros te ayudamos a convertirlo en una invitación especial.</p>
-          <a class="button button-light" href="https://wa.me/528132642699?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20las%20invitaciones%20digitales." target="_blank" rel="noopener">Hablemos por WhatsApp <span>↗</span></a>
+          <a class="button button-light" href="https://wa.me/528132642699?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20las%20invitaciones%20digitales." target="_blank" rel="noopener">Hablemos por WhatsApp <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
         </div>
       </section>
     </div>
@@ -575,7 +582,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
         <p class="demo-note">Los diseños mostrados son ejemplos conceptuales listos para personalizar con tus datos, fotos y estilo.</p>
         <div class="center-action" style="margin-top: 40px;">
           <a class="button button-dark" id="catalogWhatsAppGeneralBtn" href="https://wa.me/528132642699" target="_blank" rel="noopener">
-            Personalizar un diseño de esta colección <span>↗</span>
+            Personalizar un diseño de esta colección <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span>
           </a>
         </div>
       </section>
