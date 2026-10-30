@@ -61,6 +61,10 @@ button { font: inherit; }
 .nav-cta span, .button span { margin-left: 14px; }
 .icon { display: inline-block; width: 1em; height: 1em; vertical-align: -.12em; stroke-width: 2; }
 .step-symbol .icon, .ornament .icon { stroke-width: 1.3; }
+.feature-icon .icon { stroke-width: 1.5; }
+.menu-toggle .icon { stroke-width: 2.2; }
+.menu-toggle { padding: 1px 5px; }
+.nav-cta .icon { width: .8em; }
 .ornament { min-height: 21.5px; }
 .menu-toggle { display: none; border: 0; background: transparent; font-size: 22px; }
 .hero { min-height: 670px; position: relative; display: flex; align-items: center; color: white; overflow: hidden; background: #5a5144; }
@@ -327,11 +331,22 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19" fill="none" stroke="currentColor"/></symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6" fill="none" stroke="currentColor"/></symbol>
+  <symbol id="i-arrow-d" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6" fill="none" stroke="currentColor"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M8.5 17V5.5l11-2.5V14.5" fill="none" stroke="currentColor"/><circle cx="6" cy="17.5" r="2.8" fill="currentColor" stroke="none"/><circle cx="17" cy="15" r="2.8" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.8 2.7 7.2 9 9-6.3 1.8-8.4 4.2-9 9-.6-4.8-2.7-7.2-9-9 6.3-1.8 8.4-4.2 9-9z" fill="none" stroke="currentColor" stroke-linejoin="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5" fill="none" stroke="currentColor"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-9.5-10.3C1.5 7.2 3.7 4 7 4c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.3 0 5.5 3.2 4.5 6.7C20 15.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M20 20l-1-4L7.5 4.5a2.1 2.1 0 0 0-3 3L16 19l4 1zM9.5 6.5l-3 3" fill="none" stroke="currentColor" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star4" viewBox="0 0 24 24"><path d="M12 2c.7 5.6 3.1 8.3 10 10-6.9 1.7-9.3 4.4-10 10-.7-5.6-3.1-8.3-10-10 6.9-1.7 9.3-4.4 10-10z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17" fill="none" stroke="currentColor"/></symbol>
 </svg>
   <div class="announcement">Diseñamos el primer recuerdo de un día inolvidable</div>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="AJ Moments, inicio">
-      <span class="brand-mark">AJ<span>✦</span></span>
+      <span class="brand-mark">AJ<span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star4"/></svg></span></span>
       <span class="brand-name">AJ MOMENTS<small>INVITACIONES DIGITALES</small></span>
     </a>
     <nav class="main-nav" aria-label="Navegación principal">
@@ -342,7 +357,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
     </nav>
     <div class="nav-actions">
       <a class="nav-cta" href="#planes">Comenzar <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
     </div>
   </header>
 
@@ -356,7 +371,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
           <p class="hero-copy">Diseños digitales hechos a tu medida para anunciar ese momento que llevas tanto tiempo soñando.</p>
           <div class="hero-actions">
             <a class="button button-light" href="#coleccion">Explorar diseños <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
-            <a class="text-link light-link" href="#experiencia">Descubre la experiencia <span>↓</span></a>
+            <a class="text-link light-link" href="#experiencia">Descubre la experiencia <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-d"/></svg></span></a>
           </div>
         </div>
       </section>
@@ -478,12 +493,12 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
           <h2>La emoción comienza<br><em>antes del gran día.</em></h2>
           <p class="experience-copy">Una experiencia digital que combina diseño, información y detalles personales para que tus invitados sientan que forman parte de algo especial.</p>
           <div class="feature-list">
-            <div class="feature"><span class="feature-icon">♫</span><div><h3>Música que crea ambiente</h3><p>Elige una canción que acompañe tu historia.</p></div></div>
-            <div class="feature"><span class="feature-icon">✧</span><div><h3>Fotos y detalles personales</h3><p>Un diseño que refleja tu estilo y personalidad.</p></div></div>
-            <div class="feature"><span class="feature-icon">⌖</span><div><h3>Todo en un solo lugar</h3><p>Ubicación, itinerario, fecha y cuenta regresiva.</p></div></div>
-            <div class="feature"><span class="feature-icon">♡</span><div><h3>Confirmación de asistencia</h3><p>Facilita la organización de tu celebración.</p></div></div>
+            <div class="feature"><span class="feature-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-music"/></svg></span><div><h3>Música que crea ambiente</h3><p>Elige una canción que acompañe tu historia.</p></div></div>
+            <div class="feature"><span class="feature-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sparkle"/></svg></span><div><h3>Fotos y detalles personales</h3><p>Un diseño que refleja tu estilo y personalidad.</p></div></div>
+            <div class="feature"><span class="feature-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg></span><div><h3>Todo en un solo lugar</h3><p>Ubicación, itinerario, fecha y cuenta regresiva.</p></div></div>
+            <div class="feature"><span class="feature-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span><div><h3>Confirmación de asistencia</h3><p>Facilita la organización de tu celebración.</p></div></div>
           </div>
-          <a class="text-link dark-link" href="#proceso">Conoce cómo funciona <span>→</span></a>
+          <a class="text-link dark-link" href="#proceso">Conoce cómo funciona <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-r"/></svg></span></a>
         </div>
       </section>
 
@@ -492,7 +507,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
         <div class="process-intro"><p class="eyebrow">SENCILLO DESDE EL PRINCIPIO</p><h2>Tu invitación ideal,<br><em>en tres momentos.</em></h2><p>Te acompañamos desde la idea inicial hasta que esté lista para compartir.</p></div>
         <div class="steps">
           <article class="step"><span class="step-no">01</span><div class="step-symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div><h3>Cuéntanos tu idea</h3><p>Comparte el tipo de evento, tus colores favoritos y los detalles que quieres incluir.</p></article>
-          <article class="step"><span class="step-no">02</span><div class="step-symbol">✎</div><h3>Diseñamos para ti</h3><p>Preparamos una invitación personalizada que reúne tu información y tu estilo.</p></article>
+          <article class="step"><span class="step-no">02</span><div class="step-symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pencil"/></svg></div><h3>Diseñamos para ti</h3><p>Preparamos una invitación personalizada que reúne tu información y tu estilo.</p></article>
           <article class="step"><span class="step-no">03</span><div class="step-symbol"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div><h3>Comparte y celebra</h3><p>Recibe tu enlace y envíalo a tus invitados por WhatsApp o redes sociales.</p></article>
         </div>
       </section>
@@ -571,7 +586,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
 
     <div class="catalog-view" id="catalogView">
       <div class="catalog-hero">
-        <a class="catalog-back-link" id="catalogBackBtn"><span>←</span> Volver al inicio</a>
+        <a class="catalog-back-link" id="catalogBackBtn"><span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-l"/></svg></span> Volver al inicio</a>
         <p class="eyebrow" id="catalogEyebrow"></p>
         <h1 id="catalogTitle"></h1>
         <p id="catalogDescription"></p>
@@ -590,7 +605,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
   </main>
 
   <footer class="site-footer">
-    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">AJ<span>✦</span></span><span class="brand-name">AJ MOMENTS<small>INVITACIONES DIGITALES</small></span></a>
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">AJ<span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star4"/></svg></span></span><span class="brand-name">AJ MOMENTS<small>INVITACIONES DIGITALES</small></span></a>
     <p>Una invitación especial para una historia única.</p>
     <div class="footer-links">
       <a href="#coleccion">Colección</a>
@@ -609,13 +624,15 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
 
   <script>
 const menuToggle = document.querySelector('.menu-toggle');
+const ICON_MENU = '<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>';
+const ICON_CLOSE = '<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>';
 const nav = document.querySelector('.main-nav');
 
 menuToggle.addEventListener('click', () => {
   const isOpen = nav.classList.toggle('open');
   menuToggle.setAttribute('aria-expanded', String(isOpen));
   menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-  menuToggle.textContent = isOpen ? '×' : '☰';
+  menuToggle.innerHTML = isOpen ? ICON_CLOSE : ICON_MENU;
 });
 
 nav.querySelectorAll('a').forEach(link => {
@@ -623,7 +640,7 @@ nav.querySelectorAll('a').forEach(link => {
     nav.classList.remove('open');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', 'Abrir menú');
-    menuToggle.textContent = '☰';
+    menuToggle.innerHTML = ICON_MENU;
   });
 });
 
