@@ -28,7 +28,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
  :root {
   --paper: #f8f5ef;
@@ -168,6 +168,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
 .phone-gallery { display: flex; justify-content: center; align-items: flex-start; gap: clamp(20px, 4vw, 55px); flex-wrap: wrap; }
 .phone-item { background: none; border: 0; padding: 0; cursor: pointer; text-align: center; transition: transform .25s; }
 .phone-item:hover { transform: translateY(-8px); }
+.phone-item { width: 150px; }
 .phone { display: block; width: 150px; height: 292px; padding: 6px; border-radius: 23px; background: #171816; box-shadow: 0 15px 32px #1b1a171f; position: relative; }
 .phone-speaker { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 2; width: 35px; height: 7px; background: #171816; border-radius: 10px; }
 .phone-screen { display: flex; height: 100%; border-radius: 17px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; padding: 18px 9px; position: relative; color: #fff8ec; }
@@ -258,7 +259,14 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
   .collection-phone { width: 185px; height: 355px; border-radius: 30px; padding: 7px; }
   .collection-screen { border-radius: 23px; }
   .phone { width: 132px; height: 260px; }
+  .phone-item { width: 132px; }
   .plan-card { padding: 30px 20px; }
+}
+@media (max-width: 760px) {
+  .menu-toggle { display: block; cursor: pointer; }
+  .main-nav { display: none; position: absolute; top: 81px; left: 0; right: 0; transform: none; padding: 20px 6%; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; box-shadow: 0 15px 20px #0000000a; }
+  .main-nav.open { display: flex; }
+  .main-nav > a { padding: 13px 0; border-bottom: 1px solid var(--line); }
 }
 @media (max-width: 680px) {
   .announcement { font-size: 8px; letter-spacing: .08em; }
@@ -287,6 +295,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
   .experience-content h2 { font-size: 39px; }
   .phone-gallery { gap: 28px 20px; }
   .phone { width: 125px; height: 245px; border-radius: 20px; }
+  .phone-item { width: 125px; }
   .phone-label { font-size: 8px; }
   .steps { grid-template-columns: 1fr; gap: 24px; }
   .step { display: grid; grid-template-columns: 45px 1fr; column-gap: 15px; padding-top: 20px; }
@@ -538,7 +547,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
           <details><summary>¿Se puede abrir desde un celular? <span>+</span></summary><p>Sí. La página está diseñada para adaptarse a celulares, tabletas y computadoras.</p></details>
           <details><summary>¿Con cuánto tiempo debo solicitarla? <span>+</span></summary><p>Lo ideal es solicitarla con anticipación. El tiempo de entrega dependerá del diseño y de la información que nos compartas.</p></details>
           <details><summary>¿Cuánto tiempo estará activa mi invitación? <span>+</span></summary><p>Tu invitación permanece activa durante todo el periodo previo y se da de baja 2 días después de tu evento.</p></details>
-          <details><summary>¿Qué pasa si tengo problemas con mi invitación? <span>+</span></summary><p>Cada invitación se programa y prueba minuciosamente en múltiples dispositivos antes de entregarse, por lo que funcionará de forma impecable. De cualquier manera, cuentas con nuestro respaldo directo: ante cualquier ajuste o consulta de último momento, nos escribes por WhatsApp y lo resolvemos de inmediato.</p></details>
+          <details><summary>¿Qué pasa si tengo problemas con mi invitación? <span>+</span></summary><p>Cada invitación se programa y prueba en múltiples dispositivos antes de entregarse. De cualquier manera, cuentas con nuestro respaldo directo: ante cualquier detalle o consulta, escríbenos por WhatsApp.</p></details>
         </div>
       </section>
 
@@ -578,7 +587,7 @@ h1 em, h2 em { font-weight: 400; color: var(--gold); }
     <p>Una invitación especial para una historia única.</p>
     <div class="footer-links">
       <a href="#coleccion">Colección</a>
-      <a href="#planes">Planes</a>
+      <a href="#planes">Paquetes</a>
       <a href="#contacto">Contacto</a>
       <a href="https://www.facebook.com/ajcraftinglab" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestra página de Facebook" style="display: inline-flex; align-items: center; gap: 5px;">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
