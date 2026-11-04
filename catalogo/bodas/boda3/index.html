@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valeria & Fernando — Invitación de Boda</title>
+  <link rel="icon" type="image/png" href="../../../img/favicon.png">
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Valeria & Fernando — Nuestra Boda">
+  <meta property="og:description" content="Acompáñanos a celebrar nuestro gran día. Sábado, 15 de abril de 2028 · Events Marbet Salón.">
+  <meta property="og:image" content="Margaritas.webp">
+  <meta property="og:image:alt" content="Invitación de Boda de Valeria y Fernando">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Valeria & Fernando — Nuestra Boda">
+  <meta name="twitter:description" content="Acompáñanos a celebrar nuestro gran día. Sábado, 15 de abril de 2028 · Events Marbet Salón.">
+  <meta name="twitter:image" content="Margaritas.webp">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Marck+Script&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            script: ['"Caveat"', '"Marck Script"', 'cursive'],
+            calligraphy: ['"Marck Script"', 'cursive'],
+            names: ['"Great Vibes"', 'cursive'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          },
+          colors: {
+            cream: {
+              50: '#FAF8F4',
+              100: '#F5EFE6',
+              200: '#EFE6D8',
+              300: '#E2D5C0',
+              800: '#524942',
+              900: '#3D352F'
+            },
+            olive: {
+              100: '#E3E5DD',
+              200: '#CCD1C2',
+              600: '#7E856E',
+              700: '#5F6750',
+              800: '#464D3A',
+              900: '#353A2C'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grain {
+      background-color: #F6F1EA;
+    }
+
+    .curve-top-wave {
+      border-top-left-radius: 50% 30px;
+      border-top-right-radius: 50% 30px;
+    }
+
+    #petalsCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F6F1EA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c5bba8;
+      border-radius: 4px;
+    }
+
+    @keyframes subtleDrift {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
+    }
+    .animate-drift {
+      animation: subtleDrift 7s ease-in-out infinite;
+    }
+    
+    .arch-frame {
+      border-radius: 180px 180px 20px 20px;
+    }
+
+    .soft-shadow {
+      box-shadow: 0 15px 35px -10px rgba(92, 81, 71, 0.12), 0 5px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    body {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    input, textarea {
+      -webkit-user-select: auto;
+      user-select: auto;
+    }
+
+    img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;" class="bg-[#3A3E34] text-[#524942] font-serif antialiased min-h-screen p-0 flex justify-center selection:bg-[#7E856E] selection:text-white relative overflow-x-hidden">
+
+  <canvas id="petalsCanvas"></canvas>
+
+  <main class="w-full max-w-[480px] bg-[#F6F1EA] shadow-2xl relative z-10 overflow-hidden flex flex-col min-h-screen sm:border-x sm:border-[#EDE5D8]/30">
+    
+    <section class="relative w-full h-[680px] sm:h-[730px] flex flex-col justify-between items-center text-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="Margaritas.webp" 
+          alt="Margaritas bajo el sol dorado" 
+          class="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.02]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#FAF8F4]/30 via-black/10 to-transparent"></div>
+        <div class="absolute inset-0 bg-amber-900/10 mix-blend-multiply"></div>
+        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/45 to-transparent pointer-events-none"></div>
+      </div>
+
+      <div class="relative z-10 pt-28 sm:pt-36 px-6">
+        <h1 class="text-white drop-shadow-[0_2px_14px_rgba(30,20,10,0.65)] flex flex-col items-center">
+          <span class="block font-names text-[68px] sm:text-[80px] leading-[1.05] tracking-wide font-normal -rotate-1">
+            Valeria
+          </span>
+          <span class="block font-serif italic text-2xl text-amber-100/95 mt-1 mb-0.5 tracking-wider">
+            y
+          </span>
+          <span class="block font-names text-[74px] sm:text-[86px] leading-[1.05] tracking-wide font-normal -rotate-1 mt-7 sm:mt-9">
+            Fernando
+          </span>
+        </h1>
+      </div>
+
+      <div class="relative z-10 pb-16 flex flex-col items-center">
+        <p class="font-sans text-[11px] uppercase tracking-[0.22em] text-[#FAF5EB] font-medium drop-shadow-md mb-3">
+          Te invitamos<br>a nuestra boda
+        </p>
+
+        <div class="text-[#FAF5EB] font-serif text-[26px] tracking-[0.35em] font-normal drop-shadow-md">
+          15 · 04 · 2028
+        </div>
+
+        <div class="mt-6 flex items-center justify-center">
+          <div class="w-12 h-[0.5px] bg-[#FAF5EB]/60 mr-3"></div>
+          <svg class="w-6 h-6 drop-shadow-sm text-[#FFDF6D]" viewBox="0 0 32 32" fill="none">
+            <ellipse cx="16" cy="7" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="16" cy="25" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="7" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="25" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="9.6" cy="9.6" rx="3.2" ry="5.5" transform="rotate(-45 9.6 9.6)" fill="#FFFFFF"/>
+            <ellipse cx="22.4" cy="22.4" rx="3.2" ry="5.5" transform="rotate(-45 22.4 22.4)" fill="#FFFFFF"/>
+            <ellipse cx="22.4" cy="9.6" rx="3.2" ry="5.5" transform="rotate(45 22.4 9.6)" fill="#FFFFFF"/>
+            <ellipse cx="9.6" cy="22.4" rx="3.2" ry="5.5" transform="rotate(45 9.6 22.4)" fill="#FFFFFF"/>
+            <circle cx="16" cy="16" r="4.2" fill="#F4B728"/>
+            <circle cx="16" cy="16" r="3.2" fill="#ECA214"/>
+          </svg>
+          <div class="w-12 h-[0.5px] bg-[#FAF5EB]/60 ml-3"></div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 inset-x-0 z-20 pointer-events-none">
+        <svg viewBox="0 0 500 80" preserveAspectRatio="none" class="w-full h-16 sm:h-20 block fill-[#F6F1EA]">
+          <path d="M0,45 C150,90 320,10 500,55 L500,80 L0,80 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="story" class="relative px-8 pt-2 pb-12 bg-[#F6F1EA] text-[#554B43]">
+      <div class="max-w-[340px] mx-auto text-left">
+        
+        <div class="space-y-4 font-serif text-[16px] sm:text-[17px] leading-[1.65] text-[#5A5149]">
+          <p>
+            Nos conocimos en un día ordinario, pero a partir de ese instante todo se volvió extraordinario.
+          </p>
+          <p>
+            Con el paso del tiempo comprendimos que queríamos caminar juntos toda la vida, ¡y hoy estamos listos para decir «sí, acepto» rodeados de las personas que más amamos!
+          </p>
+        </div>
+
+        <div class="font-script text-[26px] text-[#463D36] leading-tight mt-6">
+          Con amor,<br>
+          <span class="font-names text-[40px] sm:text-[44px] text-[#3D352F] block mt-1 tracking-wide">Valeria y Fernando</span>
+        </div>
+
+        <div class="mt-8 bg-[#EFE9DD]/90 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-[#DDD3C3] shadow-sm">
+          <div class="flex items-center gap-3.5 mb-3">
+            <div class="flex-1 min-w-0">
+              <span class="block font-sans text-[9px] uppercase tracking-[0.25em] text-[#827566] font-medium">Nuestra Canción</span>
+              <h4 id="songTitleDisplay" class="font-serif text-[16px] text-[#3D352F] font-semibold truncate leading-tight mt-0.5">
+                Clair de Lune
+              </h4>
+              <p class="font-serif italic text-xs text-[#706456] truncate">Para escuchar mientras lees</p>
+            </div>
+
+            <button 
+              id="mainPlayBtn" 
+              onclick="toggleBackgroundMusic()" 
+              type="button"
+              class="w-11 h-11 rounded-full bg-[#464D3B] hover:bg-[#383E30] text-[#FAF7F2] flex items-center justify-center shadow-md active:scale-95 transition-all flex-shrink-0"
+              title="Reproducir / Pausar">
+              <svg id="mainPlayIcon" class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <svg id="mainPauseIcon" class="w-5 h-5 hidden fill-current" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="space-y-1 pt-1">
+            <div class="relative w-full h-2 bg-[#DDD3C2] rounded-full overflow-hidden cursor-pointer group" id="progressBarContainer" onclick="seekAudio(event)">
+              <div id="progressBar" class="h-full bg-[#5F6750] rounded-full w-0 transition-[width] duration-150"></div>
+            </div>
+            <div class="flex justify-between items-center text-[10px] font-sans text-[#786C5D] font-mono tracking-wider pt-0.5">
+              <span id="currentTime">0:00</span>
+              <span id="totalDuration">--:--</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="relative w-full min-h-[460px] sm:min-h-[500px] overflow-hidden flex flex-col justify-between items-center text-center">
+      <img 
+        src="Tu.webp" 
+        alt="Tú, yo y toda una vida" 
+        class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.82]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#2E2822]/65 via-[#2E2822]/45 to-[#2E2822]/75"></div>
+
+      <div class="h-6"></div>
+
+      <div class="relative z-10 my-auto py-6 px-6 flex flex-col items-center justify-center max-w-[340px] mx-auto text-center">
+        <div class="max-w-[320px] mx-auto text-center">
+          <div class="text-[10px] uppercase font-sans tracking-[0.35em] text-[#FAF5EB]/90 font-medium drop-shadow-sm mb-2">
+            Faltan
+          </div>
+          <div id="countdown" class="flex items-center justify-center gap-3 sm:gap-4 font-serif text-[26px] sm:text-[28px] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
+            <div class="flex flex-col items-center">
+              <span id="cd-days" class="font-normal block leading-none">--</span>
+              <span class="text-[8px] sm:text-[9px] block font-sans uppercase tracking-[0.2em] text-amber-100/90 font-light mt-1">días</span>
+            </div>
+            <span class="text-white/70 text-xl font-light -mt-3.5">:</span>
+            <div class="flex flex-col items-center">
+              <span id="cd-hours" class="font-normal block leading-none">--</span>
+              <span class="text-[8px] sm:text-[9px] block font-sans uppercase tracking-[0.2em] text-amber-100/90 font-light mt-1">horas</span>
+            </div>
+            <span class="text-white/70 text-xl font-light -mt-3.5">:</span>
+            <div class="flex flex-col items-center">
+              <span id="cd-mins" class="font-normal block leading-none">--</span>
+              <span class="text-[8px] sm:text-[9px] block font-sans uppercase tracking-[0.2em] text-amber-100/90 font-light mt-1">min</span>
+            </div>
+            <span class="text-white/70 text-xl font-light -mt-3.5">:</span>
+            <div class="flex flex-col items-center">
+              <span id="cd-secs" class="font-normal block leading-none">--</span>
+              <span class="text-[8px] sm:text-[9px] block font-sans uppercase tracking-[0.2em] text-amber-100/90 font-light mt-1">seg</span>
+            </div>
+          </div>
+          <div class="text-[10px] uppercase font-sans tracking-[0.35em] text-[#FAF5EB]/90 font-medium drop-shadow-sm mt-2">
+            Para la celebración
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10 w-full">
+        <svg viewBox="0 0 500 50" preserveAspectRatio="none" class="w-full h-12 block fill-[#F6F1EA]">
+          <path d="M0,50 C180,0 340,40 500,10 L500,50 L0,50 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="details" class="bg-[#F6F1EA] px-8 pt-2 pb-10 text-[#4D443D]">
+      <div class="max-w-[340px] mx-auto">
+        
+        <div class="text-center mb-8">
+          <h3 class="font-sans text-[13px] uppercase tracking-[0.35em] text-[#554C44] font-medium">
+            DETALLES
+          </h3>
+        </div>
+
+        <div class="flex items-start gap-4 mb-7">
+          <div class="w-7 pt-1 flex justify-center text-[#6A6055]">
+            <svg class="w-5 h-5 stroke-[1.4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <circle cx="8" cy="15" r="1" fill="currentColor"></circle>
+              <circle cx="12" cy="15" r="1" fill="currentColor"></circle>
+              <circle cx="16" cy="15" r="1" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-sans text-[11px] uppercase tracking-[0.2em] font-medium text-[#7C7166] mb-1">
+              FECHA Y HORA
+            </h4>
+            <p class="font-serif text-[17px] text-[#443C35] leading-snug">
+              Sábado, 15 de abril de 2028<br>
+              <span class="text-[15px] text-[#695F55]">a las 19:00 hrs</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 mb-8">
+          <div class="w-7 pt-1 flex justify-center text-[#6A6055]">
+            <svg class="w-5 h-5 stroke-[1.4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-sans text-[11px] uppercase tracking-[0.2em] font-medium text-[#7C7166] mb-1">
+              LUGAR DEL EVENTO
+            </h4>
+            <p class="font-serif text-[16px] text-[#443C35] leading-snug">
+              Events Marbet Salón<br>
+              <span class="text-[14px] text-[#695F55] block mt-0.5">Av. Abraham Lincoln 1600, Real Cumbres, Monterrey, N.L.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-10 text-center">
+          <a 
+            href="https://maps.app.goo.gl/kpytxoiLG2VAL4sr5" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="block relative w-full aspect-square max-w-[270px] mx-auto rounded-full overflow-hidden shadow-lg border-4 border-white/90 p-1.5 bg-[#EFECE4] group transition-transform hover:scale-[1.02]">
+            <svg viewBox="0 0 300 300" class="w-full h-full rounded-full">
+              <defs>
+                <radialGradient id="aerialBase" cx="50%" cy="50%" r="70%">
+                  <stop offset="0%" stop-color="#F5F2EB"/>
+                  <stop offset="65%" stop-color="#ECE5D8"/>
+                  <stop offset="100%" stop-color="#E0D7C6"/>
+                </radialGradient>
+                <pattern id="cityRoofPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <rect width="14" height="14" fill="#DDD5C6" rx="1.5" opacity="0.6"/>
+                </pattern>
+              </defs>
+
+              <rect width="300" height="300" fill="url(#aerialBase)" />
+
+              <g opacity="0.85">
+                <rect x="20" y="20" width="55" height="40" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="85" y="20" width="60" height="40" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="20" y="70" width="55" height="35" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="85" y="70" width="70" height="35" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+
+                <rect x="175" y="15" width="50" height="35" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="235" y="15" width="50" height="35" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="195" y="60" width="85" height="30" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+
+                <rect x="15" y="185" width="45" height="45" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="70" y="185" width="55" height="45" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="15" y="240" width="50" height="45" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="75" y="240" width="60" height="45" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+
+                <rect x="175" y="210" width="50" height="40" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="235" y="210" width="50" height="40" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+                <rect x="180" y="260" width="105" height="30" rx="3" fill="#E4DCCE" stroke="#D7CEBF" stroke-width="0.8"/>
+              </g>
+
+              <g opacity="0.75">
+                <rect x="26" y="26" width="12" height="10" rx="1" fill="#D3C9B7"/>
+                <rect x="42" y="26" width="12" height="10" rx="1" fill="#C9BFAC"/>
+                <rect x="26" y="42" width="12" height="10" rx="1" fill="#C9BFAC"/>
+                <rect x="42" y="42" width="12" height="10" rx="1" fill="#D3C9B7"/>
+
+                <rect x="92" y="26" width="14" height="10" rx="1" fill="#C9BFAC"/>
+                <rect x="112" y="26" width="14" height="10" rx="1" fill="#D3C9B7"/>
+                <rect x="92" y="42" width="14" height="10" rx="1" fill="#D3C9B7"/>
+                <rect x="112" y="42" width="14" height="10" rx="1" fill="#C9BFAC"/>
+
+                <rect x="26" y="76" width="18" height="12" rx="1" fill="#D3C9B7"/>
+                <rect x="48" y="76" width="18" height="12" rx="1" fill="#C9BFAC"/>
+
+                <rect x="180" y="218" width="14" height="12" rx="1" fill="#D3C9B7"/>
+                <rect x="200" y="218" width="14" height="12" rx="1" fill="#C9BFAC"/>
+                <rect x="242" y="218" width="16" height="12" rx="1" fill="#D3C9B7"/>
+                <rect x="262" y="218" width="16" height="12" rx="1" fill="#C9BFAC"/>
+              </g>
+
+              <rect x="25" y="125" width="55" height="42" rx="6" fill="#D1DAC0" opacity="0.8"/>
+              <rect x="210" y="115" width="70" height="48" rx="6" fill="#D1DAC0" opacity="0.8"/>
+              <rect x="140" y="225" width="28" height="55" rx="5" fill="#D1DAC0" opacity="0.7"/>
+
+              <g fill="#889B77" opacity="0.85">
+                <circle cx="38" cy="138" r="6"/>
+                <circle cx="52" cy="136" r="5"/>
+                <circle cx="65" cy="142" r="6"/>
+                <circle cx="44" cy="153" r="5.5"/>
+                <circle cx="60" cy="154" r="5"/>
+
+                <circle cx="225" cy="128" r="6.5"/>
+                <circle cx="242" cy="125" r="5.5"/>
+                <circle cx="258" cy="132" r="6"/>
+                <circle cx="232" cy="145" r="6"/>
+                <circle cx="250" cy="148" r="5.5"/>
+                <circle cx="266" cy="144" r="5"/>
+
+                <circle cx="154" cy="238" r="4.5"/>
+                <circle cx="154" cy="254" r="4.5"/>
+                <circle cx="154" cy="270" r="4.5"/>
+                <circle cx="85" cy="112" r="3.5"/>
+                <circle cx="100" cy="118" r="3.5"/>
+                <circle cx="115" cy="124" r="3.5"/>
+              </g>
+
+              <g stroke="#FFFFFF" stroke-linecap="round" opacity="0.95">
+                <line x1="80" y1="15" x2="80" y2="110" stroke-width="5"/>
+                <line x1="165" y1="15" x2="165" y2="100" stroke-width="5"/>
+                <line x1="15" y1="65" x2="165" y2="65" stroke-width="4"/>
+                <line x1="170" y1="55" x2="285" y2="55" stroke-width="4"/>
+                <line x1="230" y1="15" x2="230" y2="95" stroke-width="4.5"/>
+
+                <line x1="65" y1="180" x2="65" y2="290" stroke-width="4.5"/>
+                <line x1="135" y1="180" x2="135" y2="290" stroke-width="5"/>
+                <line x1="15" y1="235" x2="135" y2="235" stroke-width="4"/>
+                <line x1="170" y1="205" x2="285" y2="205" stroke-width="4.5"/>
+                <line x1="230" y1="205" x2="230" y2="290" stroke-width="4.5"/>
+                <line x1="170" y1="255" x2="285" y2="255" stroke-width="4"/>
+              </g>
+
+              <g stroke="#DDD3C3" stroke-width="0.8" stroke-dasharray="2 2" fill="none">
+                <line x1="80" y1="15" x2="80" y2="110"/>
+                <line x1="135" y1="180" x2="135" y2="290"/>
+              </g>
+
+              <path d="M -10,105 Q 120,150 310,185" stroke="#D3C9B8" stroke-width="17" fill="none" stroke-linecap="square"/>
+              <path d="M -10,105 Q 120,150 310,185" stroke="#FFFFFF" stroke-width="13" fill="none"/>
+              <path d="M -10,105 Q 120,150 310,185" stroke="#A9B897" stroke-width="2.8" fill="none"/>
+              <path d="M -10,102 Q 120,147 310,182" stroke="#E3DCce" stroke-width="0.9" stroke-dasharray="3 3" fill="none"/>
+              <path d="M -10,108 Q 120,153 310,188" stroke="#E3DCce" stroke-width="0.9" stroke-dasharray="3 3" fill="none"/>
+
+              <path d="M 160,-10 L 140,310" stroke="#D3C9B8" stroke-width="13" fill="none"/>
+              <path d="M 160,-10 L 140,310" stroke="#FFFFFF" stroke-width="9.5" fill="none"/>
+              <path d="M 160,-10 L 140,310" stroke="#E3DCCE" stroke-width="0.9" stroke-dasharray="3 3" fill="none"/>
+
+              <g transform="translate(138, 118)">
+                <rect x="-8" y="-6" width="34" height="26" rx="3" fill="#DED6C7" stroke="#9E8D77" stroke-width="1.2"/>
+                <rect x="-4" y="-3" width="26" height="15" rx="1.5" fill="#B3A591"/>
+                <rect x="0" y="0" width="18" height="9" rx="1" fill="#C9BDAA"/>
+                <circle cx="21" cy="14" r="2.5" fill="#7D9369"/>
+                <circle cx="2" cy="14" r="2.2" fill="#7D9369"/>
+              </g>
+
+              <text x="82" y="128" transform="rotate(11, 82, 128)" font-family="'Montserrat', sans-serif" font-size="6" font-weight="600" fill="#7A6D5E" letter-spacing="0.6">AV. ABRAHAM LINCOLN</text>
+              <text x="133" y="60" transform="rotate(94, 133, 60)" font-family="'Montserrat', sans-serif" font-size="5" font-weight="600" fill="#8C7F70" letter-spacing="0.6">REAL CUMBRES</text>
+
+              <g transform="translate(258, 42)" opacity="0.85">
+                <circle cx="0" cy="0" r="14" fill="#FAF8F5" stroke="#CFC5B4" stroke-width="1"/>
+                <polygon points="0,-11 3,-2 0,0" fill="#464D3A"/>
+                <polygon points="0,-11 -3,-2 0,0" fill="#6A7558"/>
+                <polygon points="0,11 3,2 0,0" fill="#ABA192"/>
+                <polygon points="0,11 -3,2 0,0" fill="#D3C9B9"/>
+                <polygon points="11,0 2,3 0,0" fill="#ABA192"/>
+                <polygon points="-11,0 -2,3 0,0" fill="#ABA192"/>
+                <text x="0" y="-13" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="700" fill="#3D4532">N</text>
+              </g>
+
+              <g transform="translate(22, 276)" opacity="0.8">
+                <line x1="0" y1="0" x2="35" y2="0" stroke="#756A5B" stroke-width="1.5"/>
+                <line x1="0" y1="-3" x2="0" y2="3" stroke="#756A5B" stroke-width="1.2"/>
+                <line x1="35" y1="-3" x2="35" y2="3" stroke="#756A5B" stroke-width="1.2"/>
+                <text x="17.5" y="-3.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="5" font-weight="500" fill="#6B6052">200 m</text>
+              </g>
+            </svg>
+
+            <div class="absolute top-[44%] left-[51%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
+              <div class="relative flex items-center justify-center">
+                <span class="absolute w-8 h-8 rounded-full bg-[#586348]/25 animate-ping"></span>
+                <svg class="w-8 h-8 text-[#3A422F] drop-shadow-[0_3px_5px_rgba(0,0,0,0.35)]" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="bg-[#FAF8F3]/95 backdrop-blur-sm px-2.5 py-1 rounded shadow-md border border-[#DED4C3] mt-0.5 whitespace-nowrap group-hover:bg-white transition-colors text-center">
+                <span class="font-serif text-[12px] font-semibold text-[#3A322C] block">Events Marbet Salón</span>
+                <span class="font-sans text-[8.5px] text-[#706456]">Av. Abraham Lincoln 1600</span>
+              </div>
+              <span class="text-xs text-[#5E544A] mt-0.5">♡</span>
+            </div>
+          </a>
+
+          <div class="mt-6">
+            <a 
+              href="https://maps.app.goo.gl/kpytxoiLG2VAL4sr5" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#8C8072] text-[#5C5248] hover:bg-[#8C8072] hover:text-white transition-all font-sans text-[10px] uppercase tracking-[0.2em] shadow-sm">
+              <span>ABRIR EN GOOGLE MAPS</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-4 flex justify-center">
+          <svg class="w-5 h-5 text-[#FFDF6D]" viewBox="0 0 32 32" fill="none">
+            <ellipse cx="16" cy="7" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="16" cy="25" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="7" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="25" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="9.6" cy="9.6" rx="3.2" ry="5.5" transform="rotate(-45 9.6 9.6)" fill="#FFFFFF"/>
+            <ellipse cx="22.4" cy="22.4" rx="3.2" ry="5.5" transform="rotate(-45 22.4 22.4)" fill="#FFFFFF"/>
+            <ellipse cx="22.4" cy="9.6" rx="3.2" ry="5.5" transform="rotate(45 22.4 9.6)" fill="#FFFFFF"/>
+            <ellipse cx="9.6" cy="22.4" rx="3.2" ry="5.5" transform="rotate(45 9.6 22.4)" fill="#FFFFFF"/>
+            <circle cx="16" cy="16" r="4.2" fill="#ECA214"/>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="dresscode" class="bg-[#F6F1EA] px-8 py-8 text-center text-[#4E443C]">
+      <div class="max-w-[340px] mx-auto">
+        
+        <h3 class="font-sans text-[13px] uppercase tracking-[0.35em] text-[#554C44] font-medium mb-1">
+          CÓDIGO DE VESTIMENTA
+        </h3>
+
+        <div class="space-y-3 font-serif text-[15px] sm:text-[16px] text-[#554C44] leading-relaxed mb-6 mt-6">
+          <div class="bg-[#ECE6DC]/70 rounded-xl p-3.5 border border-[#DFD7CA] text-center">
+            <span class="block font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-[#665D52] mb-1">
+              Mujeres
+            </span>
+            <p class="text-[#36302B] font-medium">Vestido negro largo</p>
+          </div>
+
+          <div class="bg-[#ECE6DC]/70 rounded-xl p-3.5 border border-[#DFD7CA] text-center">
+            <span class="block font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-[#665D52] mb-1">
+              Hombres
+            </span>
+            <p class="text-[#36302B] font-medium">Traje formal</p>
+          </div>
+        </div>
+
+        <p class="font-serif italic text-[14px] text-[#6E6358] mb-5">
+          Agradecemos vestir de rigurosa etiqueta negra para celebrar esta noche inolvidable.
+        </p>
+
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="group relative flex flex-col items-center">
+            <span class="w-8 h-8 rounded-full bg-[#1A1A1A] border border-[#333333] shadow-sm transition-transform hover:scale-110"></span>
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5 text-[9px] font-sans uppercase tracking-wider text-[#685D52]">Negro</span>
+          </div>
+          <div class="group relative flex flex-col items-center">
+            <span class="w-8 h-8 rounded-full bg-[#2B2927] border border-[#44403C] shadow-sm transition-transform hover:scale-110"></span>
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5 text-[9px] font-sans uppercase tracking-wider text-[#685D52]">Ónix</span>
+          </div>
+          <div class="group relative flex flex-col items-center">
+            <span class="w-8 h-8 rounded-full bg-[#3F3D3B] border border-[#524E4A] shadow-sm transition-transform hover:scale-110"></span>
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5 text-[9px] font-sans uppercase tracking-wider text-[#685D52]">Grafito</span>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <svg class="w-5 h-5 text-[#FFDF6D]" viewBox="0 0 32 32" fill="none">
+            <ellipse cx="16" cy="7" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="16" cy="25" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="7" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="25" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="9.6" cy="9.6" rx="3.2" ry="5.5" transform="rotate(-45 9.6 9.6)" fill="#FFFFFF"/>
+            <ellipse cx="22.4" cy="22.4" rx="3.2" ry="5.5" transform="rotate(-45 22.4 22.4)" fill="#FFFFFF"/>
+            <ellipse cx="22.4" cy="9.6" rx="3.2" ry="5.5" transform="rotate(45 22.4 9.6)" fill="#FFFFFF"/>
+            <ellipse cx="9.6" cy="22.4" rx="3.2" ry="5.5" transform="rotate(45 9.6 22.4)" fill="#FFFFFF"/>
+            <circle cx="16" cy="16" r="4.2" fill="#ECA214"/>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="gifts" class="bg-[#F1ECE3] px-8 py-10 text-center text-[#4E443C] border-y border-[#E8E0D2]/70">
+      <div class="max-w-[340px] mx-auto">
+        <h3 class="font-sans text-[13px] uppercase tracking-[0.35em] text-[#554C44] font-medium mb-1">
+          MESA DE REGALOS
+        </h3>
+
+        <p class="font-script text-[32px] text-[#473F37] leading-snug mb-5">
+          Lluvia de sobres
+        </p>
+
+        <div class="bg-[#FAF8F3] rounded-2xl p-6 shadow-sm border border-[#E5DCCF] text-center mb-5">
+          <div class="w-13 h-13 mx-auto w-12 h-12 rounded-full bg-[#E8E0D2]/60 flex items-center justify-center text-[#5C5248] mb-3">
+            <svg class="w-6 h-6 stroke-[1.4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+
+          <p class="font-serif text-[15px] sm:text-[16px] text-[#5A5148] leading-relaxed mb-2">
+            El mejor regalo para nosotros es contar con tu presencia en este día tan especial.
+          </p>
+
+          <p class="font-serif italic text-[14px] text-[#786E64] leading-relaxed mb-5">
+            Si deseas hacernos un presente, dispondremos de un buzón para sobres el día del evento o bien puedes realizarlo vía transferencia.
+          </p>
+
+          <div class="flex items-center justify-center gap-2 mb-4 pt-1 border-t border-[#EAE2D5]">
+            <span class="w-8 h-[0.5px] bg-[#D8CEBF]"></span>
+            <span class="font-sans text-[10px] uppercase tracking-[0.22em] font-semibold text-[#756C5A]">
+              Transferencia Bancaria
+            </span>
+            <span class="w-8 h-[0.5px] bg-[#D8CEBF]"></span>
+          </div>
+
+          <div class="space-y-2.5 font-sans text-xs text-[#524942] text-left bg-[#F4EFE6]/70 rounded-xl p-4 border border-[#E5DCCF]">
+            <div class="flex justify-between items-center border-b border-[#EAE2D5] pb-1.5">
+              <span class="text-[#877C70] uppercase text-[10px] tracking-wider">Banco</span>
+              <span class="font-medium font-serif text-[15px] text-[#3D352F]">BBVA</span>
+            </div>
+
+            <div class="flex justify-between items-center border-b border-[#EAE2D5] pb-1.5">
+              <span class="text-[#877C70] uppercase text-[10px] tracking-wider">Beneficiario</span>
+              <span class="font-medium font-serif text-[15px] text-[#3D352F]">Fernando Martínez</span>
+            </div>
+
+            <div>
+              <span class="text-[#877C70] uppercase text-[10px] tracking-wider block mb-1">Tarjeta</span>
+              <div class="flex items-center justify-between gap-2 bg-[#FAF8F3] px-3 py-2 rounded-lg border border-[#DDD3C2]">
+                <span id="clabeNumber" class="font-mono text-xs tracking-wider text-[#3D352F] select-all">0000 0000 0000 0000</span>
+                <button 
+                  type="button"
+                  onclick="copyClabe()" 
+                  id="copyClabeBtn"
+                  class="text-[10px] font-sans uppercase tracking-wider text-[#756C5A] hover:text-[#3D352F] font-semibold bg-white/90 hover:bg-white px-2 py-1 rounded border border-[#D5C9B6] transition-all flex items-center gap-1 active:scale-95 shadow-2xs">
+                  <svg id="copyIcon" class="w-3 h-3 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"></rect>
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"></path>
+                  </svg>
+                  <span id="copyText">Copiar</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <p class="font-script text-[22px] text-[#635950]">
+          ¡Gracias por tu cariño y buenos deseos!
+        </p>
+      </div>
+    </section>
+
+    <div class="relative w-full h-10 -mb-1 z-10">
+      <svg viewBox="0 0 500 50" preserveAspectRatio="none" class="w-full h-10 block fill-[#F6F1EA] rotate-180">
+        <path d="M0,0 C160,40 340,10 500,45 L500,50 L0,50 Z"></path>
+      </svg>
+    </div>
+
+    <section id="rsvp" class="relative py-16 px-6 overflow-hidden flex flex-col items-center justify-center">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="Margaritas.webp" 
+          alt="Margaritas bajo el sol dorado" 
+          class="w-full h-full object-cover filter brightness-[0.78] contrast-[1.05]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#2B2822]/65 via-[#342F26]/55 to-[#24211B]/75 backdrop-blur-[2px]"></div>
+      </div>
+
+      <div class="relative z-10 w-full max-w-[350px] bg-[#FAF7F2]/95 backdrop-blur-md rounded-2xl p-8 text-center shadow-[0_20px_50px_rgba(0,0,0,0.35)] border border-[#EBE3D5]/80 relative overflow-hidden">
+        <div class="absolute inset-2 pointer-events-none rounded-xl border border-[#C5B8A5]/35"></div>
+
+        <div class="relative mx-auto w-12 h-12 rounded-full bg-gradient-to-br from-[#FAF8F5] to-[#EFE7DC] border border-[#D1C3B2] shadow-sm flex items-center justify-center text-[#4E5642] mb-4">
+          <svg class="w-5 h-5 fill-current text-[#475239]" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </div>
+
+        <span class="block font-sans text-[10px] uppercase tracking-[0.3em] text-[#8C8072] font-medium mb-1">
+          R.S.V.P.
+        </span>
+
+        <h3 class="font-script text-[34px] leading-tight text-[#3A332C] mb-3">
+          Confirma tu asistencia
+        </h3>
+
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <span class="w-8 h-[0.5px] bg-[#CFC3B0]"></span>
+          <svg class="w-3.5 h-3.5 text-[#E0A838]" viewBox="0 0 32 32" fill="none">
+            <ellipse cx="16" cy="7" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="16" cy="25" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="7" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="25" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <circle cx="16" cy="16" r="4.2" fill="#E0A838"/>
+          </svg>
+          <span class="w-8 h-[0.5px] bg-[#CFC3B0]"></span>
+        </div>
+        
+        <p class="font-serif text-[15px] text-[#5C5349] leading-[1.65] mb-2">
+          Será un honor inmenso compartir este día contigo.
+        </p>
+
+        <p class="font-serif italic text-[14px] text-[#7A6F63] leading-relaxed mb-6">
+          Agradecemos confirmar antes del <strong class="font-semibold text-[#4A4239] not-italic">15 de marzo de 2028</strong>.
+        </p>
+
+        <button 
+          onclick="openRsvpModal()"
+          class="group relative w-full py-3.5 px-6 rounded-full bg-[#464D3B] hover:bg-[#393F30] active:scale-[0.98] transition-all text-[#FAF7F2] font-sans text-[10px] uppercase tracking-[0.25em] font-semibold flex items-center justify-center gap-2.5 shadow-[0_8px_20px_rgba(70,77,59,0.25)] border border-[#5F6851]">
+          <svg class="w-4 h-4 fill-[#E3E8DC] transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span class="tracking-[0.22em]">CONFIRMAR ASISTENCIA</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="bg-[#F6F1EA] px-8 pt-6 pb-14 text-center">
+      
+
+      <div class="mt-8">
+        <p class="font-script text-[36px] sm:text-[40px] text-[#423A33] leading-tight">
+          ¡Nos vemos<br>en nuestra boda!
+        </p>
+      
+        <div class="mt-4 flex flex-col items-center gap-3">
+          <svg class="w-5 h-5 text-[#FFDF6D]" viewBox="0 0 32 32" fill="none">
+            <ellipse cx="16" cy="7" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="16" cy="25" rx="3.2" ry="5.5" fill="#FFFFFF"/>
+            <ellipse cx="7" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <ellipse cx="25" cy="16" rx="5.5" ry="3.2" fill="#FFFFFF"/>
+            <circle cx="16" cy="16" r="4.2" fill="#ECA214"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <audio id="weddingAudio" loop preload="auto" autoplay>
+      <source src="musica.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="rsvpModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+      <div class="bg-[#FAF8F3] rounded-2xl w-full max-w-sm p-6 shadow-2xl border border-[#DFD5C2] relative animate-fade-in">
+        <button onclick="closeRsvpModal()" class="absolute top-4 right-4 text-[#8C8072] hover:text-[#463D36]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <div class="text-center mb-5">
+          <h4 class="font-sans text-[11px] uppercase tracking-[0.25em] text-[#7A6F64] font-semibold">
+            CONFIRMACIÓN
+          </h4>
+          <h3 class="font-script text-3xl text-[#463E36] mt-1">¿Nos acompañas?</h3>
+        </div>
+
+        <form id="rsvpForm" onsubmit="handleRsvpSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block font-sans text-[10px] uppercase tracking-wider text-[#6F6459] mb-1">Nombre y Apellido</label>
+            <input id="rsvpGuestName" type="text" required placeholder="Ej: Ana y Carlos" class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5C9B6] text-sm focus:outline-none focus:border-[#756C5A] text-[#3D352F]">
+          </div>
+
+          <div>
+            <label class="block font-sans text-[10px] uppercase tracking-wider text-[#6F6459] mb-1">¿Podrás asistir?</label>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-white border border-[#D5C9B6] cursor-pointer text-xs text-[#4A4139]">
+                <input type="radio" name="attendance" value="Sí asistiré" checked class="text-[#756C5A] focus:ring-0">
+                <span>¡Con mucho gusto!</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-white border border-[#D5C9B6] cursor-pointer text-xs text-[#4A4139]">
+                <input type="radio" name="attendance" value="No podré asistir" class="text-[#756C5A] focus:ring-0">
+                <span>No podré asistir</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-3 rounded-full bg-[#464D3B] hover:bg-[#393F30] text-[#FAF7F2] font-sans text-[10px] uppercase tracking-[0.2em] font-semibold shadow-md transition-all flex items-center justify-center gap-2 border border-[#5F6851]">
+            <span>Confirmar y enviar por WhatsApp</span>
+            <svg class="w-3.5 h-3.5 fill-[#E3E8DC]" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+          </button>
+        </form>
+
+        <div id="rsvpSuccess" class="hidden text-center py-6">
+          <svg class="w-12 h-12 text-[#7E856E] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <h4 class="font-script text-3xl text-[#463E36] mb-1">¡Muchas gracias!</h4>
+          <p class="font-serif text-sm text-[#6A6054]">Tu respuesta ha sido registrada exitosamente. ¡Nos vemos pronto!</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      return false;
+    }, { capture: true });
+
+    document.addEventListener('dragstart', (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    function copyClabe() {
+      const clabeRaw = document.getElementById('clabeNumber').textContent.replace(/\s+/g, '');
+      const textarea = document.createElement('textarea');
+      textarea.value = clabeRaw;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        const copyText = document.getElementById('copyText');
+        copyText.textContent = '¡Copiado!';
+        setTimeout(() => {
+          copyText.textContent = 'Copiar';
+        }, 2200);
+      } catch (err) {}
+      document.body.removeChild(textarea);
+    }
+
+    function toggleNavMenu() {
+      const menu = document.getElementById('navMenu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    function openRsvpModal() {
+      const modal = document.getElementById('rsvpModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeRsvpModal() {
+      const modal = document.getElementById('rsvpModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleRsvpSubmit(e) {
+      e.preventDefault();
+      const guestName = document.getElementById('rsvpGuestName').value.trim();
+      const attendance = document.querySelector('input[name="attendance"]:checked').value;
+
+      let message = '';
+      if (attendance === 'Sí asistiré') {
+        message = `¡Hola Valeria y Fernando! Confirmo mi asistencia para su boda:%0A%0A`;
+        message += `• *Nombre(s):* ${encodeURIComponent(guestName)}%0A`;
+        message += `• *Respuesta:* ¡Con mucho gusto los acompañaré! 🎉💍%0A`;
+      } else {
+        message = `¡Hola Valeria y Fernando! Lamentablemente no podré acompañarlos en su boda:%0A%0A`;
+        message += `• *Nombre(s):* ${encodeURIComponent(guestName)}%0A`;
+        message += `• *Respuesta:* No podré asistir, pero les deseo lo mejor en este gran día. 🤍%0A`;
+      }
+
+      const whatsappUrl = `https://wa.me/528110000000?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+
+      document.getElementById('rsvpForm').classList.add('hidden');
+      document.getElementById('rsvpSuccess').classList.remove('hidden');
+      setTimeout(() => {
+        closeRsvpModal();
+        setTimeout(() => {
+          document.getElementById('rsvpForm').reset();
+          document.getElementById('rsvpForm').classList.remove('hidden');
+          document.getElementById('rsvpSuccess').classList.add('hidden');
+        }, 400);
+      }, 2200);
+    }
+
+    function updateCountdown() {
+      const targetDate = new Date('2028-04-15T19:00:00').getTime();
+      const now = new Date().getTime();
+      let diff = targetDate - now;
+
+      if (diff < 0) {
+        diff = 0;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent = days;
+      document.getElementById('cd-hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('cd-mins').textContent = mins.toString().padStart(2, '0');
+      document.getElementById('cd-secs').textContent = secs.toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    const weddingAudio = document.getElementById('weddingAudio');
+    const mainPlayIcon = document.getElementById('mainPlayIcon');
+    const mainPauseIcon = document.getElementById('mainPauseIcon');
+    const progressBar = document.getElementById('progressBar');
+    const currentTimeEl = document.getElementById('currentTime');
+    const totalDurationEl = document.getElementById('totalDuration');
+
+    let isAudioPlaying = false;
+
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    weddingAudio.addEventListener('error', (e) => {
+      console.warn("No se pudo cargar la fuente de audio remota. Si deseas usar tu propia música, coloca tu archivo .mp3 local.");
+    });
+
+    weddingAudio.addEventListener('loadedmetadata', () => {
+      totalDurationEl.textContent = formatTime(weddingAudio.duration);
+    });
+
+    weddingAudio.addEventListener('timeupdate', () => {
+      if (weddingAudio.duration) {
+        const percent = (weddingAudio.currentTime / weddingAudio.duration) * 100;
+        progressBar.style.width = `${percent}%`;
+        currentTimeEl.textContent = formatTime(weddingAudio.currentTime);
+        if (totalDurationEl.textContent === '--:--') {
+          totalDurationEl.textContent = formatTime(weddingAudio.duration);
+        }
+      }
+    });
+
+    function seekAudio(e) {
+      const container = document.getElementById('progressBarContainer');
+      const rect = container.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      if (weddingAudio.duration) {
+        weddingAudio.currentTime = (clickX / width) * weddingAudio.duration;
+      }
+    }
+
+    function toggleBackgroundMusic() {
+      if (!isAudioPlaying) {
+        weddingAudio.play().then(() => {
+          isAudioPlaying = true;
+          mainPlayIcon.classList.add('hidden');
+          mainPauseIcon.classList.remove('hidden');
+        }).catch(() => {});
+      } else {
+        weddingAudio.pause();
+        isAudioPlaying = false;
+        mainPlayIcon.classList.remove('hidden');
+        mainPauseIcon.classList.add('hidden');
+      }
+    }
+
+    function tryAutoplay() {
+      if (isAudioPlaying) return;
+      const playPromise = weddingAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          isAudioPlaying = true;
+          mainPlayIcon.classList.add('hidden');
+          mainPauseIcon.classList.remove('hidden');
+          removeAllAutoplayListeners();
+        }).catch(() => {});
+      }
+    }
+
+    function onFirstUserGesture() {
+      tryAutoplay();
+    }
+
+    const gestureEvents = ['click', 'touchstart', 'touchend', 'scroll', 'keydown', 'pointerdown'];
+
+    function removeAllAutoplayListeners() {
+      gestureEvents.forEach(evt => {
+        window.removeEventListener(evt, onFirstUserGesture, { capture: true });
+        document.removeEventListener(evt, onFirstUserGesture, { capture: true });
+      });
+    }
+
+    gestureEvents.forEach(evt => {
+      window.addEventListener(evt, onFirstUserGesture, { capture: true, passive: true });
+      document.addEventListener(evt, onFirstUserGesture, { capture: true, passive: true });
+    });
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      tryAutoplay();
+    } else {
+      window.addEventListener('DOMContentLoaded', tryAutoplay);
+      window.addEventListener('load', tryAutoplay);
+    }
+
+    const canvas = document.getElementById('petalsCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    class Daisy {
+      constructor() {
+        this.reset(true);
+      }
+
+      reset(initial = false) {
+        this.x = Math.random() * width;
+        this.y = initial ? Math.random() * height : -40;
+        this.size = 12 + Math.random() * 16;
+        this.speedY = 0.6 + Math.random() * 1.2;
+        this.speedX = Math.sin(Math.random() * 3) * 0.5;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.025;
+        this.sway = Math.random() * Math.PI * 2;
+        this.swaySpeed = 0.015 + Math.random() * 0.02;
+        this.swayWidth = 0.6 + Math.random() * 0.9;
+        this.opacity = 0.55 + Math.random() * 0.4;
+        this.flip = Math.random() * Math.PI;
+        this.flipSpeed = 0.01 + Math.random() * 0.02;
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.sway += this.swaySpeed;
+        this.x += Math.sin(this.sway) * this.swayWidth + this.speedX;
+        this.rotation += this.rotationSpeed;
+        this.flip += this.flipSpeed;
+
+        if (this.y > height + 40 || this.x < -60 || this.x > width + 60) {
+          this.reset(false);
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.scale(1, Math.cos(this.flip) * 0.7 + 0.3);
+        ctx.globalAlpha = this.opacity;
+
+        const petals = 8;
+        const petalLength = this.size * 0.65;
+        const petalWidth = this.size * 0.26;
+        const centerRadius = this.size * 0.22;
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.15)';
+        ctx.shadowBlur = 4;
+        ctx.shadowOffsetY = 2;
+
+        for (let i = 0; i < petals; i++) {
+          const angle = (i * Math.PI * 2) / petals;
+          ctx.save();
+          ctx.rotate(angle);
+          ctx.beginPath();
+          ctx.ellipse(0, -petalLength * 0.65, petalWidth, petalLength * 0.5, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.beginPath();
+        ctx.arc(0, 0, centerRadius, 0, Math.PI * 2);
+        ctx.fillStyle = '#F4B728';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(0, 0, centerRadius * 0.65, 0, Math.PI * 2);
+        ctx.fillStyle = '#ECA214';
+        ctx.fill();
+
+        ctx.restore();
+      }
+    }
+
+    const daisiesCount = 28;
+    const daisies = Array.from({ length: daisiesCount }, () => new Daisy());
+
+    function animateDaisies() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < daisies.length; i++) {
+        daisies[i].update();
+        daisies[i].draw();
+      }
+      requestAnimationFrame(animateDaisies);
+    }
+
+    animateDaisies();
+  </script>
+</body>
+</html>

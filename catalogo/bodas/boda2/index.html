@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>Boda de Karina & Omar</title>
+    <meta name="description" content="Acompáñanos en nuestra boda el 15 de mayo de 2027"/>
+    <link rel="icon" type="image/png" href="../../../img/favicon.png"/>
+
+    <!-- Open Graph / Redes Sociales (WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Boda de Karina & Omar"/>
+    <meta property="og:description" content="Acompáñanos a celebrar nuestra boda el 15 de mayo de 2027 en Santiago, N.L."/>
+    <meta property="og:image" content="principal1.webp"/>
+    <meta property="og:image:alt" content="Boda de Karina y Omar"/>
+    <meta property="og:locale" content="es_MX"/>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Boda de Karina & Omar"/>
+    <meta name="twitter:description" content="Acompáñanos a celebrar nuestra boda el 15 de mayo de 2027 en Santiago, N.L."/>
+    <meta name="twitter:image" content="principal1.webp"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sageBg: '#cbe7e6',
+                        sageDark: '#1b7d82',
+                        sageDarker: '#135e62',
+                        weddingText: '#264244',
+                        weddingMuted: '#4d7072',
+                        weddingAccent: '#d4af37',
+                        weddingBorder: '#bfe0df',
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        accent: ['"Great Vibes"', 'cursive'],
+                        body: ['"Montserrat"', 'sans-serif'],
+                        serifText: ['"Cormorant Garamond"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-bg: #cbe7e6;
+            --color-primary: #1b7d82;
+            --color-text: #264244;
+            --color-muted: #4d7072;
+            --color-border: #bfe0df;
+        }
+
+        body {
+            background-color: #0d2325;
+            color: var(--color-text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .safe-top {
+            top: max(1rem, env(safe-area-inset-top, 1rem));
+            right: max(1rem, env(safe-area-inset-right, 1rem));
+        }
+
+        .leaf-decor {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.18;
+            z-index: 0;
+            transition: transform 0.4s ease;
+        }
+
+        .leaf-primary { color: #1b7d82; }
+        .leaf-accent { color: #4fa8ad; }
+        .leaf-sand { color: #9fd0ce; }
+
+        #toast {
+            visibility: hidden;
+            opacity: 0;
+            transform: translate(-50%, 20px);
+            transition: all 0.3s ease;
+        }
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+
+        .hero-slide {
+            transition: opacity 1.6s ease-in-out, transform 9s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        button, a, select, input, textarea {
+            touch-action: manipulation;
+        }
+
+        .timeline-beam {
+            background: linear-gradient(180deg, #1b7d82 0%, #4fa8ad 50%, #1b7d82 100%);
+            background-size: 100% 200%;
+            animation: beamFlow 4s ease-in-out infinite;
+        }
+
+        @keyframes beamFlow {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .timeline-dot-pulse {
+            box-shadow: 0 0 0 0 rgba(27, 125, 130, 0.7);
+            animation: dotGlow 2.5s infinite cubic-bezier(0.66, 0, 1, 1);
+        }
+
+        @keyframes dotGlow {
+            0% { box-shadow: 0 0 0 0 rgba(27, 125, 130, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(27, 125, 130, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(27, 125, 130, 0); }
+        }
+
+        .timeline-item-anim {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+
+        .timeline-item-anim.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .timeline-card:hover, .timeline-card:active {
+            transform: translateX(4px);
+            border-color: #1b7d82;
+            box-shadow: 0 8px 20px -4px rgba(27, 125, 130, 0.15);
+        }
+
+        .timeline-icon-anim {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .timeline-card:hover .timeline-icon-anim,
+        .timeline-card:active .timeline-icon-anim {
+            transform: scale(1.18) rotate(6deg);
+        }
+    </style>
+</head>
+<body class="selection:bg-sageDark selection:text-white antialiased min-h-screen flex justify-center bg-[#0d2325]">
+
+    <div class="w-full max-w-md sm:max-w-lg md:max-w-[480px] bg-sageBg min-h-screen shadow-2xl relative overflow-x-hidden border-x border-[#1b7d82]/20">
+
+    <div class="absolute safe-top z-50 flex items-center gap-3">
+        <audio id="wedding-audio" loop preload="none">
+            <source src="musica.mp3">
+        </audio>
+
+        <button id="audio-toggle-btn" 
+                class="w-11 h-11 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-xl transition-all active:scale-90 bg-[#1a1a1a]/90 backdrop-blur-md text-white border border-white/20 touch-manipulation"
+                aria-label="Reproducir música">
+            <i id="audio-icon" data-lucide="volume-x" class="w-5 h-5 sm:w-4 sm:h-4"></i>
+        </button>
+    </div>
+
+    <header class="relative min-h-[100svh] flex items-center justify-center text-white overflow-hidden">
+        <div class="absolute inset-0 w-full h-full">
+            <div id="slide-1" class="absolute inset-0 w-full h-full bg-cover bg-center hero-slide opacity-100 scale-105"
+                 style="background-image: url('principal1.webp'); background-position: center;"></div>
+            <div id="slide-2" class="absolute inset-0 w-full h-full bg-cover bg-center hero-slide opacity-0 scale-100"
+                 style="background-image: url('principal2.webp'); background-position: center;"></div>
+            <div id="slide-3" class="absolute inset-0 w-full h-full bg-cover bg-center hero-slide opacity-0 scale-100"
+                 style="background-image: url('frase.webp'); background-position: center;"></div>
+        </div>
+
+        <div class="absolute inset-0 bg-[#0a3538] opacity-45 sm:opacity-40 z-[2]"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-white via-white/40 to-transparent z-[3]"></div>
+
+        <div class="relative z-10 text-center py-16 px-4 max-w-sm mx-auto flex flex-col items-center justify-center w-full">
+            <span class="inline-block tracking-[0.35em] text-[11px] uppercase font-medium text-white/90 mb-5 drop-shadow">
+                NUESTRA BODA
+            </span>
+
+            <div class="flex flex-col items-center justify-center mb-5 scale-95">
+                <div class="w-44 h-4 border-t border-l border-r border-white/70"></div>
+                <div class="flex items-center gap-2 py-3 px-4">
+                    <span class="text-7xl sm:text-8xl font-accent leading-none select-none text-white drop-shadow-md">K</span>
+                    <span class="text-2xl sm:text-3xl font-accent opacity-60 text-white/90">&amp;</span>
+                    <span class="text-7xl sm:text-8xl font-accent leading-none select-none text-white drop-shadow-md">O</span>
+                </div>
+                <div class="w-44 h-4 border-b border-l border-r border-white/70"></div>
+            </div>
+
+            <h1 class="text-lg font-heading tracking-widest uppercase text-white/95 my-1.5 drop-shadow font-normal">
+                NOS CASAMOS
+            </h1>
+
+            <p class="font-accent text-3xl sm:text-4xl text-white tracking-wide my-2 drop-shadow">
+                Karina &amp; Omar
+            </p>
+
+            <p class="font-heading tracking-[0.25em] text-sm text-white/90 mb-6 drop-shadow">
+                15 · 05 · 2027
+            </p>
+
+            <div class="grid grid-cols-4 gap-2 w-full max-w-[280px] mx-auto text-white drop-shadow">
+                <div class="flex flex-col items-center bg-black/20 rounded-lg py-1.5 backdrop-blur-xs">
+                    <span id="days" class="text-2xl font-heading font-semibold">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-white/80 mt-0.5">Días</span>
+                </div>
+                <div class="flex flex-col items-center bg-black/20 rounded-lg py-1.5 backdrop-blur-xs">
+                    <span id="hours" class="text-2xl font-heading font-semibold">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-white/80 mt-0.5">Horas</span>
+                </div>
+                <div class="flex flex-col items-center bg-black/20 rounded-lg py-1.5 backdrop-blur-xs">
+                    <span id="minutes" class="text-2xl font-heading font-semibold">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-white/80 mt-0.5">Minutos</span>
+                </div>
+                <div class="flex flex-col items-center bg-black/20 rounded-lg py-1.5 backdrop-blur-xs">
+                    <span id="seconds" class="text-2xl font-heading font-semibold">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-white/80 mt-0.5">Segundos</span>
+                </div>
+            </div>
+
+            <p class="mt-4 text-[11px] text-white/75 tracking-wider uppercase drop-shadow font-light">
+                Faltan para el gran día
+            </p>
+
+            <div class="mt-8">
+                <a href="#mensaje" aria-label="Continuar" class="inline-flex p-2 text-white/80 hover:text-white transition active:scale-95 animate-bounce">
+                    <i data-lucide="chevron-down" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="mensaje" class="relative py-14 sm:py-20 px-5 sm:px-6 bg-white overflow-hidden text-center">
+        <svg class="leaf-decor leaf-primary top-4 left-4 w-8 h-11 rotate-45" viewBox="0 0 40 50" fill="currentColor"><path d="M20 0 Q35 15 35 30 Q35 45 20 50 Q5 45 5 30 Q5 15 20 0"></path></svg>
+        <svg class="leaf-decor leaf-accent top-8 right-6 w-7 h-10 -rotate-12" viewBox="0 0 40 50" fill="currentColor"><path d="M20 0 Q35 15 35 30 Q35 45 20 50 Q5 45 5 30 Q5 15 20 0"></path></svg>
+        <svg class="leaf-decor leaf-sand bottom-6 left-8 w-8 h-11 rotate-12" viewBox="0 0 40 50" fill="currentColor"><path d="M20 0 Q35 15 35 30 Q35 45 20 50 Q5 45 5 30 Q5 15 20 0"></path></svg>
+
+        <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-3 flex items-center justify-center text-sageDark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 sm:w-12 sm:h-12 stroke-[1.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="7" r="4"/><path d="M5 21v-2a4 4 0 0 1 4-4h1"/><circle cx="17" cy="11" r="3"/><path d="M21 21v-1.5a3 3 0 0 0-3-3h-2"/>
+                </svg>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-4 sm:mb-6">Nuestra Historia</h2>
+
+            <p class="text-sm sm:text-base leading-relaxed text-weddingMuted font-normal max-w-xl mx-auto mb-5 sm:mb-6 px-1">
+                Dicen que las mejores historias no se planean, se encuentran. Lo que comenzó como una bonita complicidad entre pláticas interminables y risas compartidas, con el tiempo se convirtió en nuestro refugio más seguro. Aprendimos a caminar al mismo ritmo, a celebrar los triunfos del otro y a elegirnos cada mañana con el corazón abierto. Hoy damos gracias por el camino recorrido y, con inmensa ilusión, nos preparamos para comenzar el capítulo más hermoso de nuestras vidas: nuestro matrimonio.
+                <span class="inline-flex items-center gap-1.5 align-middle ml-1 text-weddingAccent">
+                    <svg class="w-4 h-4 inline-block shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="14" r="7"></circle>
+                        <path d="m14.5 4.5 2 2"></path>
+                        <path d="m7.5 4.5 2 2"></path>
+                        <path d="M12 2v3"></path>
+                    </svg>
+                    <svg class="w-4 h-4 inline-block shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </span>
+            </p>
+
+            <p class="font-accent text-2xl sm:text-3xl text-sageDark mb-5 sm:mb-6">
+                Con amor, Karina &amp; Omar
+            </p>
+
+            <div class="flex items-center justify-center gap-3 opacity-60">
+                <span class="w-8 sm:w-10 h-px bg-weddingAccent"></span>
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-weddingAccent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span class="w-8 sm:w-10 h-px bg-weddingAccent"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-20 sm:py-28 px-6 bg-[#0a3538] text-white text-center overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30" 
+             style="background-image: url('frase.webp'); background-position: center;"></div>
+        <div class="absolute inset-0 bg-[#0a3538]/70"></div>
+
+        <div class="relative z-10 max-w-xl mx-auto flex flex-col items-center">
+            <span class="font-heading text-4xl sm:6xl text-white/50 leading-none select-none mb-1">“</span>
+            <blockquote class="text-base sm:text-lg md:text-xl font-heading font-normal leading-relaxed text-white px-2">
+                Uno solo puede ser vencido,<br class="hidden sm:inline"> pero dos pueden resistir.<br class="hidden sm:inline"> ¡La cuerda de tres hilos no se rompe fácilmente!
+            </blockquote>
+            <span class="font-heading text-4xl sm:text-6xl text-white/50 leading-none select-none mt-1">”</span>
+            <p class="mt-3 sm:mt-4 uppercase tracking-[0.25em] text-[10px] sm:text-xs text-white/80 font-medium">
+                — ECLESIASTÉS 4:12
+            </p>
+        </div>
+    </section>
+
+    <section id="familias" class="py-14 sm:py-20 px-5 sm:px-6 bg-sageBg text-center">
+        <div class="max-w-2xl mx-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                <i data-lucide="heart-handshake" class="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.3]"></i>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-2 sm:mb-3">Nuestras familias</h2>
+            <p class="text-xs sm:text-base text-weddingMuted max-w-lg mx-auto mb-8 sm:mb-12 px-2">
+                Con profundo agradecimiento a nuestros padres, por su amor, valores y por acompañarnos en cada paso que nos ha traído hasta aquí.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 sm:gap-10">
+                <div class="flex flex-col items-center bg-white/40 sm:bg-transparent rounded-2xl p-4 sm:p-0">
+                    <h3 class="text-xs sm:text-base font-heading text-weddingText mb-1.5 sm:mb-2 font-medium">Familia de la novia</h3>
+                    <div class="w-8 sm:w-12 h-px bg-sageDark/30 mb-3 sm:mb-5"></div>
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-sageDark/30 p-0.5 shadow-sm bg-white mb-2 sm:mb-3">
+                        <img src="https://img.magnific.com/foto-gratis/tratamiento-belleza-antienvejecimiento_23-2149123569.jpg?semt=ais_hybrid&w=740&q=80" 
+                             alt="Guadalupe & Eduardo" 
+                             class="w-full h-full object-cover rounded-full"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/200x200/cbe7e6/1b7d82?text=G+%26+E'">
+                    </div>
+                    <p class="text-xs sm:text-sm font-medium text-weddingText">Guadalupe &amp; Eduardo</p>
+                </div>
+
+                <div class="flex flex-col items-center bg-white/40 sm:bg-transparent rounded-2xl p-4 sm:p-0">
+                    <h3 class="text-xs sm:text-base font-heading text-weddingText mb-1.5 sm:mb-2 font-medium">Familia del novio</h3>
+                    <div class="w-8 sm:w-12 h-px bg-sageDark/30 mb-3 sm:mb-5"></div>
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-sageDark/30 p-0.5 shadow-sm bg-white mb-2 sm:mb-3">
+                        <img src="https://img.magnific.com/foto-gratis/gente-reunida-reunion-familiar_23-2149153718.jpg?semt=ais_hybrid&w=740&q=80" 
+                             alt="Carmen & Gerardo" 
+                             class="w-full h-full object-cover rounded-full"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/200x200/cbe7e6/1b7d82?text=C+%26+G'">
+                    </div>
+                    <p class="text-xs sm:text-sm font-medium text-weddingText">Carmen &amp; Gerardo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="itinerario" class="relative py-14 px-5 bg-white overflow-hidden">
+        <svg class="leaf-decor leaf-primary top-8 left-4 w-7 h-9 rotate-45" viewBox="0 0 40 50" fill="currentColor"><path d="M20 0 Q35 15 35 30 Q35 45 20 50 Q5 45 5 30 Q5 15 20 0"></path></svg>
+        <svg class="leaf-decor leaf-accent top-1/2 right-4 w-7 h-10 -rotate-12" viewBox="0 0 40 50" fill="currentColor"><path d="M20 0 Q35 15 35 30 Q35 45 20 50 Q5 45 5 30 Q5 15 20 0"></path></svg>
+
+        <div class="relative z-10 max-w-sm mx-auto">
+            <div class="text-center mb-8">
+                <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 stroke-[1.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-heading text-weddingText">Itinerario</h2>
+                <p class="text-[11px] text-weddingMuted mt-1 uppercase tracking-wider">Momentos especiales</p>
+            </div>
+
+            <div class="relative pl-6">
+                <div class="absolute left-2 top-3 bottom-3 w-1 rounded-full timeline-beam"></div>
+
+                <div class="timeline-item-anim relative mb-6 w-full">
+                    <div class="absolute -left-[23px] top-4 w-3.5 h-3.5 rounded-full bg-sageDark border-2 border-white shadow timeline-dot-pulse"></div>
+                    <div class="timeline-card bg-sageBg/30 border border-weddingBorder rounded-xl p-3.5 shadow-sm text-left backdrop-blur-xs">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-sageDark mb-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 timeline-icon-anim"></i> 17:00 hrs
+                        </span>
+                        <h3 class="text-sm font-heading font-medium text-weddingText flex items-center gap-1.5">
+                            <i data-lucide="church" class="w-4 h-4 text-sageDark shrink-0 timeline-icon-anim"></i> Ceremonia religiosa
+                        </h3>
+                        <p class="text-xs text-weddingMuted mt-1">Parroquia de Santiago Apóstol, Santiago, N.L.</p>
+                        <a href="#ubicaciones" class="inline-flex items-center gap-1 text-[11px] font-semibold text-sageDark hover:underline mt-2">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i> Ver ubicación en mapa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item-anim relative mb-6 w-full">
+                    <div class="absolute -left-[23px] top-4 w-3.5 h-3.5 rounded-full bg-sageDark border-2 border-white shadow timeline-dot-pulse"></div>
+                    <div class="timeline-card bg-sageBg/30 border border-weddingBorder rounded-xl p-3.5 shadow-sm text-left backdrop-blur-xs">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-sageDark mb-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 timeline-icon-anim"></i> 20:00 hrs
+                        </span>
+                        <h3 class="text-sm font-heading font-medium text-weddingText flex items-center gap-1.5">
+                            <i data-lucide="wine" class="w-4 h-4 text-sageDark shrink-0 timeline-icon-anim"></i> Cóctel de bienvenida
+                        </h3>
+                        <p class="text-xs text-weddingMuted mt-1">Las Nubes Eventos</p>
+                        <a href="#ubicaciones" class="inline-flex items-center gap-1 text-[11px] font-semibold text-sageDark hover:underline mt-2">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i> Ver salón en mapa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item-anim relative mb-6 w-full">
+                    <div class="absolute -left-[23px] top-4 w-3.5 h-3.5 rounded-full bg-sageDark border-2 border-white shadow timeline-dot-pulse"></div>
+                    <div class="timeline-card bg-sageBg/30 border border-weddingBorder rounded-xl p-3.5 shadow-sm text-left backdrop-blur-xs">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-sageDark mb-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 timeline-icon-anim"></i> 21:00 hrs
+                        </span>
+                        <h3 class="text-sm font-heading font-medium text-weddingText flex items-center gap-1.5">
+                            <i data-lucide="utensils" class="w-4 h-4 text-sageDark shrink-0 timeline-icon-anim"></i> Cena de gala
+                        </h3>
+                        <p class="text-xs text-weddingMuted mt-1">Las Nubes Eventos</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item-anim relative mb-6 w-full">
+                    <div class="absolute -left-[23px] top-4 w-3.5 h-3.5 rounded-full bg-sageDark border-2 border-white shadow timeline-dot-pulse"></div>
+                    <div class="timeline-card bg-sageBg/30 border border-weddingBorder rounded-xl p-3.5 shadow-sm text-left backdrop-blur-xs">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-sageDark mb-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 timeline-icon-anim"></i> 22:00 hrs
+                        </span>
+                        <h3 class="text-sm font-heading font-medium text-weddingText flex items-center gap-1.5">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-sageDark shrink-0 timeline-icon-anim"></i> Fiesta y Baile
+                        </h3>
+                        <p class="text-xs text-weddingMuted mt-1">Las Nubes Eventos</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item-anim relative w-full">
+                    <div class="absolute -left-[23px] top-4 w-3.5 h-3.5 rounded-full bg-sageDark border-2 border-white shadow timeline-dot-pulse"></div>
+                    <div class="timeline-card bg-sageBg/30 border border-weddingBorder rounded-xl p-3.5 shadow-sm text-left backdrop-blur-xs">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-sageDark">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 timeline-icon-anim"></i> 02:00 hrs · Fin de la celebración
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicaciones" class="py-14 sm:py-20 px-5 sm:px-6 bg-sageBg text-center border-t border-weddingBorder/40">
+        <div class="max-w-md mx-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                <i data-lucide="map-pin" class="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.2]"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-1">Ubicaciones</h2>
+            <p class="text-xs sm:text-sm text-weddingMuted mb-7 sm:mb-9 px-2">
+                Encuentra fácilmente cómo llegar a la ceremonia religiosa y a la fiesta de celebración.
+            </p>
+
+            <div class="space-y-5">
+                <div class="bg-white rounded-2xl p-5 border border-weddingBorder shadow-sm text-left">
+                    <div class="flex items-start gap-3.5 mb-3">
+                        <div class="w-11 h-11 rounded-xl bg-sageDark/10 text-sageDark flex items-center justify-center shrink-0">
+                            <i data-lucide="church" class="w-5 h-5 stroke-[1.4]"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block text-[10px] uppercase font-bold tracking-widest text-sageDark mb-0.5">CEREMONIA RELIGIOSA</span>
+                            <h3 class="font-heading text-base font-semibold text-weddingText">Parroquia de Santiago Apóstol</h3>
+                            <p class="text-xs text-weddingMuted mt-0.5">Juárez S/N, Casco Histórico, Santiago, N.L.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2.5 pt-2">
+                        <a href="https://maps.google.com/?cid=13986795375832562247" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-sageDark hover:bg-sageDarker text-white text-xs font-medium transition active:scale-95 shadow-xs">
+                            <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google Maps
+                        </a>
+                        <a href="https://waze.com/ul?q=Parroquia%20de%20Santiago%20Apostol%20Santiago%20NL" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border border-weddingBorder bg-sageBg/40 text-weddingText hover:bg-sageBg text-xs font-medium transition active:scale-95">
+                            <i data-lucide="map" class="w-3.5 h-3.5 text-sageDark"></i> Abrir en Waze
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-5 border border-weddingBorder shadow-sm text-left">
+                    <div class="flex items-start gap-3.5 mb-3">
+                        <div class="w-11 h-11 rounded-xl bg-sageDark/10 text-sageDark flex items-center justify-center shrink-0">
+                            <i data-lucide="sparkles" class="w-5 h-5 stroke-[1.4]"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block text-[10px] uppercase font-bold tracking-widest text-sageDark mb-0.5">RECEPCIÓN &amp; FIESTA</span>
+                            <h3 class="font-heading text-base font-semibold text-weddingText">Las Nubes Eventos</h3>
+                            <p class="text-xs text-weddingMuted mt-0.5">Carretera Nacional, Los Rodríguez, Santiago, N.L.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2.5 pt-2">
+                        <a href="https://maps.google.com/?cid=11541971476543388391" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-sageDark hover:bg-sageDarker text-white text-xs font-medium transition active:scale-95 shadow-xs">
+                            <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google Maps
+                        </a>
+                        <a href="https://waze.com/ul?q=Las%20Nubes%20Eventos%20Santiago%20NL" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border border-weddingBorder bg-sageBg/40 text-weddingText hover:bg-sageBg text-xs font-medium transition active:scale-95">
+                            <i data-lucide="map" class="w-3.5 h-3.5 text-sageDark"></i> Abrir en Waze
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dresscode" class="py-14 sm:py-20 px-5 sm:px-6 bg-white text-center border-t border-weddingBorder/40">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-7 sm:mb-10">Código de Vestimenta</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 text-center max-w-sm sm:max-w-none mx-auto">
+                <div class="bg-sageBg rounded-2xl p-5 sm:p-6 border border-weddingBorder flex flex-col items-center shadow-sm">
+                    <div class="flex items-center justify-center mb-3">
+                        <svg class="w-8 h-12 drop-shadow-xs" viewBox="0 0 64 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26 12 C28 8 36 8 38 12" stroke="#1b7d82" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M25 14 L23 24 Q32 28 41 24 L39 14" fill="#1b7d82"/>
+                            <path d="M23 24 Q32 30 41 24 L38 42 Q32 44 26 42 Z" fill="#135e62"/>
+                            <rect x="25.5" y="41" width="13" height="3" rx="1.2" fill="#d4af37"/>
+                            <path d="M25.5 43.5 C24 55 14 85 11 96 C18 98 46 98 53 96 C50 85 40 55 38.5 43.5 Z" fill="#1b7d82"/>
+                            <path d="M29 45 Q26 72 23 96" stroke="#cbe7e6" stroke-width="1.4" stroke-linecap="round"/>
+                            <path d="M35 45 Q38 72 41 96" stroke="#cbe7e6" stroke-width="1.4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-bold tracking-widest text-weddingText uppercase mb-2 sm:mb-3">DAMAS</h3>
+                    <div class="text-xs text-weddingText space-y-1 mb-4 sm:mb-5">
+                        <p>Vestido largo o midi</p>
+                        <p>Colores pasteles o vibrantes</p>
+                        <p>Tacones o sandalias elegantes</p>
+                    </div>
+                </div>
+
+                <div class="bg-sageBg rounded-2xl p-5 sm:p-6 border border-weddingBorder flex flex-col items-center shadow-sm">
+                    <div class="flex items-center justify-center mb-3">
+                        <svg class="w-8 h-12 drop-shadow-xs" viewBox="0 0 64 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="32,20 25,12 39,12" fill="#FFFFFF"/>
+                            <path d="M28 16 L36 20 L36 16 L28 20 Z" fill="#d4af37"/>
+                            <circle cx="32" cy="18" r="1.5" fill="#b89325"/>
+                            <polygon points="32,38 27,18 37,18" fill="#FFFFFF"/>
+                            <path d="M19 14 L27 18 L24 45 L32 50 L40 45 L37 18 L45 14 C48 24 47 38 46 52 L38 53 L32 50 L26 53 L18 52 C17 38 16 24 19 14 Z" fill="#184347"/>
+                            <path d="M22 15 L28 27 L25 44 L32 49 L32 38 L27 18 Z" fill="#0f2b2e"/>
+                            <path d="M42 15 L36 27 L39 44 L32 49 L32 38 L37 18 Z" fill="#0f2b2e"/>
+                            <polygon points="23,30 26,27 27,30" fill="#FFFFFF"/>
+                            <path d="M23 52 L22 96 C24 97 28 97 29 96 L31.5 64 L34 96 C35 97 39 97 41 96 L40 52 Z" fill="#0f2b2e"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-bold tracking-widest text-weddingText uppercase mb-2 sm:mb-3">CABALLEROS</h3>
+                    <div class="text-xs text-weddingText space-y-1 mb-4 sm:mb-5">
+                        <p>Traje formal</p>
+                        <p>Corbata opcional</p>
+                        <p>Zapatos de vestir</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="regalos" class="py-14 sm:py-20 px-5 sm:px-6 bg-sageBg text-center border-t border-weddingBorder/50">
+        <div class="max-w-md mx-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                <i data-lucide="gift" class="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.2]"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-2 sm:mb-3">Mesa de Regalos</h2>
+            <p class="text-xs sm:text-sm text-weddingMuted max-w-md mx-auto mb-8 sm:mb-10 px-2">
+                Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con nosotros, ponemos a tu disposición las siguientes opciones:
+            </p>
+
+            <div class="grid grid-cols-1 gap-5 max-w-sm mx-auto">
+                <div class="bg-white rounded-xl p-5 border border-weddingBorder flex flex-col items-center justify-between text-center shadow-sm">
+                    <div class="flex flex-col items-center w-full">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center text-[#e10098] mb-3 border border-pink-100">
+                            <i data-lucide="shopping-bag" class="w-6 h-6 stroke-[1.4]"></i>
+                        </div>
+                        <h3 class="font-heading text-sm sm:text-base font-semibold text-weddingText mb-1">Liverpool</h3>
+                        <p class="text-xs text-weddingMuted mb-2">Evento No. <span class="font-semibold text-weddingText tracking-wider">51348920</span></p>
+                        <p class="text-xs text-weddingMuted leading-relaxed max-w-xs mb-4">
+                            Puedes buscar nuestro evento en tiendas físicas o en línea.
+                        </p>
+                    </div>
+                    <a href="https://mesaderegalos.liverpool.com.mx/" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-1.5 w-full py-3 px-3 rounded-lg bg-[#e10098] hover:bg-[#c30084] text-white text-xs font-semibold uppercase tracking-wider transition shadow-sm active:scale-95">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ir a Liverpool
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 border border-weddingBorder flex flex-col items-center justify-between text-center shadow-sm">
+                    <div class="flex flex-col items-center w-full">
+                        <div class="w-12 h-12 rounded-full bg-sageDark/10 flex items-center justify-center text-sageDark mb-3 border border-sageDark/20">
+                            <i data-lucide="mail" class="w-6 h-6 stroke-[1.3]"></i>
+                        </div>
+                        <h3 class="font-heading text-sm sm:text-base font-semibold text-weddingText mb-1">Lluvia de Sobres</h3>
+                        <p class="text-xs text-weddingMuted leading-relaxed max-w-xs mb-3">
+                            Si deseas hacernos un presente en efectivo o por transferencia bancaria:
+                        </p>
+
+                        <div class="w-full bg-sageBg/50 border border-weddingBorder rounded-lg p-2.5 sm:p-3 text-left mb-3 text-[11px] space-y-1">
+                            <p class="text-weddingText"><span class="font-semibold text-weddingMuted">Banco:</span> BBVA</p>
+                            <p class="text-weddingText"><span class="font-semibold text-weddingMuted">Titular:</span> Omar Gonzalez</p>
+                            <p class="text-weddingText font-mono break-all flex flex-col sm:flex-row sm:items-center justify-between">
+                                <span><span class="font-sans font-semibold text-weddingMuted">CLABE:</span> 012 180 015482930192</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="copyClabe('012180015482930192')"
+                            class="inline-flex items-center justify-center gap-1.5 w-full py-3 px-3 rounded-lg bg-sageDark hover:bg-sageDarker text-white text-xs font-semibold uppercase tracking-wider transition shadow-sm active:scale-95">
+                        <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar CLABE
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 border border-weddingBorder flex flex-col items-center justify-center text-center shadow-sm min-h-[160px]">
+                    <div class="w-12 h-12 rounded-full bg-sageDark/10 flex items-center justify-center text-sageDark mb-3 border border-sageDark/20">
+                        <i data-lucide="package" class="w-6 h-6 stroke-[1.3]"></i>
+                    </div>
+                    <h3 class="font-heading text-sm sm:text-base font-semibold text-weddingText mb-1">Regalo Físico</h3>
+                    <p class="text-xs sm:text-sm text-weddingText leading-relaxed max-w-xs">
+                        También recibiremos tu detalle o regalo físico con mucho cariño el día del evento.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="children-not-allowed" class="py-14 sm:py-20 px-5 sm:px-6 bg-white text-center border-t border-weddingBorder/50">
+        <div class="max-w-lg mx-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                <i data-lucide="smile" class="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.2]"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-3 sm:mb-4">Evento para adultos</h2>
+            <p class="text-xs sm:text-sm text-weddingMuted leading-relaxed max-w-md mx-auto px-2">
+                Sabemos lo importantes que son los pequeños en nuestras vidas, pero en esta ocasión hemos decidido celebrar en un ambiente solo para adultos. ¡Esperamos compartir este día contigo!
+            </p>
+        </div>
+    </section>
+
+    <section id="weather" class="py-14 sm:py-20 px-5 sm:px-6 bg-sageBg text-center border-t border-weddingBorder/50">
+        <div class="max-w-md mx-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                <i data-lucide="sun-medium" class="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.2]"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-2">¿Qué clima esperar?</h2>
+            
+            <div class="flex items-center justify-center gap-3 my-3 sm:my-4">
+                <span class="h-px w-10 bg-weddingBorder"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-sageDark/50"></span>
+                <span class="h-px w-10 bg-weddingBorder"></span>
+            </div>
+
+            <div class="bg-white rounded-2xl p-4 sm:p-6 border border-weddingBorder shadow-sm mb-3 flex items-center justify-center gap-5 sm:gap-6">
+                <div class="text-sageDark">
+                    <i data-lucide="cloud-sun" class="w-10 h-10 sm:w-12 sm:h-12 stroke-[1.3]"></i>
+                </div>
+                <div class="text-left">
+                    <span class="text-2xl sm:text-3xl font-heading font-semibold text-weddingText">28°</span>
+                    <span class="text-xs sm:text-sm text-weddingMuted"> / 19°</span>
+                    <div class="w-14 sm:w-16 h-1.5 bg-sageDark rounded-full mt-1 sm:mt-1.5"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5 sm:gap-3 mb-4">
+                <div class="bg-white rounded-xl p-2.5 sm:p-3 border border-weddingBorder text-center">
+                    <i data-lucide="thermometer" class="w-4 h-4 text-sageDark mx-auto mb-1"></i>
+                    <p class="text-sm font-semibold text-weddingText">28°C</p>
+                    <p class="text-[9px] sm:text-[10px] text-weddingMuted uppercase tracking-wider">TEMP. MÁX</p>
+                </div>
+                <div class="bg-white rounded-xl p-2.5 sm:p-3 border border-weddingBorder text-center">
+                    <i data-lucide="thermometer-snowflake" class="w-4 h-4 text-sageDark mx-auto mb-1"></i>
+                    <p class="text-sm font-semibold text-weddingText">19°C</p>
+                    <p class="text-[9px] sm:text-[10px] text-weddingMuted uppercase tracking-wider">TEMP. MÍN</p>
+                </div>
+                <div class="bg-white rounded-xl p-2.5 sm:p-3 border border-weddingBorder text-center">
+                    <i data-lucide="cloud-drizzle" class="w-4 h-4 text-sageDark mx-auto mb-1"></i>
+                    <p class="text-sm font-semibold text-weddingText">12%</p>
+                    <p class="text-[9px] sm:text-[10px] text-weddingMuted uppercase tracking-wider">LLUVIA</p>
+                </div>
+                <div class="bg-white rounded-xl p-2.5 sm:p-3 border border-weddingBorder text-center">
+                    <i data-lucide="wind" class="w-4 h-4 text-sageDark mx-auto mb-1"></i>
+                    <p class="text-sm font-semibold text-weddingText">11 km/h</p>
+                    <p class="text-[9px] sm:text-[10px] text-weddingMuted uppercase tracking-wider">VIENTO</p>
+                </div>
+            </div>
+
+            <p class="text-[10px] sm:text-[11px] text-weddingMuted italic px-2">
+                Pronóstico estimado con datos de referencia · Puede variar
+            </p>
+        </div>
+    </section>
+
+    <section id="add-to-calendar" class="py-14 sm:py-20 px-5 sm:px-6 bg-white text-center border-t border-weddingBorder/50">
+        <div class="max-w-md mx-auto flex flex-col items-center">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                <i data-lucide="calendar" class="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.2]"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-2 sm:mb-3">¡Guarda la fecha!</h2>
+
+            <div class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full mb-6 border border-sageDark/40 bg-sageDark/10 text-xs text-weddingText">
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-sageDark"></i>
+                <span>Sábado, 15 de mayo de 2027</span>
+            </div>
+
+            <div class="relative w-full max-w-xs">
+                <div class="flex gap-2.5">
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Karina+%26+Omar&dates=20270515T230000Z/20270516T080000Z&details=Celebraci%C3%B3n+de+la+boda+de+Karina+y+Omar.&location=Parroquia+de+Santiago+Ap%C3%B3stol,+Santiago,+N.L." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="flex-1 min-h-[46px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-semibold bg-sageDark hover:bg-sageDarker text-white shadow transition active:scale-95">
+                        <i data-lucide="calendar-plus" class="w-4 h-4"></i> Agendar evento
+                    </a>
+                    <button onclick="downloadIcsFile()" 
+                            class="min-h-[46px] px-3.5 py-3 rounded-xl border border-weddingBorder bg-sageBg/50 text-weddingText hover:bg-sageBg text-xs font-medium transition active:scale-95 shadow-sm"
+                            title="Descargar iCal / Outlook"
+                            aria-label="Descargar archivo de calendario">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="relative py-14 sm:py-20 px-5 sm:px-6 bg-sageBg overflow-hidden text-center border-t border-weddingBorder/50">
+        <svg class="leaf-decor leaf-primary top-6 left-6 w-8 h-12 rotate-45 hidden sm:block" viewBox="0 0 40 50" fill="currentColor"><path d="M20 0 Q35 15 35 30 Q35 45 20 50 Q5 45 5 30 Q5 15 20 0"></path></svg>
+        <svg class="leaf-decor leaf-accent top-10 right-6 w-8 h-11 -rotate-12 hidden sm:block" viewBox="0 0 40 50" fill="currentColor"><path d="M20 0 Q35 15 35 30 Q35 45 20 50 Q5 45 5 30 Q5 15 20 0"></path></svg>
+
+        <div class="relative z-10 max-w-xl mx-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2 flex items-center justify-center text-sageDark">
+                <i data-lucide="message-circle" class="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.2]"></i>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading text-weddingText mb-1">Confirmación de Asistencia</h2>
+            <p class="text-xs text-sageDark font-semibold mb-2">Confirma antes del 15 de abril de 2027</p>
+            <p class="text-xs text-weddingMuted mb-6 sm:mb-8 max-w-sm mx-auto px-1">
+                Completa tus datos y te redirigiremos a WhatsApp para enviar tu confirmación directamente a los novios.
+            </p>
+
+            <form id="rsvp-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-left max-w-md mx-auto">
+                <div>
+                    <label class="block text-xs text-weddingText font-medium mb-1">Nombre completo <span class="text-red-500">*</span></label>
+                    <input id="rsvp-full-name" type="text" required class="w-full px-3.5 py-3 rounded-lg border border-weddingBorder bg-white text-weddingText text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-sageDark/40 placeholder-weddingMuted/60 transition" placeholder="Ej. Ana Gómez Martínez">
+                </div>
+
+                <div>
+                    <label class="block text-xs text-weddingText font-medium mb-1">Cantidad de pases / personas <span class="text-red-500">*</span></label>
+                    <select id="rsvp-guests" required class="w-full px-3.5 py-3 rounded-lg border border-weddingBorder bg-white text-weddingText text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-sageDark/40 transition">
+                        <option value="" disabled selected>Selecciona cantidad</option>
+                        <option value="1 persona">1 persona</option>
+                        <option value="2 personas">2 personas</option>
+                        <option value="3 personas">3 personas</option>
+                        <option value="4 personas">4 personas</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-weddingText font-medium mb-1">Respuesta <span class="text-red-500">*</span></label>
+                    <div class="grid grid-cols-2 gap-3" id="attendance-toggle">
+                        <button type="button" data-status="yes" onclick="setAttendance('yes')" 
+                                class="att-btn min-h-[46px] py-3 px-3 rounded-lg border border-weddingBorder bg-white text-xs text-weddingMuted text-center font-medium transition hover:border-sageDark flex items-center justify-center gap-1.5 active:scale-95 shadow-xs">
+                            <i data-lucide="check" class="w-4 h-4"></i> Sí asistiré
+                        </button>
+                        <button type="button" data-status="no" onclick="setAttendance('no')" 
+                                class="att-btn min-h-[46px] py-3 px-3 rounded-lg border border-weddingBorder bg-white text-xs text-weddingMuted text-center font-medium transition hover:border-red-400 flex items-center justify-center gap-1.5 active:scale-95 shadow-xs">
+                            <i data-lucide="x" class="w-4 h-4"></i> No podré asistir
+                        </button>
+                    </div>
+                    <input type="hidden" id="attendance-val" required>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-weddingText font-medium mb-1">Mensaje para los novios (opcional)</label>
+                    <textarea id="rsvp-message" rows="2" class="w-full px-3.5 py-2.5 rounded-lg border border-weddingBorder bg-white text-weddingText text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-sageDark/40 placeholder-weddingMuted/60 resize-none transition" placeholder="¡Muchas felicidades Karina y Omar!..."></textarea>
+                </div>
+
+                <button type="submit" 
+                        class="w-full min-h-[48px] mt-2 flex items-center justify-center gap-2 py-3.5 px-4 bg-[#25D366] hover:bg-[#1faa4f] text-white rounded-lg text-xs font-semibold uppercase tracking-wider transition active:scale-[0.98] shadow-md hover:shadow-lg">
+                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.49 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.64-8.12 8.13-8.12 2.17 0 4.21.85 5.75 2.38 1.53 1.54 2.38 3.58 2.38 5.75-.01 4.48-3.65 8.12-8.13 8.12zm4.46-6.09c-.24-.12-1.45-.71-1.68-.79-.22-.08-.39-.12-.55.12-.17.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.24-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.23-.16-.48-.28z"/>
+                    </svg>
+                    <span>Confirmar por WhatsApp</span>
+                </button>
+            </form>
+
+            <div id="rsvp-done" class="hidden py-6 sm:py-8 text-center">
+                <i data-lucide="check-circle" class="w-12 h-12 text-[#25D366] mx-auto mb-2"></i>
+                <h3 class="font-heading text-lg sm:text-xl text-weddingText mb-1">¡Abriendo WhatsApp!</h3>
+                <p class="text-xs text-weddingMuted mb-3">Envía el mensaje prellenado en la conversación para completar tu registro.</p>
+                <button type="button" onclick="resetRsvpForm()" class="text-xs text-sageDark underline underline-offset-2 py-2">
+                    Enviar otra confirmación
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 bg-sageBg text-center border-t border-weddingBorder">
+        <div class="max-w-md mx-auto flex flex-col items-center gap-2">
+            <p class="font-accent text-3xl text-sageDark">
+                Karina &amp; Omar
+            </p>
+            <p class="font-heading tracking-[0.25em] text-xs uppercase text-weddingText/80">
+                15 · 05 · 2027
+            </p>
+            <div class="w-12 h-px bg-weddingBorder my-2"></div>
+            <p class="text-[11px] text-weddingMuted px-2">
+                AJ Crafting Lab
+            </p>
+        </div>
+    </footer>
+
+    </div>
+
+    <div id="toast" class="fixed bottom-6 left-1/2 z-50 px-4 py-2.5 rounded-full bg-black/90 text-white text-xs font-medium shadow-2xl flex items-center gap-2 max-w-[90vw] truncate">
+        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+        <span id="toast-text" class="truncate">Copiado al portapapeles</span>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Bloquear clic derecho en toda la página
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        const audio = document.getElementById('wedding-audio');
+        const audioBtn = document.getElementById('audio-toggle-btn');
+        const audioIcon = document.getElementById('audio-icon');
+        let isAudioPlaying = false;
+
+        audioBtn.addEventListener('click', function() {
+            if (isAudioPlaying) {
+                audio.pause();
+                audioIcon.setAttribute('data-lucide', 'volume-x');
+                isAudioPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    audioIcon.setAttribute('data-lucide', 'volume-2');
+                    isAudioPlaying = true;
+                }).catch(() => {});
+            }
+            lucide.createIcons();
+        });
+
+        const targetDate = new Date('2027-05-15T17:00:00').getTime();
+
+        function runCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days);
+                document.getElementById('hours').innerText = String(hours);
+                document.getElementById('minutes').innerText = String(minutes);
+                document.getElementById('seconds').innerText = String(seconds);
+            } else {
+                document.getElementById('days').innerText = "0";
+                document.getElementById('hours').innerText = "0";
+                document.getElementById('minutes').innerText = "0";
+                document.getElementById('seconds').innerText = "0";
+            }
+        }
+        setInterval(runCountdown, 1000);
+        runCountdown();
+
+        const slides = [
+            document.getElementById('slide-1'),
+            document.getElementById('slide-2'),
+            document.getElementById('slide-3')
+        ];
+        let currentSlideIdx = 0;
+
+        setInterval(() => {
+            slides[currentSlideIdx].classList.remove('opacity-100', 'scale-105');
+            slides[currentSlideIdx].classList.add('opacity-0', 'scale-100');
+
+            currentSlideIdx = (currentSlideIdx + 1) % slides.length;
+
+            slides[currentSlideIdx].classList.remove('opacity-0', 'scale-100');
+            slides[currentSlideIdx].classList.add('opacity-100', 'scale-105');
+        }, 5000);
+
+        const initTimelineAnimation = () => {
+            const timelineItems = document.querySelectorAll('.timeline-item-anim');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                timelineItems.forEach(item => observer.observe(item));
+            } else {
+                timelineItems.forEach(item => item.classList.add('is-visible'));
+            }
+        };
+        initTimelineAnimation();
+
+        function notify(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-text').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function setAttendance(ans) {
+            document.getElementById('attendance-val').value = ans;
+            const buttons = document.querySelectorAll('.att-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-status') === ans) {
+                    if (ans === 'yes') {
+                        btn.className = 'att-btn min-h-[46px] py-3 px-3 rounded-lg border border-sageDark bg-sageDark text-white text-xs text-center font-medium shadow-sm flex items-center justify-center gap-1.5 active:scale-95';
+                    } else {
+                        btn.className = 'att-btn min-h-[46px] py-3 px-3 rounded-lg border border-red-500 bg-red-500 text-white text-xs text-center font-medium shadow-sm flex items-center justify-center gap-1.5 active:scale-95';
+                    }
+                } else {
+                    btn.className = 'att-btn min-h-[46px] py-3 px-3 rounded-lg border border-weddingBorder text-xs text-weddingMuted text-center font-medium hover:border-sageDark flex items-center justify-center gap-1.5 active:scale-95';
+                }
+            });
+            lucide.createIcons();
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const val = document.getElementById('attendance-val').value;
+            if (!val) {
+                notify('Por favor selecciona si asistirás');
+                return;
+            }
+
+            const fullName = document.getElementById('rsvp-full-name').value.trim();
+            const guests = document.getElementById('rsvp-guests').value;
+            const extraMessage = document.getElementById('rsvp-message').value.trim();
+
+            const attendanceText = val === 'yes' ? '¡Sí, con mucho gusto asistiré! 🎉' : 'Lamentablemente no podré asistir 🤍';
+
+            let message = `¡Hola Karina y Omar! ✨\n\n`;
+            message += `*Confirmación de asistencia a su boda*\n`;
+            message += `👤 *Invitado:* ${fullName}\n`;
+            message += `💌 *Respuesta:* ${attendanceText}\n`;
+            if (val === 'yes') {
+                message += `👥 *Pases / Personas:* ${guests}\n`;
+            }
+            if (extraMessage) {
+                message += `📝 *Mensaje:* ${extraMessage}\n`;
+            }
+
+            const phoneNumber = "5218100000000";
+            const encodedText = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            document.getElementById('rsvp-form').classList.add('hidden');
+            document.getElementById('rsvp-done').classList.remove('hidden');
+            notify('Redirigiendo a WhatsApp...');
+        }
+
+        function resetRsvpForm() {
+            document.getElementById('rsvp-form').reset();
+            document.getElementById('attendance-val').value = '';
+            const buttons = document.querySelectorAll('.att-btn');
+            buttons.forEach(btn => {
+                btn.className = 'att-btn min-h-[46px] py-3 px-3 rounded-lg border border-weddingBorder text-xs text-weddingMuted text-center font-medium hover:border-sageDark flex items-center justify-center gap-1.5 active:scale-95';
+            });
+            document.getElementById('rsvp-done').classList.add('hidden');
+            document.getElementById('rsvp-form').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function copyClabe(clabeNumber) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = clabeNumber;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            notify('CLABE copiada: ' + clabeNumber);
+        }
+
+        function downloadIcsFile() {
+            const icsData = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Invitacion Boda//Karina y Omar//ES
+BEGIN:VEVENT
+SUMMARY:Boda de Karina & Omar
+DESCRIPTION:Celebración de la boda de Karina y Omar en Santiago, N.L.
+LOCATION:Parroquia de Santiago Apóstol, Santiago, N.L.
+DTSTART:20270515T230000Z
+DTEND:20270516T080000Z
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Boda-Karina-y-Omar.ics';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            notify('Descargando evento de calendario...');
+        }
+    </script>
+</body>
+</html>
