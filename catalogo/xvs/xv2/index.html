@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mis XV Años - Regina</title>
+    <meta name="description" content="Acompáñame a celebrar mis XV Años el 27 de febrero de 2027. ¡Será una noche inolvidable!">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mis XV Años - Regina">
+    <meta property="og:description" content="Acompáñame a celebrar mis XV Años el 27 de febrero de 2027. Consulta aquí la ubicación, horarios y confirma tu asistencia.">
+    <meta property="og:image" content="xv8.webp">
+    <meta property="og:image:alt" content="XV Años Regina">
+    <meta property="og:locale" content="es_MX">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mis XV Años - Regina">
+    <meta name="twitter:description" content="Acompáñame a celebrar mis XV Años el 27 de febrero de 2027.">
+    <meta name="twitter:image" content="xv8.webp">
+
+    <link rel="icon" type="image/png" href="../../../img/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --ruby-red: #8f0e21;
+            --ruby-dark: #670817;
+            --ruby-light: #ad172f;
+            --champagne-gold: #aa8c70;
+            --champagne-light: #d6c6b4;
+            --taupe-gray: #a4999b;
+            --taupe-dark: #524749;
+            --ivory-cream: #fcfbfa;
+            --ivory-warm: #f6f2ee;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f3f1;
+            color: #4a3e40;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        img {
+            -webkit-user-drag: none;
+            user-select: none;
+            pointer-events: auto;
+        }
+
+        .font-script {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .font-serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .petal {
+            position: fixed;
+            top: -60px;
+            background: radial-gradient(circle at 30% 30%, #b8142c 0%, #750615 80%);
+            border-radius: 150% 0 150% 0;
+            pointer-events: none;
+            z-index: 1;
+            box-shadow: 0 2px 6px rgba(117, 6, 21, 0.2);
+            opacity: 0;
+            animation: drift linear infinite;
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translateY(-80px) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            8% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.65;
+            }
+            85% {
+                opacity: 0.65;
+            }
+            100% {
+                transform: translateY(115vh) rotate(360deg) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        .polaroid-card {
+            background: #ffffff;
+            box-shadow: 0 8px 20px -4px rgba(103, 8, 23, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-45px) rotate(-8deg) scale(0.92);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(45px) rotate(8deg) scale(0.92);
+        }
+
+        .reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0) rotate(var(--natural-rotation, -1.5deg)) scale(1);
+        }
+
+        .reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0) rotate(var(--natural-rotation, 1.5deg)) scale(1);
+        }
+
+        .polaroid-card.revealed:hover {
+            transform: scale(1.04) rotate(0deg) !important;
+            z-index: 10;
+        }
+
+        .timeline-step {
+            opacity: 0;
+            transform: translateY(35px) scale(0.96);
+            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+
+        .timeline-step.revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .wine-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(170, 140, 112, 0.35);
+            box-shadow: 0 10px 25px -5px rgba(103, 8, 23, 0.06);
+        }
+
+        @keyframes crossfade {
+            0%, 45% {
+                opacity: 1;
+            }
+            55%, 95% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .hero-slide-1 {
+            animation: crossfade 10s ease-in-out infinite;
+        }
+
+        .hero-slide-2 {
+            animation: crossfade 10s ease-in-out infinite reverse;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f7f3f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #aa8c70;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-[#4a3e40] antialiased selection:bg-rose-200">
+
+    <div id="petals-container" aria-hidden="true"></div>
+
+    <div class="mx-auto max-w-md bg-[#fcfbfa] min-h-screen shadow-2xl relative z-10 overflow-hidden border-x border-[#aa8c70]/20">
+
+        <header class="relative min-h-[92vh] flex flex-col justify-between items-center text-center text-white px-6 pt-12 pb-8 overflow-hidden">
+            <div class="absolute top-4 right-4 z-30">
+                <button id="musicToggle" class="w-11 h-11 rounded-full bg-black/35 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-center text-white transition hover:bg-black/55 active:scale-95" aria-label="Reproducir música">
+                    <i data-lucide="volume-x" id="musicIcon" class="w-5 h-5 drop-shadow"></i>
+                </button>
+            </div>
+
+            <audio id="bgMusic" loop preload="auto">
+                <source src="musica.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="absolute inset-0 z-0">
+                <img 
+                    src="xv8.webp" 
+                    alt="Quinceañera Regina 1" 
+                    class="hero-slide-1 absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.92] transition-opacity duration-1000"
+                >
+                <img 
+                    src="xv7.webp" 
+                    alt="Quinceañera Regina 2" 
+                    class="hero-slide-2 absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.92] transition-opacity duration-1000"
+                >
+                <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/85"></div>
+                <div class="absolute inset-0 bg-[#670817]/25 mix-blend-multiply"></div>
+            </div>
+
+            <div class="relative z-10 my-auto py-10">
+                <h1 class="font-script text-7xl sm:text-8xl text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] font-normal tracking-wide">
+                    Regina
+                </h1>
+                <p class="font-serif-title uppercase tracking-[0.35em] text-sm sm:text-base text-[#f6f2ee] mt-2 font-light drop-shadow">
+                    Mis XV Años
+                </p>
+                <div class="w-16 h-[1.5px] bg-[#aa8c70] mx-auto my-3"></div>
+                <p class="font-serif-title text-xl sm:text-2xl italic tracking-wider text-white drop-shadow">
+                    27 de Febrero, 2027
+                </p>
+            </div>
+
+            <div class="relative z-10 w-full pb-4">
+                <div class="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+                    <div class="grid grid-cols-4 gap-2 text-center max-w-xs mx-auto">
+                        <div class="p-1">
+                            <span id="days" class="block font-serif-title text-3xl sm:text-4xl font-semibold leading-tight drop-shadow">000</span>
+                            <span class="text-[10px] uppercase tracking-widest text-[#d6c6b4] drop-shadow">Días</span>
+                        </div>
+                        <div class="p-1">
+                            <span id="hours" class="block font-serif-title text-3xl sm:text-4xl font-semibold leading-tight drop-shadow">00</span>
+                            <span class="text-[10px] uppercase tracking-widest text-[#d6c6b4] drop-shadow">Horas</span>
+                        </div>
+                        <div class="p-1">
+                            <span id="minutes" class="block font-serif-title text-3xl sm:text-4xl font-semibold leading-tight drop-shadow">00</span>
+                            <span class="text-[10px] uppercase tracking-widest text-[#d6c6b4] drop-shadow">Minutos</span>
+                        </div>
+                        <div class="p-1">
+                            <span id="seconds" class="block font-serif-title text-3xl sm:text-4xl font-semibold leading-tight drop-shadow">00</span>
+                            <span class="text-[10px] uppercase tracking-widest text-[#d6c6b4] drop-shadow">Segundos</span>
+                        </div>
+                    </div>
+                    <p class="text-xs tracking-wider text-[#f6f2ee] drop-shadow mt-2 font-light text-center">Faltan para el gran día</p>
+                </div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#fcfbfa] to-transparent z-10"></div>
+        </header>
+
+        <section class="px-6 pt-10 pb-4 text-center relative">
+            <div class="relative mx-auto w-24 h-24 mb-3">
+                <div class="w-full h-full rounded-full overflow-hidden p-1 bg-gradient-to-tr from-[#8f0e21] via-[#aa8c70] to-[#f6f2ee] shadow-lg">
+                    <img src="xv6.webp" 
+                         alt="Regina retrato" 
+                         class="w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+            
+            <p class="font-serif-title uppercase tracking-[0.25em] text-[11px] font-semibold text-[#8f0e21] mb-2">Un mensaje especial</p>
+
+            <p class="text-xs text-[#524749] leading-relaxed max-w-xs mx-auto mb-3">
+                Hoy comienzo a escribir una de las etapas más hermosas de mi historia. Mirar atrás me llena de gratitud por cada recuerdo, y mirar hacia adelante me llena de ilusión por todos los sueños que están por florecer.
+            </p>
+
+            <p class="text-xs text-[#670817] leading-relaxed font-medium max-w-xs mx-auto">
+                Nada de esto estaría completo sin las personas que han iluminado mi camino. Por eso, que me acompañes en esta noche mágica es el regalo más valioso que puedo recibir. ✨
+            </p>
+
+            <p class="font-script text-3xl text-[#8f0e21] mt-4">Con todo mi cariño, Regina</p>
+
+            <div class="flex items-center justify-center gap-2 text-[#aa8c70] mt-3">
+                <span class="h-[1px] w-12 bg-[#aa8c70]/40"></span>
+                <svg class="w-4 h-4 text-[#aa8c70]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 7.5a4.5 4.5 0 0 0-4.5 4.5c0 2.8 2.2 4.2 4.5 6 2.3-1.8 4.5-3.2 4.5-6a4.5 4.5 0 0 0-4.5-4.5z"/>
+                    <path d="M12 7.5C10.5 5 11 3 12 3s1.5 2 0 4.5"/>
+                    <path d="M10 10c.8-.7 1.4-.9 2-.9s1.2.2 2 .9"/>
+                    <path d="M12 18v3.5"/>
+                    <path d="M12 19.5c-1.5.5-3 0-4-1"/>
+                    <path d="M12 20.5c1.5.5 3 0 4-1"/>
+                </svg>
+                <span class="h-[1px] w-12 bg-[#aa8c70]/40"></span>
+            </div>
+        </section>
+
+        <section class="px-8 py-10 my-4 text-center relative bg-gradient-to-r from-[#f6f2ee] via-[#efeae5] to-[#f6f2ee] border-y border-[#aa8c70]/30">
+            <span class="text-4xl text-[#aa8c70] font-serif leading-none block mb-1">“</span>
+            <blockquote class="font-serif-title text-lg text-[#670817] italic font-medium max-w-xs mx-auto">
+                Hay noches que se convierten en recuerdos eternos y sueños que merecen ser celebrados.
+            </blockquote>
+            <span class="text-4xl text-[#aa8c70] font-serif leading-none block mt-1">”</span>
+        </section>
+
+        <section class="px-6 pt-1 pb-6 text-center">
+            <div class="w-10 h-10 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 flex items-center justify-center text-[#8f0e21] mb-2 shadow-sm">
+                <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <h2 class="font-serif-title text-lg uppercase tracking-widest text-[#670817] font-semibold mb-2">Mi Familia</h2>
+            <p class="text-xs text-[#524749] leading-relaxed max-w-xs mx-auto">
+                Gracias a mis padres por ser mi guía, por abrazar mis sueños y enseñarme que el amor de familia es el refugio más dulce.
+            </p>
+
+            <p class="text-xs font-semibold text-[#8f0e21] mt-4 tracking-wider uppercase">Familia Reyes García</p>
+            
+            <div class="mt-3 flex justify-center">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#aa8c70] shadow-md">
+                    <img src="familia.webp" 
+                         alt="Familia" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-8">
+            <div class="text-center mb-6">
+                <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                    <i data-lucide="camera" class="w-4 h-4"></i>
+                </div>
+                <h2 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817]">Sesión de Fotos</h2>
+                <div class="w-8 h-[1.5px] bg-[#aa8c70] mx-auto mt-1"></div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 overflow-hidden py-2 px-1">
+                <div class="polaroid-card reveal-left p-2 pb-4 rounded-sm cursor-pointer" style="--natural-rotation: -1.5deg;" onclick="openLightbox('xv1.webp')">
+                    <div class="aspect-[3/4] overflow-hidden bg-[#f6f2ee] rounded-xs">
+                        <img src="xv1.webp" alt="Regina Foto 1" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="polaroid-card reveal-right p-2 pb-4 rounded-sm cursor-pointer" style="--natural-rotation: 1.5deg;" onclick="openLightbox('xv2.webp')">
+                    <div class="aspect-[3/4] overflow-hidden bg-[#f6f2ee] rounded-xs">
+                        <img src="xv2.webp" alt="Regina Foto 2" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="polaroid-card reveal-left p-2 pb-4 rounded-sm cursor-pointer" style="--natural-rotation: 1deg;" onclick="openLightbox('xv3.webp')">
+                    <div class="aspect-[3/4] overflow-hidden bg-[#f6f2ee] rounded-xs">
+                        <img src="xv3.webp" alt="Regina Foto 3" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="polaroid-card reveal-right p-2 pb-4 rounded-sm cursor-pointer" style="--natural-rotation: -2deg;" onclick="openLightbox('xv5.webp')">
+                    <div class="aspect-[3/4] overflow-hidden bg-[#f6f2ee] rounded-xs">
+                        <img src="xv5.webp" alt="Regina Foto 4" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="polaroid-card reveal-left p-2 pb-4 rounded-sm cursor-pointer" style="--natural-rotation: -1deg;" onclick="openLightbox('xv6.webp')">
+                    <div class="aspect-[3/4] overflow-hidden bg-[#f6f2ee] rounded-xs">
+                        <img src="xv6.webp" alt="Regina Foto 5" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="polaroid-card reveal-right p-2 pb-4 rounded-sm cursor-pointer" style="--natural-rotation: 2deg;" onclick="openLightbox('xv9.webp')">
+                    <div class="aspect-[3/4] overflow-hidden bg-[#f6f2ee] rounded-xs">
+                        <img src="xv9.webp" alt="Regina Foto 6" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-8">
+            <div class="text-center mb-6">
+                <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <h2 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817]">Locaciones</h2>
+            </div>
+
+            <div class="space-y-5">
+                <div class="wine-card rounded-2xl overflow-hidden border border-[#aa8c70]/30">
+                    <div class="h-36 overflow-hidden">
+                        <img src="parroquia.webp" 
+                             alt="Parroquia de Nuestra Señora Reina de los Ángeles" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <p class="text-xs text-[#8f0e21] font-semibold mt-0.5">Ceremonia Religiosa</p>
+                        <h3 class="font-serif-title text-base font-semibold text-[#670817]">Parroquia Nuestra Señora Reina de los Ángeles</h3>
+                        <p class="text-xs text-[#524749] mt-1">Av. Roberto Garza Sada 300, Carrizalejo, 66290 San Pedro Garza García, N.L.</p>
+                        <div class="inline-flex items-center gap-1 text-[11px] text-[#670817] bg-[#f6f2ee] border border-[#aa8c70]/30 px-3 py-1 rounded-full mt-2 font-medium">
+                            <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#aa8c70]"></i>
+                            <span>06:00 p.m.</span>
+                        </div>
+                        <div class="mt-3">
+                            <a href="https://maps.google.com/?cid=7963435920713298923" target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-1.5 text-xs text-[#670817] bg-white border border-[#aa8c70]/50 px-4 py-1.5 rounded-full shadow-sm hover:bg-[#f6f2ee] transition">
+                                <i data-lucide="navigation" class="w-3.5 h-3.5 text-[#8f0e21]"></i>
+                                <span>Ver ubicación en Mapa</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-card rounded-2xl overflow-hidden border border-[#aa8c70]/30">
+                    <div class="h-36 overflow-hidden">
+                        <img src="salon.webp" 
+                             alt="Las Nubes Eventos" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <p class="text-xs text-[#8f0e21] font-semibold mt-0.5">Recepción & Fiesta</p>
+                        <h3 class="font-serif-title text-base font-semibold text-[#670817]">Las Nubes Eventos</h3>
+                        <p class="text-xs text-[#524749] mt-1">Carr. Nacional, Los Rodríguez, 67318 Santiago, N.L.</p>
+                        <div class="inline-flex items-center gap-1 text-[11px] text-[#670817] bg-[#f6f2ee] border border-[#aa8c70]/30 px-3 py-1 rounded-full mt-2 font-medium">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-[#aa8c70]"></i>
+                            <span>08:00 p.m.</span>
+                        </div>
+                        <div class="mt-3">
+                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-1.5 text-xs text-[#670817] bg-white border border-[#aa8c70]/50 px-4 py-1.5 rounded-full shadow-sm hover:bg-[#f6f2ee] transition">
+                                <i data-lucide="navigation" class="w-3.5 h-3.5 text-[#8f0e21]"></i>
+                                <span>Ver ubicación en Mapa</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-8">
+            <div class="text-center mb-8">
+                <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                    <i data-lucide="clipboard-list" class="w-4 h-4"></i>
+                </div>
+                <h2 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817]">Programa del Día</h2>
+            </div>
+
+            <div class="relative pl-6 space-y-6 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-[#aa8c70]/40">
+                <div class="timeline-step relative">
+                    <span class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-[#8f0e21] text-white flex items-center justify-center shadow-md text-xs ring-4 ring-[#fcfbfa]">
+                        <i data-lucide="church" class="w-3 h-3"></i>
+                    </span>
+                    <div class="wine-card rounded-xl p-3.5 ml-2">
+                        <span class="text-[11px] font-semibold text-[#8f0e21] block">06:00 PM</span>
+                        <h4 class="text-xs font-semibold text-[#670817]">Misa de Acción de Gracias</h4>
+                        <p class="text-[11px] text-[#524749]">Parroquia Reina de los Ángeles, San Pedro</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step relative" style="transition-delay: 100ms;">
+                    <span class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-[#8f0e21] text-white flex items-center justify-center shadow-md text-xs ring-4 ring-[#fcfbfa]">
+                        <i data-lucide="glass-water" class="w-3 h-3"></i>
+                    </span>
+                    <div class="wine-card rounded-xl p-3.5 ml-2">
+                        <span class="text-[11px] font-semibold text-[#8f0e21] block">08:00 PM</span>
+                        <h4 class="text-xs font-semibold text-[#670817]">Recepción & Cóctel de Bienvenida</h4>
+                        <p class="text-[11px] text-[#524749]">Jardín Principal Las Nubes</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step relative" style="transition-delay: 200ms;">
+                    <span class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-[#8f0e21] text-white flex items-center justify-center shadow-md text-xs ring-4 ring-[#fcfbfa]">
+                        <i data-lucide="utensils" class="w-3 h-3"></i>
+                    </span>
+                    <div class="wine-card rounded-xl p-3.5 ml-2">
+                        <span class="text-[11px] font-semibold text-[#8f0e21] block">09:00 PM</span>
+                        <h4 class="text-xs font-semibold text-[#670817]">Cena de Gala & Brindis</h4>
+                        <p class="text-[11px] text-[#524749]">Salón Imperial</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step relative" style="transition-delay: 300ms;">
+                    <span class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-[#8f0e21] text-white flex items-center justify-center shadow-md text-xs ring-4 ring-[#fcfbfa]">
+                        <i data-lucide="music" class="w-3 h-3"></i>
+                    </span>
+                    <div class="wine-card rounded-xl p-3.5 ml-2">
+                        <span class="text-[11px] font-semibold text-[#8f0e21] block">10:15 PM</span>
+                        <h4 class="text-xs font-semibold text-[#670817]">Vals Principal y Apertura de Pista</h4>
+                        <p class="text-[11px] text-[#524749]">¡A celebrar y bailar toda la noche!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-6">
+            <div class="text-center mb-4">
+                <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                    <i data-lucide="shirt" class="w-4 h-4"></i>
+                </div>
+                <h2 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817]">Código de Vestimenta</h2>
+                <p class="text-[11px] text-[#524749] max-w-xs mx-auto mt-1">
+                    Sugerimos una paleta de tonos elegantes inspirada en nuestra temática de gala.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mt-4">
+                <div class="wine-card rounded-2xl p-3.5 text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif-title text-sm font-semibold text-[#670817]">Damas</h3>
+                        <p class="text-[10px] text-[#8f0e21] font-medium mt-1">Vestido largo o de gala</p>
+                        <p class="text-[10px] text-[#524749]">Tonos vino, champán o neutros</p>
+                    </div>
+                    <div class="mt-3 grid grid-cols-3 gap-1 rounded-lg overflow-hidden p-1 bg-[#f6f2ee] border border-[#aa8c70]/30">
+                        <span class="h-6 rounded bg-[#8f0e21]" title="Rojo Rubí"></span>
+                        <span class="h-6 rounded bg-[#670817]" title="Borgoña Oscuro"></span>
+                        <span class="h-6 rounded bg-[#aa8c70]" title="Champán Dorado"></span>
+                        <span class="h-6 rounded bg-[#a4999b]" title="Gris Cálido"></span>
+                        <span class="h-6 rounded bg-[#d6c6b4]" title="Marfil Cálido"></span>
+                        <span class="h-6 rounded bg-[#4a3e40]" title="Ceniza Profundo"></span>
+                    </div>
+                </div>
+
+                <div class="wine-card rounded-2xl p-3.5 text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif-title text-sm font-semibold text-[#670817]">Caballeros</h3>
+                        <p class="text-[10px] text-[#8f0e21] font-medium mt-1">Traje formal oscuro</p>
+                        <p class="text-[10px] text-[#524749]">Corbata o moño</p>
+                        <p class="text-[10px] text-[#524749]">Zapatos de vestir</p>
+                    </div>
+                    <div class="mt-3 grid grid-cols-3 gap-1 rounded-lg overflow-hidden p-1 bg-[#f6f2ee] border border-[#aa8c70]/30">
+                        <span class="h-6 rounded bg-[#1e293b]"></span>
+                        <span class="h-6 rounded bg-[#334155]"></span>
+                        <span class="h-6 rounded bg-[#1e3a5f]"></span>
+                        <span class="h-6 rounded bg-[#4a3e40]"></span>
+                        <span class="h-6 rounded bg-[#670817]"></span>
+                        <span class="h-6 rounded bg-[#0f172a]"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-6">
+            <div class="text-center mb-5">
+                <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                    <i data-lucide="utensils" class="w-4 h-4"></i>
+                </div>
+                <h2 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817]">Menú de la Recepción</h2>
+            </div>
+
+            <div class="space-y-3">
+                <div class="wine-card rounded-2xl p-3 flex items-center gap-3">
+                    <div class="w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-[#aa8c70]/40">
+                        <img src="bisquet.webp"
+                        class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="text-[10px] tracking-wider uppercase font-semibold text-[#aa8c70]">Entrada</span>
+                        <h4 class="text-xs font-semibold text-[#670817]">Bisquet de langosta y pimientos</h4>
+                        <p class="text-[11px] text-[#524749] leading-snug">Aromatizado al coñac con crocante de parmesano y brotes tiernos.</p>
+                    </div>
+                </div>
+
+                <div class="wine-card rounded-2xl p-3 flex items-center gap-3">
+                    <div class="w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-[#aa8c70]/40">
+                        <img src="medallon.webp"
+                        class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="text-[10px] tracking-wider uppercase font-semibold text-[#aa8c70]">Plato Fuerte</span>
+                        <h4 class="text-xs font-semibold text-[#670817]">Medallón de res en costra de hierbas</h4>
+                        <p class="text-[11px] text-[#524749] leading-snug">Con demi-glace de oporto, milhojas de papa gratinada y espárragos al limón.</p>
+                    </div>
+                </div>
+
+                <div class="wine-card rounded-2xl p-3 flex items-center gap-3">
+                    <div class="w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-[#aa8c70]/40">
+                        <img src="domo.webp"
+                        class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="text-[10px] tracking-wider uppercase font-semibold text-[#aa8c70]">Postre</span>
+                        <h4 class="text-xs font-semibold text-[#670817]">Domo de frutos del bosque & avellana</h4>
+                        <p class="text-[11px] text-[#524749] leading-snug">Glaseado espejo con coulis de frambuesa y crocante de pistache.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-6">
+            <div class="text-center mb-5">
+                <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                    <i data-lucide="gift" class="w-4 h-4"></i>
+                </div>
+                <h2 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817]">Mesa de Regalos</h2>
+                <p class="text-xs text-[#524749] italic mt-1 font-serif max-w-xs mx-auto">
+                    Tu presencia es el mejor regalo, pero si gustas tener un detalle conmigo...
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div class="wine-card rounded-2xl p-4 text-center">
+                    <i data-lucide="mail" class="w-5 h-5 mx-auto text-[#aa8c70] mb-2"></i>
+                    <p class="text-xs text-[#524749] leading-relaxed font-light">
+                        Una <strong class="text-[#670817]">lluvia de sobres</strong> será bienvenida.
+                    </p>
+                </div>
+                <div class="wine-card rounded-2xl p-4 text-center">
+                    <i data-lucide="package" class="w-5 h-5 mx-auto text-[#aa8c70] mb-2"></i>
+                    <p class="text-xs text-[#524749] leading-relaxed font-light">
+                        También aceptamos <strong class="text-[#670817]">regalo físico</strong> con mucho gusto.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="rsvp-section" class="px-6 py-8">
+            <div class="text-center mb-4">
+                <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                </div>
+                <h2 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817]">Confirmación de Asistencia</h2>
+                <p class="text-[11px] text-[#524749] mt-1">Me hará muy feliz saber si podré contar contigo en este día tan especial.</p>
+                <p class="text-[11px] font-semibold text-[#8f0e21] mt-2">Confirma antes del 15 de febrero de 2027</p>
+            </div>
+
+            <form id="rsvpForm" class="space-y-3 mt-4" onsubmit="handleWhatsAppRSVP(event)">
+                <div>
+                    <label class="block text-[11px] font-medium text-[#670817] mb-1">Nombre Completo *</label>
+                    <input type="text" id="rsvpFullName" required placeholder="Ingresa tu nombre y apellido" class="w-full text-xs px-3 py-2.5 rounded-xl border border-[#aa8c70]/40 bg-white focus:outline-none focus:ring-2 focus:ring-[#8f0e21]">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-medium text-[#670817] mb-1">Cantidad de personas *</label>
+                    <select id="rsvpGuests" required class="w-full text-xs px-3 py-2.5 rounded-xl border border-[#aa8c70]/40 bg-white text-[#524749] focus:outline-none focus:ring-2 focus:ring-[#8f0e21]">
+                        <option value="">Selecciona cantidad</option>
+                        <option value="1 persona">1 Persona</option>
+                        <option value="2 personas">2 Personas</option>
+                        <option value="3 personas">3 Personas</option>
+                        <option value="4 personas">4 Personas</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-medium text-[#670817] mb-1">Confirmación *</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center justify-center gap-1.5 p-2 rounded-xl border border-[#aa8c70]/40 bg-white text-xs text-[#524749] cursor-pointer has-[:checked]:bg-[#8f0e21] has-[:checked]:text-white transition shadow-sm">
+                            <input type="radio" name="attendance" value="Sí, con mucho gusto asistiré" required class="hidden">
+                            <span>Sí asistiré</span>
+                        </label>
+                        <label class="flex items-center justify-center gap-1.5 p-2 rounded-xl border border-[#aa8c70]/40 bg-white text-xs text-[#524749] cursor-pointer has-[:checked]:bg-[#8f0e21] has-[:checked]:text-white transition shadow-sm">
+                            <input type="radio" name="attendance" value="Lamentablemente no podré asistir" required class="hidden">
+                            <span>No podré asistir</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-medium text-[#670817] mb-1">Mensaje para Regina (Opcional)</label>
+                    <textarea id="rsvpNote" rows="2" placeholder="Escribe unas palabras o felicitación..." class="w-full text-xs px-3 py-2 rounded-xl border border-[#aa8c70]/40 bg-white focus:outline-none focus:ring-2 focus:ring-[#8f0e21] resize-none"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3 bg-[#25D366] hover:bg-[#1faa53] text-white rounded-xl font-medium text-xs shadow-md shadow-[#25D366]/25 flex items-center justify-center gap-2 transition active:scale-[0.99]">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                        <span>Confirmar vía WhatsApp</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="px-6 py-6 text-center">
+            <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-1 shadow-sm">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+            </div>
+            <h3 class="font-serif-title uppercase tracking-widest text-xs font-semibold text-[#670817] mb-1">¡Guarda la fecha!</h3>
+            <p class="text-xs text-[#8f0e21] mb-3">Sábado, 27 de febrero de 2027</p>
+
+            <button onclick="addToGoogleCalendar()" class="w-full py-3 bg-[#8f0e21] hover:bg-[#670817] text-white rounded-xl font-medium text-xs shadow-md shadow-[#8f0e21]/25 flex items-center justify-center gap-2 transition active:scale-[0.99]">
+                <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+                <span>Agregar a mi Calendario</span>
+            </button>
+        </section>
+
+        <section class="px-6 py-8 text-center border-t border-[#aa8c70]/30 bg-[#f6f2ee]/50">
+            <div class="w-8 h-8 mx-auto rounded-full bg-[#f6f2ee] border border-[#aa8c70]/30 text-[#8f0e21] flex items-center justify-center mb-2 shadow-sm">
+                <i data-lucide="hash" class="w-4 h-4"></i>
+            </div>
+            <h3 class="font-serif-title text-xs uppercase tracking-widest text-[#670817] font-semibold">¡Comparte el momento!</h3>
+            <p class="text-[11px] text-[#524749] mt-1 mb-3">Comparte conmigo este momento usando mi hashtag</p>
+
+            <button onclick="copyHashtag('#XVRegina')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-[#670817] border border-[#aa8c70]/50 text-xs font-semibold hover:bg-[#f6f2ee] transition shadow-sm">
+                <span>#XVRegina</span>
+                <i data-lucide="copy" class="w-3.5 h-3.5 text-[#8f0e21]"></i>
+            </button>
+
+            <div id="copyToast" class="hidden text-[10px] text-[#8f0e21] font-medium mt-1">¡Hashtag copiado al portapapeles!</div>
+
+            <div class="flex justify-center gap-4 mt-5">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center justify-center text-xs text-[#524749] bg-white border border-[#aa8c70]/40 px-5 py-2 rounded-full shadow-sm hover:bg-[#f6f2ee] min-w-[110px] text-center font-medium transition">
+                    <span class="inline-block text-center">Instagram</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center justify-center text-xs text-[#524749] bg-white border border-[#aa8c70]/40 px-5 py-2 rounded-full shadow-sm hover:bg-[#f6f2ee] min-w-[110px] text-center font-medium transition">
+                    <span class="inline-block text-center">Facebook</span>
+                </a>
+            </div>
+
+            <footer class="mt-8 pt-4 border-t border-[#aa8c70]/20 text-[10px] text-[#a4999b]">
+                <p>AJ Moments • 2026</p>
+            </footer>
+        </section>
+
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-4 right-4 text-white p-2 rounded-full bg-white/20 hover:bg-white/40 transition">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Ampliación foto" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain" onclick="event.stopPropagation()">
+    </div>
+
+    <div id="globalToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#670817] text-white text-xs px-4 py-2 rounded-full shadow-lg backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        Mensaje
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        const targetDate = new Date('February 27, 2027 18:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                const elDays = document.getElementById('days');
+                const elHours = document.getElementById('hours');
+                const elMinutes = document.getElementById('minutes');
+                const elSeconds = document.getElementById('seconds');
+
+                if (elDays) elDays.textContent = String(days).padStart(3, '0');
+                if (elHours) elHours.textContent = String(hours).padStart(2, '0');
+                if (elMinutes) elMinutes.textContent = String(minutes).padStart(2, '0');
+                if (elSeconds) elSeconds.textContent = String(seconds).padStart(2, '0');
+            } else {
+                const elDays = document.getElementById('days');
+                if (elDays) {
+                    document.getElementById('days').textContent = "000";
+                    document.getElementById('hours').textContent = "00";
+                    document.getElementById('minutes').textContent = "00";
+                    document.getElementById('seconds').textContent = "00";
+                }
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const petalsContainer = document.getElementById('petals-container');
+        const numPetals = 16;
+
+        for (let i = 0; i < numPetals; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            const size = Math.random() * 14 + 10;
+            petal.style.width = `${size}px`;
+            petal.style.height = `${size * 1.3}px`;
+            petal.style.left = `${Math.random() * 100}vw`;
+            petal.style.animationDuration = `${Math.random() * 8 + 7}s`;
+            petal.style.animationDelay = `${Math.random() * 5}s`;
+            petalsContainer.appendChild(petal);
+        }
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal-left, .reveal-right, .timeline-step').forEach(card => {
+            revealObserver.observe(card);
+        });
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        function copyHashtag(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                const toast = document.getElementById('copyToast');
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 2500);
+            } catch (err) {
+                console.error(err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('globalToast');
+            toast.textContent = msg;
+            toast.classList.remove('opacity-0');
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 3000);
+        }
+
+        function handleWhatsAppRSVP(event) {
+            event.preventDefault();
+
+            const phoneNumber = "528180000000";
+
+            const fullName = document.getElementById('rsvpFullName').value.trim();
+            const guests = document.getElementById('rsvpGuests').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked')?.value || "Confirmado";
+            const note = document.getElementById('rsvpNote').value.trim();
+
+            let message = `¡Hola Regina! ✨\n\n`;
+            message += `Soy *${fullName}*.\n`;
+            message += `*Confirmación:* ${attendance}\n`;
+            message += `*Boletos/Asistentes:* ${guests}\n`;
+
+            if (note) {
+                message += `*Mensaje:* "${note}"\n`;
+            }
+
+            message += `\n¡Gracias por la invitación a tus XV Años! 👑`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            showToast("Abriendo WhatsApp...");
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 400);
+        }
+
+        function addToGoogleCalendar() {
+            const title = encodeURIComponent("Mis XV Años - Regina");
+            const details = encodeURIComponent("Celebración de Mis XV Años. Ceremonia en Parroquia Nuestra Señora Reina de los Ángeles y Recepción en Las Nubes Eventos.");
+            const location = encodeURIComponent("Parroquia Nuestra Señora Reina de los Ángeles, Av. Roberto Garza Sada 300, San Pedro Garza García, N.L.");
+            const dates = "20270227T180000/20270228T030000";
+            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+            window.open(url, '_blank');
+        }
+
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        let isMusicPlaying = false;
+
+        musicToggle.addEventListener('click', function() {
+            const icon = document.getElementById('musicIcon');
+            
+            if (bgMusic.paused) {
+                bgMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    showToast("Música reproduciéndose 🎵");
+                    icon.setAttribute('data-lucide', 'volume-2');
+                    lucide.createIcons();
+                }).catch(() => {
+                    showToast("Toca de nuevo para reproducir");
+                });
+            } else {
+                bgMusic.pause();
+                isMusicPlaying = false;
+                showToast("Música pausada");
+                icon.setAttribute('data-lucide', 'volume-x');
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

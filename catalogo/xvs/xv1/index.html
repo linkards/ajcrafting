@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elizabeth — Mis XV Años</title>
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Elizabeth — Mis XV Años">
+  <meta property="og:description" content="Te invito a celebrar mis XV Años. Sábado 15 de abril de 2028 en Espacio Fundidora. ¡Acompáñame en este día tan especial!">
+  <meta property="og:image" content="principal.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elizabeth — Mis XV Años">
+  <meta name="twitter:description" content="Te invito a celebrar mis XV Años. Sábado 15 de abril de 2028 en Espacio Fundidora.">
+  <meta name="twitter:image" content="principal.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../../img/favicon.png">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            script: ['"Pinyon Script"', 'cursive'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          },
+          colors: {
+            cream: '#F8F3DF',
+            warmBeige: '#EFECE1',
+            roseDust: '#E2CEBF',
+            darkCharcoal: '#2D2726',
+            softDark: '#3E3735',
+            sandLine: '#C2B8AE',
+            goldAccent: '#A38B6D'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #636b56;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
+        url('fondo1.webp');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #2D2726;
+      min-height: 100vh;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .classic-badge {
+      position: relative;
+      background: #F8F3DF;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+      border: 1.5px solid #E2CEBF;
+      border-radius: 6px;
+    }
+    .classic-badge::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid #C4B29E;
+      pointer-events: none;
+      border-radius: 4px;
+    }
+
+    .custom-radio {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #584F49;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      display: inline-grid;
+      place-content: center;
+      transition: all 0.2s ease;
+      background: transparent;
+      margin: 0;
+    }
+    .custom-radio:checked {
+      background-color: #2D2726;
+      box-shadow: inset 0 0 0 2.5px #F8F3DF;
+    }
+
+    .card-texture {
+      position: relative;
+    }
+    .card-texture::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      background-image: radial-gradient(#000 1px, transparent 1px);
+      background-size: 8px 8px;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #2D2726 !important;
+    }
+
+    input, textarea {
+      -webkit-touch-callout: default;
+      -webkit-user-select: text;
+      user-select: text;
+    }
+
+    img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      pointer-events: auto;
+    }
+
+    #toast {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-start min-h-screen pt-0 pb-0 px-3 sm:px-4">
+
+  <main class="w-full max-w-[440px] flex flex-col items-center shadow-2xl rounded-none overflow-hidden bg-cream border-x border-[#e6dece]/80 border-t-0 border-b-0">
+
+    <!-- Hero / Header Section -->
+    <div class="relative w-full min-h-[640px] sm:min-h-[700px] overflow-hidden flex flex-col items-center justify-center py-16">
+      <div class="absolute inset-0 bg-contain sm:bg-cover bg-center bg-no-repeat" style="background-image: url('https://i.postimg.cc/Z5r6MDDt/Paisaje-floral-vintage-al-atardecer.png'); filter: contrast(1.05) saturate(0.95); background-position: center;"></div>
+
+      <div class="relative z-10 px-8 py-5 mx-6 classic-badge text-center max-w-[270px] w-full">
+        <h2 class="font-serif uppercase tracking-[0.18em] text-[20px] sm:text-[22px] text-[#2C2726] font-normal leading-tight">
+          ELIZABETH
+        </h2>
+        <div class="font-serif italic text-[22px] leading-tight text-[#7A6A5C] my-0.5">Mis XV Años</div>
+      </div>
+    </div>
+
+    <!-- Invitation Message -->
+    <div class="w-full bg-cream pt-10 pb-2 px-8 flex flex-col items-center text-center card-texture">
+      <p class="font-serif italic text-[23px] sm:text-[25px] text-[#554A44] leading-relaxed max-w-[290px]">
+        Te invito a celebrar<br>mis XV Años
+      </p>
+      <div class="flex items-center justify-center gap-2 mt-4 text-[#8C7A6B]">
+        <span class="w-8 h-[1px] bg-[#C2B8AE]"></span>
+        <span class="text-[10px]">♥</span>
+        <span class="w-8 h-[1px] bg-[#C2B8AE]"></span>
+      </div>
+    </div>
+
+    <!-- Date & Calendar Section -->
+    <div class="w-full bg-cream pt-6 pb-6 px-8 flex flex-col items-center text-center card-texture">
+      <h3 class="font-serif uppercase tracking-[0.22em] text-[20px] text-darkCharcoal font-normal">
+        FECHA
+      </h3>
+      <div class="font-serif tracking-[0.08em] text-[23px] text-darkCharcoal mt-1 mb-5">
+        15.04.2028
+      </div>
+
+      <div class="font-serif tracking-[0.16em] text-[11px] text-softDark uppercase mb-3">
+        Abril 2028
+      </div>
+
+      <div class="w-full max-w-[240px] font-sans text-[11px] text-[#4A423E]">
+        <div class="grid grid-cols-7 gap-1 text-center font-medium text-[10px] text-softDark pb-1.5 border-b border-[#ded7ca]">
+          <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
+        </div>
+
+        <div class="grid grid-cols-7 gap-y-2 gap-x-1 text-center mt-2 font-light text-[11px]">
+          <span class="text-neutral-400">27</span>
+          <span class="text-neutral-400">28</span>
+          <span class="text-neutral-400">29</span>
+          <span class="text-neutral-400">30</span>
+          <span class="text-neutral-400">31</span>
+          <span>1</span>
+          <span>2</span>
+
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+
+          <span>10</span>
+          <span>11</span>
+          <span>12</span>
+          <span>13</span>
+          <span>14</span>
+          <span class="relative flex items-center justify-center font-semibold text-darkCharcoal">
+            <span class="w-6 h-6 rounded-full border border-darkCharcoal flex items-center justify-center text-[10px] bg-warmBeige/60">15</span>
+          </span>
+          <span>16</span>
+
+          <span>17</span>
+          <span>18</span>
+          <span>19</span>
+          <span>20</span>
+          <span>21</span>
+          <span>22</span>
+          <span>23</span>
+
+          <span>24</span>
+          <span>25</span>
+          <span>26</span>
+          <span>27</span>
+          <span>28</span>
+          <span>29</span>
+          <span>30</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Section -->
+    <div class="w-full bg-cream pt-4 pb-20 sm:pb-24 px-8 flex flex-col items-center text-center card-texture">
+      <h3 class="font-serif uppercase tracking-[0.22em] text-[20px] text-darkCharcoal font-normal mb-3">
+        UBICACIÓN
+      </h3>
+      <p class="font-serif text-[17px] sm:text-[18px] text-[#423A36] leading-relaxed max-w-[280px]">
+        <strong class="font-semibold block text-[19px] mb-1">Espacio Fundidora</strong>
+        Av. Francisco I. Madero 2463<br>
+        Col. Acero, Monterrey, N.L.
+      </p>
+      
+      <a href="https://maps.app.goo.gl/7cCpr49f2mhdaRQq5" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block text-[11px] font-sans uppercase tracking-[0.2em] text-[#8C7A6B] hover:text-darkCharcoal transition-colors border-b border-[#C2B8AE] pb-0.5">
+        Ver en Google Maps
+      </a>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="relative w-full px-0 py-10 bg-cream overflow-visible">
+      <div class="absolute -top-[40px] left-1/2 -translate-x-1/2 w-[125%] max-w-[560px] h-72 sm:h-80 pointer-events-none z-0 scale-110">
+        <img 
+          src="arco.png" 
+          alt="Arco Floral Superior" 
+          class="w-full h-full object-contain object-top drop-shadow-sm"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="absolute -bottom-[40px] left-1/2 -translate-x-1/2 w-[125%] max-w-[560px] h-72 sm:h-80 pointer-events-none z-0 scale-110 rotate-180">
+        <img 
+          src="arco.png" 
+          alt="Arco Floral Inferior" 
+          class="w-full h-full object-contain object-top drop-shadow-sm"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="relative z-10 w-full bg-roseDust rounded-t-[220px] rounded-b-[220px] px-6 sm:px-8 pt-24 pb-20 shadow-inner overflow-hidden text-darkCharcoal flex flex-col items-center box-border">
+        <h3 class="font-serif uppercase tracking-[0.26em] text-[22px] sm:text-[24px] text-darkCharcoal font-normal mb-12">
+          CRONOGRAMA
+        </h3>
+
+        <div class="relative w-full max-w-[340px]">
+          <div class="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-[1px] bg-[#473E3B]"></div>
+
+          <div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 text-[14px] leading-none text-darkCharcoal select-none">
+            ♥
+          </div>
+
+          <div class="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 z-10 text-[14px] leading-none text-darkCharcoal select-none">
+            ♥
+          </div>
+
+          <div class="relative flex items-center justify-between my-12">
+            <div class="w-[45%] text-center pr-2">
+              <div class="font-serif text-[24px] sm:text-[26px] font-medium text-darkCharcoal leading-tight">5:00 PM</div>
+              <div class="font-sans text-[11px] text-[#4A4340] tracking-wide mt-1">Misa de Acción de Gracias</div>
+            </div>
+            <div class="w-[10%]"></div>
+            <div class="w-[45%] flex justify-start pl-6 text-[10px] text-darkCharcoal/70 select-none">
+              ♥
+            </div>
+          </div>
+
+          <div class="relative flex items-center justify-between my-12">
+            <div class="w-[45%] flex justify-end pr-6 text-[10px] text-darkCharcoal/70 select-none">
+              ♥
+            </div>
+            <div class="w-[10%]"></div>
+            <div class="w-[45%] text-center pl-2">
+              <div class="font-serif text-[24px] sm:text-[26px] font-medium text-darkCharcoal leading-tight">6:30 PM</div>
+              <div class="font-sans text-[11px] text-[#4A4340] tracking-wide mt-1">Recepción &amp; Bienvenida</div>
+            </div>
+          </div>
+
+          <div class="relative flex items-center justify-between my-12">
+            <div class="w-[45%] text-center pr-2">
+              <div class="font-serif text-[24px] sm:text-[26px] font-medium text-darkCharcoal leading-tight">7:30 PM</div>
+              <div class="font-sans text-[11px] text-[#4A4340] tracking-wide mt-1">Vals de Quinceañera &amp; Brindis</div>
+            </div>
+            <div class="w-[10%]"></div>
+            <div class="w-[45%] flex justify-start pl-6 text-[10px] text-darkCharcoal/70 select-none">
+              ♥
+            </div>
+          </div>
+
+          <div class="relative flex items-center justify-between my-12">
+            <div class="w-[45%] flex justify-end pr-6 text-[10px] text-darkCharcoal/70 select-none">
+              ♥
+            </div>
+            <div class="w-[10%]"></div>
+            <div class="w-[45%] text-center pl-2">
+              <div class="font-serif text-[24px] sm:text-[26px] font-medium text-darkCharcoal leading-tight">8:30 PM</div>
+              <div class="font-sans text-[11px] text-[#4A4340] tracking-wide mt-1">Cena de Gala</div>
+            </div>
+          </div>
+
+          <div class="relative flex items-center justify-between my-12">
+            <div class="w-[45%] text-center pr-2">
+              <div class="font-serif text-[24px] sm:text-[26px] font-medium text-darkCharcoal leading-tight">10:30 PM</div>
+              <div class="font-sans text-[11px] text-[#4A4340] tracking-wide mt-1">Corte de Pastel &amp; Gran Baile</div>
+            </div>
+            <div class="w-[10%]"></div>
+            <div class="w-[45%] flex justify-start pl-6 text-[10px] text-darkCharcoal/70 select-none">
+              ♥
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- RSVP Section -->
+    <div class="relative z-20 w-full mt-[70px]">
+      <div class="w-full bg-cream px-8 pt-12 sm:pt-14 pb-14 flex flex-col items-center card-texture relative z-10">
+        <h3 class="font-serif uppercase tracking-[0.24em] text-[22px] text-darkCharcoal font-normal mb-6">
+          CONFIRMAR ASISTENCIA
+        </h3>
+
+        <form id="rsvp-form" class="w-full max-w-[320px] flex flex-col items-center">
+          <div class="w-full mb-8">
+            <input 
+              type="text" 
+              id="guestName"
+              placeholder="INGRESA TU NOMBRE" 
+              required
+              class="w-full px-5 py-3 text-center rounded-full border border-[#8C827A] bg-transparent text-[#2D2726] placeholder-[#665D56] font-sans text-[11px] tracking-[0.22em] uppercase focus:bg-white/40 transition-colors"
+            />
+          </div>
+
+          <div class="w-full mb-8 text-center">
+            <p class="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-softDark font-medium mb-3">
+              ¿PODRÁS ASISTIR?
+            </p>
+            <div class="flex flex-col items-center space-y-2.5 font-sans text-[11px] tracking-[0.14em] text-[#4A423E]">
+              <label class="flex items-center gap-3 cursor-pointer select-none">
+                <input type="radio" name="attendance" value="si" checked class="custom-radio">
+                <span>Sí asistiré</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer select-none">
+                <input type="radio" name="attendance" value="no" class="custom-radio">
+                <span>No podré asistir</span>
+              </label>
+            </div>
+          </div>
+
+          <div id="guests-container" class="w-full mb-9 text-center transition-opacity duration-200">
+            <p class="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-softDark font-medium mb-3">
+              NÚMERO DE INVITADOS
+            </p>
+            <div class="flex flex-col items-center space-y-2.5 font-sans text-[11px] tracking-[0.14em] text-[#4A423E]">
+              <label class="flex items-center gap-3 cursor-pointer select-none">
+                <input type="radio" name="guests" value="1" checked class="custom-radio">
+                <span>1</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer select-none">
+                <input type="radio" name="guests" value="2" class="custom-radio">
+                <span>2</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer select-none">
+                <input type="radio" name="guests" value="3" class="custom-radio">
+                <span>3</span>
+              </label>
+            </div>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-3.5 px-6 rounded-full bg-[#272120] text-[#F3EFE6] font-sans text-[12px] tracking-[0.24em] uppercase font-medium hover:bg-[#3E3533] active:scale-[0.98] transition-all shadow-md flex items-center justify-center gap-2">
+            <span>CONFIRMAR POR WHATSAPP</span>
+          </button>
+        </form>
+
+        <div id="toast" class="hidden opacity-0 mt-5 p-3 rounded-lg bg-[#3C4A34] text-cream text-[12px] font-sans tracking-wide text-center w-full max-w-[320px]">
+          ¡Muchas gracias! Redirigiendo a WhatsApp...
+        </div>
+      </div>
+
+      <div class="w-full overflow-hidden leading-none -mt-[1px] relative z-20">
+        <svg viewBox="0 0 500 80" preserveAspectRatio="none" class="w-full h-16 sm:h-20 block text-[#F8F3DF] fill-current drop-shadow-[0_12px_10px_rgba(0,0,0,0.18)]">
+          <path d="M0,0 L500,0 C380,80 120,80 0,0 Z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Footer Landscape Section -->
+    <div class="relative w-full h-[250px] overflow-hidden flex flex-col items-center justify-end pb-8 -mt-16 sm:-mt-20 z-10">
+      <div 
+        class="absolute inset-0" 
+        style="
+          background-image: url('principal.webp');
+          background-size: cover;
+          background-position: center 40%;
+          background-repeat: no-repeat;
+          filter: contrast(1.05);
+        ">
+      </div>
+
+      <div class="relative z-10 text-center px-4">
+        <h4 class="font-serif uppercase tracking-[0.22em] text-[20px] sm:text-[22px] text-darkCharcoal font-normal leading-tight">
+          ELIZABETH
+        </h4>
+        <div class="font-serif italic text-[18px] leading-tight text-[#453D3A] my-0.5">Mis XV Años</div>
+        <p class="font-sans text-[10px] tracking-[0.2em] text-[#554A44] uppercase">
+          Te espero para celebrar
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    const WHATSAPP_PHONE_NUMBER = '5218112345678';
+
+    const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
+    const guestsContainer = document.getElementById('guests-container');
+
+    attendanceRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        if (e.target.value === 'no') {
+          guestsContainer.style.display = 'none';
+        } else {
+          guestsContainer.style.display = 'block';
+        }
+      });
+    });
+
+    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const guestName = document.getElementById('guestName').value.trim();
+      const attendance = document.querySelector('input[name="attendance"]:checked').value;
+      const guests = document.querySelector('input[name="guests"]:checked').value;
+
+      const toast = document.getElementById('toast');
+      toast.textContent = `¡Gracias ${guestName}! Redirigiendo a WhatsApp...`;
+      toast.classList.remove('hidden');
+      
+      setTimeout(() => {
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+      }, 20);
+
+      let message = '';
+      if (attendance === 'si') {
+        const personasTexto = guests === '1' ? '1 persona' : `${guests} personas`;
+        message = `🌸 *¡CONFIRMACIÓN DE ASISTENCIA!* 🌸\n` +
+          `✨ *Mis XV Años — Elizabeth* ✨\n\n` +
+          `¡Hola! Con mucha emoción confirmo mi asistencia a tu fiesta.\n\n` +
+          `👤 *Nombre:* ${guestName}\n` +
+          `✅ *Asistencia:* ¡Sí, ahí estaré!\n` +
+          `👥 *Lugares reservados:* ${personasTexto}\n\n` +
+          `¡Nos vemos muy pronto para celebrar este gran día! 💖🥂`;
+      } else {
+        message = `💌 *RESPUESTA DE INVITACIÓN* 💌\n` +
+          `✨ *Mis XV Años — Elizabeth* ✨\n\n` +
+          `¡Hola Elizabeth!\n` +
+          `Muchísimas gracias por considerarme para acompañarte en un momento tan especial.\n\n` +
+          `👤 *Nombre:* ${guestName}\n` +
+          `❌ *Asistencia:* Lamentablemente en esta ocasión no podré asistir.\n\n` +
+          `Te mando un fuerte abrazo y mis mejores deseos para que pases un día inolvidable. ¡Muchas felicidades! ✨🎂💐`;
+      }
+
+      const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 700);
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+        setTimeout(() => toast.classList.add('hidden'), 400);
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

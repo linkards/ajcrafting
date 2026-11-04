@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brigitte — Mis XV Años</title>
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brigitte — Mis XV Años">
+  <meta property="og:description" content="Tengo el honor y la alegría de invitarte a celebrar mis XV Años. Sábado 18 de Noviembre de 2028.">
+  <meta property="og:image" content="foto3.webp">
+  <meta property="og:locale" content="es_MX">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brigitte — Mis XV Años">
+  <meta name="twitter:description" content="Tengo el honor y la alegría de invitarte a celebrar mis XV Años. Sábado 18 de Noviembre de 2028.">
+  <meta name="twitter:image" content="foto3.webp">
+
+  <link rel="icon" type="image/png" href="../../../img/favicon.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'baroque-bg': '#fcf9f2',
+            'baroque-cream': '#f8f3e6',
+            'baroque-card': '#f5eee0',
+            'baroque-gold': '#c59f5a',
+            'baroque-gold-dark': '#9b7634',
+            'baroque-gold-light': '#dfc38a',
+            'baroque-blue': '#4c6b88',
+            'baroque-blue-dark': '#2e4964',
+            'baroque-blue-light': '#6f8fae',
+            'baroque-text': '#443c33',
+            'baroque-muted': '#7e7568',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #fcf9f2;
+      background-image: 
+        radial-gradient(#eedcb5 0.75px, transparent 0.75px),
+        radial-gradient(#e7d2a5 0.75px, #fcf9f2 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      color: #443c33;
+      overflow-x: hidden;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    input, textarea, select {
+      -webkit-user-select: auto;
+      user-select: auto;
+    }
+
+    .gold-divider {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 320px;
+      margin: 1.5rem auto;
+    }
+    .gold-divider::before,
+    .gold-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c59f5a, transparent);
+    }
+
+    .btn-baroque {
+      background: linear-gradient(180deg, #4d6d8c 0%, #344f69 100%);
+      border: 1px solid #7ea1c2;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(46, 73, 100, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    .btn-baroque:hover {
+      background: linear-gradient(180deg, #5b7f9f 0%, #3d5b7a 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(46, 73, 100, 0.35);
+    }
+
+    .carousel-item {
+      transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+    }
+
+    .calendar-table td, .calendar-table th {
+      text-align: center;
+      padding: 0.4rem 0.3rem;
+      font-size: 0.82rem;
+    }
+    .wedding-day-pin {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 9999px;
+      background-color: #3b5a7a;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 0 10px rgba(59, 90, 122, 0.4);
+    }
+
+    @keyframes subtleGlow {
+      0%, 100% { filter: drop-shadow(0 2px 4px rgba(197, 159, 90, 0.2)); }
+      50% { filter: drop-shadow(0 4px 12px rgba(197, 159, 90, 0.4)); }
+    }
+    .frame-glow {
+      animation: subtleGlow 5s ease-in-out infinite;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .music-playing {
+      animation: musicPulse 1.8s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="font-serif antialiased text-[#443c33] selection:bg-[#c59f5a]/30">
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="w-full max-w-[460px] mx-auto min-h-screen relative px-4 sm:px-6 py-8 flex flex-col items-center bg-[#fcf9f2] shadow-2xl overflow-hidden">
+
+    <div class="absolute top-4 right-4 z-30 flex items-center gap-2">
+      <button 
+        id="musicToggleBtn" 
+        aria-label="Reproducir o pausar música"
+        class="group relative flex items-center justify-center w-10 h-10 rounded-full bg-[#fcf9f2]/90 backdrop-blur-sm border-2 border-baroque-gold shadow-md text-[#3b5671] hover:text-[#2d465f] hover:border-baroque-gold-dark transition-all duration-300"
+      >
+        <span id="musicRing" class="hidden absolute inset-0 rounded-full border border-baroque-gold animate-ping opacity-60"></span>
+        <i id="musicIcon" class="fa-solid fa-music text-xs transition-transform duration-300 group-hover:scale-110"></i>
+      </button>
+    </div>
+
+    <div class="absolute top-0 left-0 w-24 pointer-events-none opacity-40 z-0">
+      <svg viewBox="0 0 100 140" fill="none" class="w-full h-auto text-baroque-gold">
+        <path d="M0,0 C30,10 60,40 50,80 C45,100 20,110 0,140 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <circle cx="25" cy="45" r="4" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="absolute top-0 right-0 w-24 pointer-events-none opacity-40 z-0 -scale-x-100">
+      <svg viewBox="0 0 100 140" fill="none" class="w-full h-auto text-baroque-gold">
+        <path d="M0,0 C30,10 60,40 50,80 C45,100 20,110 0,140 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <circle cx="25" cy="45" r="4" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <header class="w-full text-center relative z-10 pt-4">
+      <p class="font-cinzel text-xs sm:text-sm tracking-[0.35em] text-baroque-muted uppercase mb-4">
+        Bienvenidos
+      </p>
+
+      <div class="relative w-full max-w-[460px] h-[480px] sm:h-[530px] mx-auto mt-6 mb-8 px-2 flex items-center justify-center">
+        <div class="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center z-10 frame-glow">
+          <img 
+            src="r11.webp" 
+            alt="Marco Barroco" 
+            class="w-full h-full object-contain filter drop-shadow-xl"
+            id="marco-barroco-img"
+          />
+        </div>
+
+        <div class="relative z-20 px-6 text-center max-w-[320px] flex flex-col items-center justify-center">
+          <h1 class="font-serif text-3xl sm:text-4xl tracking-[0.18em] text-[#2d465f] uppercase font-light">
+            Brigitte
+          </h1>
+          <div class="w-12 h-px bg-gradient-to-r from-transparent via-baroque-gold to-transparent my-1"></div>
+          <span class="font-cinzel text-xs sm:text-sm tracking-[0.45em] text-baroque-muted uppercase block">
+            Mis
+          </span>
+          <div class="my-0.5 font-cinzel text-5xl sm:text-6xl text-baroque-gold font-bold tracking-[0.12em] select-none leading-none">
+            XV
+          </div>
+          <p class="font-script text-2xl sm:text-3xl text-[#395066] mt-0.5">Años</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="w-full flex justify-center mt-10 mb-8">
+      <img 
+        src="r6.webp" 
+        alt="Separador Dorado" 
+        class="w-56 sm:w-64 h-auto object-contain filter drop-shadow-sm"
+      />
+    </div>
+
+    <section class="w-full text-center my-4 px-2 relative z-10">
+      <h2 class="font-cinzel text-base sm:text-lg tracking-[0.28em] text-[#334b63] uppercase mb-6 font-semibold">
+        Con la Bendición de Dios
+      </h2>
+
+      <div class="flex flex-col items-center justify-center text-xs sm:text-sm text-[#4a4239] mb-8">
+        <span class="italic text-[12px] text-baroque-muted mb-3 font-serif">Mis amados padres</span>
+        <div class="flex flex-col items-center justify-center space-y-2 text-center font-serif font-medium text-[#2d3a48]">
+          <span class="text-sm sm:text-base tracking-wide">Sr. Fernando De la Garza</span>
+          <div class="w-12 h-px bg-gradient-to-r from-transparent via-baroque-gold to-transparent my-1"></div>
+          <span class="text-sm sm:text-base tracking-wide">Sra. Mariana Elizondo</span>
+        </div>
+      </div>
+
+      <div class="gold-divider my-8">
+        <i class="fa-solid fa-diamond text-baroque-gold text-[8px] mx-2"></i>
+      </div>
+    </section>
+
+    <section class="w-full text-center my-4 relative px-2">
+      <p class="font-cinzel text-xs sm:text-xs tracking-[0.25em] text-baroque-muted uppercase max-w-[320px] mx-auto leading-relaxed mb-4">
+        Tengo el honor y la alegría de<br>invitarte a celebrar mis
+      </p>
+
+      <div class="font-cinzel text-3xl sm:text-4xl text-baroque-gold font-bold tracking-widest my-1 select-none">
+        XV AÑOS
+      </div>
+      <h3 class="font-serif text-3xl sm:text-4xl text-[#2a435c] font-normal tracking-wide mt-2 mb-4">
+        Brigitte De la Garza
+      </h3>
+
+      <div class="max-w-[340px] mx-auto mb-8">
+        <p class="font-cinzel text-[11px] sm:text-xs tracking-[0.22em] text-baroque-muted uppercase leading-relaxed italic">
+          Que se llevará a cabo el día
+        </p>
+        <p class="font-cinzel text-xs sm:text-sm tracking-[0.25em] text-[#2d465f] uppercase font-semibold mt-1">
+          Sábado 18 de Noviembre de 2028
+        </p>
+      </div>
+
+      <div class="relative w-full max-w-[340px] mx-auto my-6 p-7 flex flex-col items-center justify-center">
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-0 flex items-center justify-center">
+          <img 
+            src="r12.webp" 
+            alt="Marco Calendario" 
+            class="w-full h-full object-contain filter drop-shadow-md"
+          />
+        </div>
+
+        <div class="relative z-10 w-full px-4 py-2">
+          <h4 class="font-cinzel text-xs tracking-[0.25em] text-[#2e4964] font-semibold mb-2">
+            Noviembre 2028
+          </h4>
+
+          <table class="w-full calendar-table text-[#4a4239]">
+            <thead>
+              <tr class="font-sans text-[10px] text-baroque-muted border-b border-[#e5d5be]/60">
+                <th>Do</th><th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sá</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td>
+              </tr>
+              <tr>
+                <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+              </tr>
+              <tr>
+                <td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+                <td>
+                  <span class="wedding-day-pin relative" title="¡El gran día!">
+                    18
+                    <i class="fa-solid fa-heart text-[8px] text-[#dfc38a] absolute -top-1 -right-1"></i>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+              </tr>
+              <tr>
+                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center space-y-3 mt-3">
+        <div class="relative inline-block text-left" id="calendarDropdownContainer">
+          <button 
+            type="button" 
+            id="addToCalendarBtn" 
+            class="text-xs font-serif text-[#3e566d] underline hover:text-baroque-gold transition tracking-wider flex items-center gap-1.5"
+          >
+            <i class="fa-regular fa-calendar-plus text-xs"></i>
+            Añadir al Calendario
+          </button>
+          
+          <div id="calendarMenu" class="hidden absolute left-1/2 -translate-x-1/2 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-40 text-xs">
+            <div class="py-1">
+              <a href="#" id="googleCalLink" target="_blank" class="block px-4 py-2 text-[#443c33] hover:bg-baroque-cream">
+                <i class="fa-brands fa-google mr-2 text-baroque-blue"></i> Google Calendar
+              </a>
+              <button id="downloadIcsBtn" class="w-full text-left px-4 py-2 text-[#443c33] hover:bg-baroque-cream">
+                <i class="fa-brands fa-apple mr-2 text-baroque-gold"></i> Apple / Outlook (.ics)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="w-full flex justify-center my-6">
+      <img 
+        src="r6.webp" 
+        alt="Separador Dorado" 
+        class="w-56 sm:w-64 h-auto object-contain filter drop-shadow-sm"
+      />
+    </div>
+
+    <section class="w-full text-center my-6 z-10">
+      <h2 class="font-cinzel text-sm sm:text-base tracking-[0.3em] text-[#334b63] uppercase mb-8 font-semibold">
+        Galería de Fotos
+      </h2>
+
+      <div class="relative w-full max-w-[480px] mx-auto h-[340px] flex items-center justify-center overflow-hidden">
+        <button id="prevBtn" aria-label="Foto anterior" class="absolute left-2 z-30 w-8 h-8 rounded-full bg-white/70 hover:bg-white text-[#334b63] shadow-md flex items-center justify-center transition border border-[#d6a858]/40">
+          <i class="fa-solid fa-chevron-left text-xs"></i>
+        </button>
+
+        <div id="carouselTrack" class="relative w-full h-full flex items-center justify-center">
+          <div class="carousel-item absolute w-[170px] h-[260px] rounded-sm overflow-hidden shadow-lg border-2 border-white/80" data-index="0">
+            <img src="foto1.webp" alt="Foto 1" class="w-full h-full object-cover">
+          </div>
+
+          <div class="carousel-item absolute w-[180px] h-[275px] rounded-sm overflow-hidden shadow-xl border-2 border-white/90" data-index="1">
+            <img src="foto2.webp" alt="Foto 2" class="w-full h-full object-cover">
+          </div>
+
+          <div class="carousel-item absolute w-[205px] h-[305px] rounded-sm overflow-hidden shadow-2xl border-4 border-[#fff] z-20" data-index="2">
+            <img src="foto3.webp" alt="Brigitte XV Años" class="w-full h-full object-cover">
+          </div>
+
+          <div class="carousel-item absolute w-[180px] h-[275px] rounded-sm overflow-hidden shadow-xl border-2 border-white/90" data-index="3">
+            <img src="foto4.webp" alt="Foto 4" class="w-full h-full object-cover">
+          </div>
+
+          <div class="carousel-item absolute w-[170px] h-[260px] rounded-sm overflow-hidden shadow-lg border-2 border-white/80" data-index="4">
+            <img src="foto5.webp" alt="Foto 5" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <button id="nextBtn" aria-label="Siguiente foto" class="absolute right-2 z-30 w-8 h-8 rounded-full bg-white/70 hover:bg-white text-[#334b63] shadow-md flex items-center justify-center transition border border-[#d6a858]/40">
+          <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+      </div>
+
+      <p id="galleryCounter" class="text-[11px] font-sans text-baroque-muted mt-2 tracking-widest">
+        1 / 5
+      </p>
+
+      <div class="my-6">
+        <h3 class="font-cinzel text-[11px] tracking-[0.3em] text-[#3e566d] uppercase font-bold mb-1">
+          Cuenta Regresiva
+        </h3>
+        <p id="countdownTimer" class="font-serif text-sm sm:text-base text-baroque-muted font-medium">
+          Cargando cuenta regresiva...
+        </p>
+      </div>
+    </section>
+
+    <section class="w-full text-center my-4 relative px-2">
+      <div class="relative w-full max-w-[360px] mx-auto py-4">
+        <div class="absolute -left-12 sm:-left-16 -top-3 -bottom-3 w-20 sm:w-26 pointer-events-none z-10 flex items-stretch">
+          <img 
+            src="r9.webp" 
+            alt="Ornamento lateral" 
+            class="w-full h-full object-fill sm:object-contain filter drop-shadow-lg scale-110 sm:scale-120 origin-center"
+          />
+        </div>
+        <div class="absolute -right-12 sm:-right-16 -top-3 -bottom-3 w-20 sm:w-26 pointer-events-none z-10 flex items-stretch -scale-x-100">
+          <img 
+            src="r9.webp" 
+            alt="Ornamento lateral" 
+            class="w-full h-full object-fill sm:object-contain filter drop-shadow-lg scale-110 sm:scale-120 origin-center"
+          />
+        </div>
+
+        <div class="my-4 relative z-20">
+          <h4 class="font-cinzel text-sm sm:text-base tracking-[0.25em] text-[#3e566d] uppercase font-bold">
+            Ceremonia religiosa
+          </h4>
+          <p class="font-cinzel text-[11px] tracking-wider text-baroque-muted uppercase mt-0.5 mb-2">
+            Parroquia San Nicolás de Tolentino
+          </p>
+
+          <div class="inline-flex items-center justify-center space-x-2 my-2 text-[#344b61]">
+            <span class="font-serif text-xl sm:text-2xl font-semibold text-[#28415a]">17:00 hrs</span>
+          </div>
+
+          <div class="mt-2">
+            <a 
+              href="https://maps.google.com/?q=Parroquia+San+Nicolás+de+Tolentino+San+Nicolás+de+los+Garza+Nuevo+Leon" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[10px] font-cinzel tracking-wider text-[#344f69] border border-[#7ea1c2]/60 bg-white/70 hover:bg-[#344f69] hover:text-white transition-all shadow-sm"
+            >
+              <i class="fa-solid fa-location-dot text-[10px] text-baroque-gold"></i>
+              Ver ubicación
+            </a>
+          </div>
+        </div>
+
+        <div class="w-16 h-px bg-gradient-to-r from-transparent via-baroque-gold to-transparent mx-auto my-5"></div>
+
+        <div class="my-4 relative z-20">
+          <h4 class="font-cinzel text-sm sm:text-base tracking-[0.25em] text-[#3e566d] uppercase font-bold">
+            Recepción
+          </h4>
+          <p class="font-cinzel text-[11px] tracking-wider text-baroque-muted uppercase mt-0.5 mb-2">
+            La Fontana Eventos
+          </p>
+
+          <div class="inline-flex items-center justify-center space-x-2 my-2 text-[#344b61]">
+            <span class="font-serif text-xl sm:text-2xl font-semibold text-[#28415a]">19:00 hrs</span>
+          </div>
+
+          <div class="mt-2">
+            <a 
+              href="https://maps.google.com/?q=La+Fontana+Eventos+San+Nicolás+de+los+Garza+Nuevo+Leon" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[10px] font-cinzel tracking-wider text-[#344f69] border border-[#7ea1c2]/60 bg-white/70 hover:bg-[#344f69] hover:text-white transition-all shadow-sm"
+            >
+              <i class="fa-solid fa-location-dot text-[10px] text-baroque-gold"></i>
+              Ver ubicación
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="w-full flex justify-center my-8">
+      <img 
+        src="r7.webp" 
+        alt="Separador Ornamental" 
+        class="w-56 sm:w-64 h-auto object-contain filter drop-shadow-sm"
+      />
+    </div>
+
+    <section class="w-full text-center my-4 px-2">
+      <h2 class="font-cinzel text-base tracking-[0.28em] text-[#334b63] uppercase mb-1 font-semibold">
+        Dress Code
+      </h2>
+      <p class="font-cinzel text-xs sm:text-sm tracking-[0.2em] text-[#2d465f] uppercase font-semibold mb-1">
+        Formal
+      </p>
+      <p class="font-serif text-xs text-baroque-muted italic mb-4">Paleta de colores para la fiesta</p>
+
+      <div class="flex items-center justify-center space-x-3 my-2">
+        <div class="group relative flex flex-col items-center">
+          <div class="w-9 h-9 rounded-full bg-[#d8c7a8] shadow-md border-2 border-white ring-1 ring-[#c59f5a]/30"></div>
+          <span class="text-[9px] font-sans text-baroque-muted mt-1 opacity-0 group-hover:opacity-100 transition">Arena</span>
+        </div>
+        <div class="group relative flex flex-col items-center">
+          <div class="w-9 h-9 rounded-full bg-[#9bbad5] shadow-md border-2 border-white ring-1 ring-[#c59f5a]/30"></div>
+          <span class="text-[9px] font-sans text-baroque-muted mt-1 opacity-0 group-hover:opacity-100 transition">Celeste</span>
+        </div>
+        <div class="group relative flex flex-col items-center">
+          <div class="w-9 h-9 rounded-full bg-[#1a1a1a] shadow-md border-2 border-white ring-1 ring-[#c59f5a]/30"></div>
+          <span class="text-[9px] font-sans text-baroque-muted mt-1 opacity-0 group-hover:opacity-100 transition">Negro</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-divider my-6">
+      <i class="fa-regular fa-clock text-baroque-gold text-xs mx-2"></i>
+    </div>
+
+    <section class="w-full text-center my-4 px-2">
+      <h2 class="font-cinzel text-base sm:text-lg tracking-[0.28em] text-[#334b63] uppercase mb-8 font-semibold">
+        Programa de la Noche
+      </h2>
+
+      <div class="relative w-full max-w-[340px] mx-auto py-2">
+        <div class="absolute left-1/2 top-4 bottom-4 w-px -translate-x-1/2 border-l border-dashed border-[#c59f5a]/60 z-0"></div>
+
+        <div class="space-y-6 relative z-10 text-xs font-serif">
+          <div class="flex items-center justify-between">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">17:00</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63]">Misa de Acción de Gracias</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">19:00</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63]">Recepción y bienvenida</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">20:00</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63]">Entrada triunfal de la Quinceañera</span>
+          </div>
+
+          <div class="flex items-center justify-between relative">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">20:30</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63] font-medium">Cambio de zapatilla & Coronación</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">21:00</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63]">Vals familiar & Chambelanes</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">21:30</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63]">Brindis & Banquete</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">22:30</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63]">Baile sorpresa & Fiesta</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="w-[42%] text-right font-medium text-[#443c33] tracking-wider">01:00</span>
+            <div class="w-3 h-3 rounded-full bg-baroque-cream border-2 border-baroque-gold flex items-center justify-center z-10">
+              <span class="w-1 h-1 rounded-full bg-baroque-gold"></span>
+            </div>
+            <span class="w-[42%] text-left font-serif text-[#334b63]">Fin del evento</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-divider my-8">
+      <i class="fa-solid fa-envelope-open-text text-baroque-gold text-xs mx-2"></i>
+    </div>
+
+    <section class="w-full text-center my-4 px-2">
+      <h2 class="font-cinzel text-base sm:text-lg tracking-[0.28em] text-[#334b63] uppercase mb-4 font-semibold">
+        Lluvia de Sobres
+      </h2>
+
+      <div class="relative w-40 h-40 mx-auto my-2 flex items-center justify-center cursor-pointer group" id="giftBoxTrigger">
+        <div class="w-32 h-32 relative transform transition duration-300 group-hover:scale-105">
+          <svg viewBox="0 0 120 120" fill="none" class="w-full h-full drop-shadow-md">
+            <circle cx="60" cy="60" r="48" fill="#f5e8cc" opacity="0.6"/>
+            <rect x="18" y="38" width="84" height="54" rx="4" fill="#fcf9f2" stroke="#c59f5a" stroke-width="2"/>
+            <path d="M18,92 L50,62" stroke="#dfc38a" stroke-width="1.5"/>
+            <path d="M102,92 L70,62" stroke="#dfc38a" stroke-width="1.5"/>
+            <path d="M18,38 L60,68 L102,38 Z" fill="#f8f2e2" stroke="#c59f5a" stroke-width="1.75"/>
+            <circle cx="60" cy="68" r="11" fill="#dfc38a" stroke="#9a712c" stroke-width="1.5"/>
+            <circle cx="60" cy="68" r="8" fill="#3b5671"/>
+            <path d="M60,63 L60,73 M56,66 L64,70" stroke="#dfc38a" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="font-sans text-[10px] tracking-wider text-baroque-muted uppercase mb-4">
+        Toca el sobre para ver los datos
+      </p>
+
+      <div id="giftDetails" class="hidden max-w-[340px] mx-auto p-4 mb-4 bg-[#faf4e6] border border-[#d6a858]/60 rounded-md text-xs font-serif text-[#443c33] transition-all">
+        <p class="font-bold text-[#2e4964] mb-2 font-cinzel text-xs tracking-wider">LLUVIA DE SOBRES</p>
+        <p class="mb-2 italic text-[11px] text-baroque-muted">
+          Si deseas hacerme un presente en efectivo, dispondremos de un buzón especial el día del evento, o bien puedes realizar una transferencia:
+        </p>
+        <p class="mb-1"><span class="font-semibold">Banco:</span> BBVA</p>
+        <p class="mb-1"><span class="font-semibold">Beneficiario:</span> Brigitte De la Garza</p>
+        <p class="mb-1"><span class="font-semibold">CLABE:</span> <span id="clabeNumber">012180015489623587</span></p>
+        <button id="copyClabeBtn" class="mt-2 text-[10px] font-sans px-3 py-1 bg-white border border-[#c59f5a] rounded text-[#2e4964] hover:bg-baroque-cream">
+          <i class="fa-regular fa-copy mr-1"></i> Copiar CLABE
+        </button>
+      </div>
+
+      <p class="font-serif text-xs text-baroque-muted italic max-w-[320px] mx-auto leading-relaxed">
+        Su presencia y cariño serán siempre mi mayor regalo.
+      </p>
+    </section>
+
+    <div class="gold-divider my-6">
+      <i class="fa-solid fa-sparkles text-baroque-gold text-xs mx-2"></i>
+    </div>
+
+    <div class="w-full flex flex-col items-center justify-center my-4 relative z-10 px-4">
+      <p class="font-cinzel text-[11px] tracking-[0.25em] text-baroque-muted uppercase mb-3">
+        ¿Nos acompañas en este gran día?
+      </p>
+      <button 
+        id="openRsvpModalBtn" 
+        class="btn-baroque px-10 py-3.5 rounded-sm text-xs font-cinzel font-semibold cursor-pointer shadow-lg tracking-[0.2em]"
+      >
+        Confirmar Asistencia
+      </button>
+    </div>
+
+    <footer class="w-full relative mt-0 -mb-16 sm:-mb-20 pt-0 flex justify-center items-end">
+      <div class="w-full max-w-[480px] flex justify-center items-end mx-auto translate-y-6 sm:translate-y-8">
+        <img 
+          src="r8.webp" 
+          alt="Remate ornamental inferior" 
+          class="w-full max-w-[440px] sm:max-w-[480px] h-auto object-contain filter drop-shadow-md scale-110 sm:scale-125 origin-bottom mx-auto"
+        />
+      </div>
+    </footer>
+
+  </main>
+
+  <div id="rsvpModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="relative w-full max-w-[400px] bg-[#fcf9f2] border-2 border-baroque-gold rounded-lg shadow-2xl p-6 text-center transform scale-95 transition-transform duration-300" id="rsvpModalCard">
+      
+      <button id="closeRsvpModalBtn" aria-label="Cerrar" class="absolute top-3 right-3 text-[#2c241c] hover:text-black">
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
+
+      <span class="text-baroque-gold-dark text-lg font-bold">✦</span>
+      <h3 class="font-cinzel text-lg tracking-[0.2em] text-[#1c2e42] font-bold uppercase mt-1 mb-2">
+        Confirmar Asistencia
+      </h3>
+      <p class="font-serif text-xs text-[#2c241c] font-medium mb-4">
+        Por favor confirma tu asistencia antes del 15 de Octubre de 2028 para festejar juntos mis XV Años.
+      </p>
+
+      <form id="rsvpForm" class="space-y-3 text-left">
+        <div>
+          <label class="block text-[11px] font-cinzel font-bold uppercase text-[#1c2530] mb-1">Nombre Completo</label>
+          <input type="text" id="rsvpName" required placeholder="Tu nombre y apellido" class="w-full px-3 py-2 text-xs font-serif font-medium bg-[#fcfaf5] border border-[#a48858] rounded focus:outline-none focus:ring-1 focus:ring-baroque-blue text-[#1c1a17] placeholder:text-[#6a5e52]"/>
+        </div>
+        <div>
+          <label class="block text-[11px] font-cinzel font-bold uppercase text-[#1c2530] mb-1">¿Asistirás a la fiesta?</label>
+          <select id="rsvpAttendance" class="w-full px-3 py-2 text-xs font-serif font-medium bg-[#fcfaf5] border border-[#a48858] rounded focus:outline-none focus:ring-1 focus:ring-baroque-blue text-[#1c1a17]">
+            <option value="si">¡Sí, con gusto te acompañaré!</option>
+            <option value="no">Lamentablemente no podré asistir</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-cinzel font-bold uppercase text-[#1c2530] mb-1">Número de pases / acompañantes</label>
+          <select id="rsvpGuests" class="w-full px-3 py-2 text-xs font-serif font-medium bg-[#fcfaf5] border border-[#a48858] rounded focus:outline-none focus:ring-1 focus:ring-baroque-blue text-[#1c1a17]">
+            <option value="1">1 persona (Solo yo)</option>
+            <option value="2">2 personas</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-cinzel font-bold uppercase text-[#1c2530] mb-1">Dedicatoria o comentarios (opcional)</label>
+          <input type="text" id="rsvpNotes" placeholder="Mensaje para la quinceañera" class="w-full px-3 py-2 text-xs font-serif font-medium bg-[#fcfaf5] border border-[#a48858] rounded focus:outline-none focus:ring-1 focus:ring-baroque-blue text-[#1c1a17] placeholder:text-[#6a5e52]"/>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full btn-baroque py-2.5 text-xs font-cinzel font-semibold rounded cursor-pointer">
+            Confirmar por WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#2e4964] text-white text-xs px-4 py-2.5 rounded shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    Notificación
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const weddingDate = new Date('2028-11-18T17:00:00').getTime();
+      const countdownEl = document.getElementById('countdownTimer');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = weddingDate - now;
+
+        if (difference < 0) {
+          countdownEl.textContent = "¡Hoy es nuestro gran día!";
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        countdownEl.textContent = `${days} días ${hours} h ${minutes} min ${seconds} seg`;
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      const galleryItems = document.querySelectorAll('.carousel-item');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const galleryCounter = document.getElementById('galleryCounter');
+      let currentIndex = 2;
+      const totalImages = galleryItems.length;
+
+      function renderCarousel() {
+        galleryItems.forEach((item, idx) => {
+          const offset = idx - currentIndex;
+
+          if (offset === 0) {
+            item.style.transform = `translateX(0px) scale(1) perspective(800px) rotateY(0deg)`;
+            item.style.zIndex = '30';
+            item.style.opacity = '1';
+            item.style.filter = 'none';
+          } else if (offset === -1) {
+            item.style.transform = `translateX(-85px) scale(0.85) perspective(800px) rotateY(32deg)`;
+            item.style.zIndex = '20';
+            item.style.opacity = '0.85';
+            item.style.filter = 'contrast(0.95) saturate(0.9)';
+          } else if (offset === 1) {
+            item.style.transform = `translateX(85px) scale(0.85) perspective(800px) rotateY(-32deg)`;
+            item.style.zIndex = '20';
+            item.style.opacity = '0.85';
+            item.style.filter = 'contrast(0.95) saturate(0.9)';
+          } else if (offset < -1) {
+            item.style.transform = `translateX(-150px) scale(0.72) perspective(800px) rotateY(45deg)`;
+            item.style.zIndex = '10';
+            item.style.opacity = '0.5';
+            item.style.filter = 'contrast(0.9)';
+          } else if (offset > 1) {
+            item.style.transform = `translateX(150px) scale(0.72) perspective(800px) rotateY(-45deg)`;
+            item.style.zIndex = '10';
+            item.style.opacity = '0.5';
+            item.style.filter = 'contrast(0.9)';
+          }
+        });
+        galleryCounter.textContent = `${currentIndex + 1} / ${totalImages}`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
+        renderCarousel();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+        renderCarousel();
+      });
+
+      let startX = 0;
+      const track = document.getElementById('carouselTrack');
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+      track.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        if (startX - endX > 40) {
+          nextBtn.click();
+        } else if (endX - startX > 40) {
+          prevBtn.click();
+        }
+      }, { passive: true });
+
+      renderCarousel();
+
+      const calDropdownBtn = document.getElementById('addToCalendarBtn');
+      const calMenu = document.getElementById('calendarMenu');
+      const googleCalLink = document.getElementById('googleCalLink');
+      const downloadIcsBtn = document.getElementById('downloadIcsBtn');
+
+      const eventDetails = {
+        title: encodeURIComponent("Mis XV Años — Brigitte"),
+        details: encodeURIComponent("Acompáñame a celebrar mis XV Años en La Fontana Eventos, San Nicolás de los Garza, N.L."),
+        location: encodeURIComponent("La Fontana Eventos, Av. República Mexicana 711, San Nicolás de los Garza, N.L., México"),
+        start: "20281118T230000Z",
+        end: "20281119T070000Z"
+      };
+      googleCalLink.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${eventDetails.title}&dates=${eventDetails.start}/${eventDetails.end}&details=${eventDetails.details}&location=${eventDetails.location}`;
+
+      calDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        calMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        calMenu.classList.add('hidden');
+      });
+
+      downloadIcsBtn.addEventListener('click', () => {
+        const icsContent = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//Brigitte//XV Anos//ES",
+          "BEGIN:VEVENT",
+          "UID:xv-brigitte-2028@eventos.com",
+          "DTSTAMP:20261029T120000Z",
+          "DTSTART:20281118T230000Z",
+          "DTEND:20281119T070000Z",
+          "SUMMARY:Mis XV Años — Brigitte",
+          "DESCRIPTION:Celebración de los XV Años de Brigitte en La Fontana Eventos.",
+          "LOCATION:La Fontana Eventos\\, San Nicolás de los Garza\\, Nuevo León",
+          "STATUS:CONFIRMED",
+          "END:VEVENT",
+          "END:VCALENDAR"
+        ].join("\r\n");
+
+        const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.setAttribute("download", "Mis-XV-Brigitte.ics");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      const giftBoxTrigger = document.getElementById('giftBoxTrigger');
+      const giftDetails = document.getElementById('giftDetails');
+      const copyClabeBtn = document.getElementById('copyClabeBtn');
+      const clabeNumber = document.getElementById('clabeNumber').textContent;
+
+      giftBoxTrigger.addEventListener('click', () => {
+        giftDetails.classList.toggle('hidden');
+      });
+
+      copyClabeBtn.addEventListener('click', () => {
+        const dummyInput = document.createElement('input');
+        dummyInput.value = clabeNumber;
+        document.body.appendChild(dummyInput);
+        dummyInput.select();
+        try {
+          document.execCommand('copy');
+          showToast("CLABE copiada al portapapeles");
+        } catch (err) {
+          showToast("No se pudo copiar automáticamente");
+        }
+        document.body.removeChild(dummyInput);
+      });
+
+      const openRsvpModalBtn = document.getElementById('openRsvpModalBtn');
+      const closeRsvpModalBtn = document.getElementById('closeRsvpModalBtn');
+      const rsvpModal = document.getElementById('rsvpModal');
+      const rsvpModalCard = document.getElementById('rsvpModalCard');
+      const rsvpForm = document.getElementById('rsvpForm');
+
+      function openModal() {
+        rsvpModal.classList.remove('hidden');
+        setTimeout(() => {
+          rsvpModal.classList.remove('opacity-0');
+          rsvpModalCard.classList.remove('scale-95');
+          rsvpModalCard.classList.add('scale-100');
+        }, 10);
+      }
+
+      function closeModal() {
+        rsvpModal.classList.add('opacity-0');
+        rsvpModalCard.classList.remove('scale-100');
+        rsvpModalCard.classList.add('scale-95');
+        setTimeout(() => {
+          rsvpModal.classList.add('hidden');
+        }, 300);
+      }
+
+      openRsvpModalBtn.addEventListener('click', openModal);
+      closeRsvpModalBtn.addEventListener('click', closeModal);
+      rsvpModal.addEventListener('click', (e) => {
+        if (e.target === rsvpModal) closeModal();
+      });
+
+      rsvpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('rsvpName').value.trim();
+        const attendance = document.getElementById('rsvpAttendance').value;
+        const guests = document.getElementById('rsvpGuests').value;
+        const notes = document.getElementById('rsvpNotes').value.trim();
+
+        const answerText = attendance === 'si' ? '¡Sí confirmo mi asistencia!' : 'No podré asistir.';
+        const whatsappMsg = `*Confirmación de Asistencia - Mis XV Años (Brigitte)*\n\n` +
+          `• *Nombre:* ${name}\n` +
+          `• *Respuesta:* ${answerText}\n` +
+          `• *Pases requeridos:* ${guests}\n` +
+          (notes ? `• *Mensaje:* ${notes}\n` : '') +
+          `\n¡Nos vemos en la fiesta! 🎉`;
+
+        const url = `https://api.whatsapp.com/send?phone=5219999999999&text=${encodeURIComponent(whatsappMsg)}`;
+        window.open(url, '_blank');
+        closeModal();
+        showToast("Redirigiendo a WhatsApp...");
+      });
+
+      const toast = document.getElementById('toast');
+      let toastTimeout;
+      function showToast(msg) {
+        clearTimeout(toastTimeout);
+        toast.textContent = msg;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toastTimeout = setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 3000);
+      }
+
+      const bgMusic = document.getElementById('bgMusic');
+      const musicToggleBtn = document.getElementById('musicToggleBtn');
+      const musicIcon = document.getElementById('musicIcon');
+      const musicRing = document.getElementById('musicRing');
+      let isPlaying = false;
+
+      function playMusic() {
+        bgMusic.play().then(() => {
+          isPlaying = true;
+          musicIcon.className = 'fa-solid fa-compact-disc fa-spin text-base text-baroque-gold';
+          musicRing.classList.remove('hidden');
+          musicToggleBtn.classList.add('music-playing');
+          showToast('Reproduciendo música');
+        }).catch(() => {
+          isPlaying = false;
+        });
+      }
+
+      function pauseMusic() {
+        bgMusic.pause();
+        isPlaying = false;
+        musicIcon.className = 'fa-solid fa-music text-sm text-[#3b5671]';
+        musicRing.classList.add('hidden');
+        musicToggleBtn.classList.remove('music-playing');
+        showToast('Música pausada');
+      }
+
+      musicToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (isPlaying) {
+          pauseMusic();
+        } else {
+          playMusic();
+        }
+      });
+
+      const startAudioOnFirstInteraction = () => {
+        if (!isPlaying) {
+          playMusic();
+        }
+        document.removeEventListener('click', startAudioOnFirstInteraction);
+        document.removeEventListener('touchstart', startAudioOnFirstInteraction);
+      };
+
+      document.addEventListener('click', startAudioOnFirstInteraction, { once: true });
+      document.addEventListener('touchstart', startAudioOnFirstInteraction, { once: true });
+
+      document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+      }, { capture: true });
+
+      document.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        return false;
+      });
+    });
+  </script>
+</body>
+</html>
