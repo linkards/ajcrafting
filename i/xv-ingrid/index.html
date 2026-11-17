@@ -369,9 +369,37 @@
           El enlace de invitación no es válido o no cuenta con pases asignados. Por favor solicita tu enlace personalizado.
         </p>
 
-        <button id="openRsvpModalBtn" class="inline-block mt-4 px-7 py-2 rounded-full bg-rose-main text-white font-sans text-xs font-medium shadow-md hover:bg-rose-dark transition active:scale-95 cursor-pointer">
-          Confirmar aquí
-        </button>
+        <div id="rsvpCardContainer" class="mt-4 bg-white/85 backdrop-blur-sm border border-rose-soft rounded-2xl p-4 shadow-sm text-left">
+          <div class="mb-3 text-center">
+            <span id="availablePassesBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-light border border-rose-soft text-rose-main font-cinzel text-[10px] font-bold tracking-wider uppercase">
+              <i class="fa-solid fa-ticket text-[10px]"></i>
+              <span id="availablePassesText"></span>
+            </span>
+          </div>
+
+          <form id="rsvpForm" class="space-y-3">
+            <div>
+              <label for="guestNameInput" class="block text-[10px] font-cinzel font-bold text-charcoal uppercase tracking-wider mb-1">
+                Nombre(s) y Apellidos *
+              </label>
+              <input type="text" id="guestNameInput" required placeholder="Ej. Familia Rodríguez o María López" 
+                     class="w-full px-3.5 py-2 text-xs rounded-xl border border-rose-soft focus:outline-none focus:border-rose-main focus:ring-1 focus:ring-rose-main text-charcoal bg-[#f8fafc]">
+            </div>
+
+            <div>
+              <label for="guestCountSelect" class="block text-[10px] font-cinzel font-bold text-charcoal uppercase tracking-wider mb-1">
+                Número de asistentes
+              </label>
+              <select id="guestCountSelect" class="w-full px-3.5 py-2 text-xs rounded-xl border border-rose-soft focus:outline-none focus:border-rose-main focus:ring-1 focus:ring-rose-main text-charcoal bg-[#f8fafc]">
+              </select>
+            </div>
+
+            <button type="submit" id="submitRsvpBtn" class="w-full mt-2 py-2.5 rounded-full bg-rose-main text-white font-sans text-xs font-semibold shadow hover:bg-rose-dark transition active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Enviar confirmación por WhatsApp</span>
+            </button>
+          </form>
+        </div>
       </div>
 
       <div class="pt-4 max-w-[290px] mx-auto relative z-10">
@@ -420,48 +448,6 @@
           <span id="copyBtnText">Copiar número de tarjeta</span>
         </button>
       </div>
-    </div>
-  </div>
-
-  <div id="rsvpModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl relative border-2 border-rose-soft">
-      <button id="closeRsvpModalBtn" class="absolute top-4 right-4 text-muted-text hover:text-charcoal p-1">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-
-      <div class="w-12 h-12 rounded-full bg-rose-light text-rose-main flex items-center justify-center mx-auto mb-3">
-        <i class="fa-regular fa-envelope text-xl"></i>
-      </div>
-
-      <h3 class="font-script text-3xl text-rose-main">Confirmar Asistencia</h3>
-      <p class="font-cinzel text-[10px] font-bold tracking-widest text-charcoal uppercase mt-1">XV Años de Ingrid Ximena</p>
-      
-      <p class="text-[11px] text-muted-text font-sans my-3 leading-relaxed">
-        Por favor ingresa tu nombre completo para registrar tu confirmación:
-      </p>
-
-      <form id="rsvpForm" class="space-y-3 text-left">
-        <div>
-          <label for="guestNameInput" class="block text-[10px] font-cinzel font-bold text-charcoal uppercase tracking-wider mb-1">
-            Nombre(s) y Apellidos *
-          </label>
-          <input type="text" id="guestNameInput" required placeholder="Ej. Familia Rodríguez o María López" 
-                 class="w-full px-3.5 py-2 text-xs rounded-xl border border-rose-soft focus:outline-none focus:border-rose-main focus:ring-1 focus:ring-rose-main text-charcoal bg-[#f8fafc]">
-        </div>
-
-        <div>
-          <label for="guestCountSelect" class="block text-[10px] font-cinzel font-bold text-charcoal uppercase tracking-wider mb-1">
-            Número de asistentes
-          </label>
-          <select id="guestCountSelect" class="w-full px-3.5 py-2 text-xs rounded-xl border border-rose-soft focus:outline-none focus:border-rose-main focus:ring-1 focus:ring-rose-main text-charcoal bg-[#f8fafc]">
-          </select>
-        </div>
-
-        <button type="submit" class="w-full mt-4 py-2.5 rounded-full bg-rose-main text-white font-sans text-xs font-semibold shadow hover:bg-rose-dark transition flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>Enviar confirmación por WhatsApp</span>
-        </button>
-      </form>
     </div>
   </div>
 
@@ -536,13 +522,13 @@
         document.body.removeChild(tempInput);
       });
 
-      const rsvpModal = document.getElementById('rsvpModal');
-      const openRsvpModalBtn = document.getElementById('openRsvpModalBtn');
-      const closeRsvpModalBtn = document.getElementById('closeRsvpModalBtn');
+      const rsvpCardContainer = document.getElementById('rsvpCardContainer');
       const rsvpForm = document.getElementById('rsvpForm');
       const guestNameInput = document.getElementById('guestNameInput');
       const guestCountSelect = document.getElementById('guestCountSelect');
+      const submitRsvpBtn = document.getElementById('submitRsvpBtn');
       const invalidLinkNotice = document.getElementById('invalidLinkNotice');
+      const availablePassesText = document.getElementById('availablePassesText');
 
       
       const CODIGOS_PASES = {
@@ -558,6 +544,7 @@
       const isValidInvite = Number.isInteger(maxPasses) && maxPasses > 0;
 
       if (isValidInvite) {
+        availablePassesText.textContent = maxPasses === 1 ? '1 pase disponible' : `${maxPasses} pases disponibles`;
         guestCountSelect.innerHTML = '';
         for (let i = 1; i <= maxPasses; i++) {
           const option = document.createElement('option');
@@ -568,27 +555,11 @@
         }
       } else {
         invalidLinkNotice.classList.remove('hidden');
-        openRsvpModalBtn.disabled = true;
-        openRsvpModalBtn.classList.remove('bg-rose-main', 'hover:bg-rose-dark', 'active:scale-95', 'cursor-pointer');
-        openRsvpModalBtn.classList.add('bg-stone-300', 'text-stone-500', 'cursor-not-allowed', 'opacity-75');
+        rsvpCardContainer.classList.add('hidden');
+        guestNameInput.disabled = true;
+        guestCountSelect.disabled = true;
+        submitRsvpBtn.disabled = true;
       }
-
-      openRsvpModalBtn.addEventListener('click', () => {
-        if (!isValidInvite) return;
-        rsvpModal.classList.remove('hidden');
-        rsvpModal.classList.add('flex');
-        setTimeout(() => guestNameInput.focus(), 150);
-      });
-
-      function closeRsvpModal() {
-        rsvpModal.classList.add('hidden');
-        rsvpModal.classList.remove('flex');
-      }
-
-      closeRsvpModalBtn.addEventListener('click', closeRsvpModal);
-      rsvpModal.addEventListener('click', (e) => {
-        if (e.target === rsvpModal) closeRsvpModal();
-      });
 
       rsvpForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -603,10 +574,9 @@
         }
 
         const guestCountText = selectedPasses === 1 ? '1 persona' : `${selectedPasses} personas`;
-        const message = `¡Hola! Confirmo con mucha alegría mi asistencia a los XV Años de Ingrid Ximena 💙\n\n👤 *Nombre:* ${guestName}\n👥 *Asistentes:* ${guestCountText}\n🎟️ *Código:* ${inviteCode}\n\n¡Muchas gracias por la invitación!`;
+        const message = `¡Hola! Confirmo con mucha alegría mi asistencia a los XV Años de Ingrid Ximena 💙\n\n👤 *Nombre:* ${guestName}\n👥 *Asistentes:* ${guestCountText}\n\n¡Muchas gracias por la invitación!`;
         const whatsappUrl = `https://wa.me/528673422473?text=${encodeURIComponent(message)}`;
 
-        closeRsvpModal();
         window.open(whatsappUrl, '_blank');
       });
 
