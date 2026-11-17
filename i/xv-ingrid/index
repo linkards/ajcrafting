@@ -122,7 +122,7 @@
 
     <section class="relative w-full px-6 pt-1 pb-6 text-center bg-cream-bg">
       <div class="floral-ornament w-48 sm:w-56 mx-auto mt-0 mb-6 opacity-90">
-        <img src="https://i.postimg.cc/pX1mK5xK/t3.webp" alt="Adorno floral" class="w-full object-contain">
+        <img src="t3.webp" alt="Adorno floral" class="w-full object-contain">
       </div>
 
       <div class="mb-6 space-y-4">
